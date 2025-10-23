@@ -1,52 +1,80 @@
 import { useState, useCallback } from 'react';
-import { Game } from '../classes/Game';
+import { Player } from '../classes/Player.js';
+import { Bot } from '../classes/Bot.js';
+
+// Створюємо екземпляри гравців один раз
+const player = new Player('Гравець', 'player');
+const bot = new Bot();
+
+// Початковий стан дошки
+const createInitialBoard = () => Array(6).fill(null).map(() => Array(7).fill(null));
 
 export function useGame() {
-  const [gameState, setGameState] = useState(() => {
-    const game = new Game();
-    return {
-      game,
-      ...game.getState()
-    };
-  });
+  const [board, setBoard] = useState(createInitialBoard);
+  const [currentPlayer, setCurrentPlayer] = useState('player');
+  const [winner, setWinner] = useState(null);
+
+  // Bot.js вже має всі методи перевірки, тож будемо використовувати їх
+  const checkWinner = useCallback((currentBoard) => {
+    return bot.checkWinner(currentBoard);
+  }, []);
 
   const playerMove = useCallback((col) => {
-    setGameState(prev => {
-      const { game } = prev;
-      game.playerMove(col);
-      return {
-        game,
-        ...game.getState()
-      };
-    });
-  }, []);
+    // Запобігаємо ходу, якщо гра закінчена, ходить бот, або колонка повна
+    if (winner || currentPlayer !== 'player' || board[0][col] !== null) {
+      return;
+    }
+
+    // 1. Отримуємо нову дошку від гравця
+    const newBoard = player.makeMove(board, col);
+    if (!newBoard) return; // Хід не вдався
+
+    // 2. Перевіряємо переможця
+    const newWinner = checkWinner(newBoard);
+
+    // 3. Оновлюємо стан
+    setBoard(newBoard);
+    if (newWinner) {
+      setWinner(newWinner);
+    } else {
+      setCurrentPlayer('bot'); // Передаємо хід боту
+    }
+  }, [board, currentPlayer, winner, checkWinner]); // Додаємо залежності
 
   const botMove = useCallback(() => {
-    setGameState(prev => {
-      const { game } = prev;
-      game.botMove();
-      return {
-        game,
-        ...game.getState()
-      };
-    });
-  }, []);
+    if (winner || currentPlayer !== 'bot') {
+      return;
+    }
+
+    // 1. Бот обирає колонку
+    const col = bot.chooseMove(board);
+    if (col === null) return; // Нічия або немає ходів
+
+    // 2. Отримуємо нову дошку від бота
+    const newBoard = bot.makeMove(board, col);
+
+    // 3. Перевіряємо переможця
+    const newWinner = checkWinner(newBoard);
+
+    // 4. Оновлюємо стан
+    setBoard(newBoard);
+    if (newWinner) {
+      setWinner(newWinner);
+    } else {
+      setCurrentPlayer('player'); // Передаємо хід гравцю
+    }
+  }, [board, currentPlayer, winner, checkWinner]); // Додаємо залежності
 
   const resetGame = useCallback(() => {
-    setGameState(prev => {
-      const { game } = prev;
-      game.reset();
-      return {
-        game,
-        ...game.getState()
-      };
-    });
+    setBoard(createInitialBoard());
+    setCurrentPlayer('player');
+    setWinner(null);
   }, []);
 
   return {
-    board: gameState.board,
-    currentPlayer: gameState.currentPlayer,
-    winner: gameState.winner,
+    board,
+    currentPlayer,
+    winner,
     playerMove,
     botMove,
     resetGame

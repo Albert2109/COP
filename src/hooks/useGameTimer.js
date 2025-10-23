@@ -12,4 +12,4 @@ export function useGameTimer(isGameActive, onTimeUpdate) {
   }, [isGameActive, onTimeUpdate]);
 }
 
-// helper/formatTime.js
+
