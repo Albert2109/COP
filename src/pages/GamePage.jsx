@@ -10,7 +10,7 @@ export default function GamePage({ onEnd }) {
 
   useGameTimer(!winner, setTime);
 
-  // Коли черга бота і немає переможця
+
   useEffect(() => {
     if (currentPlayer === 'bot' && !winner) {
       const timer = setTimeout(() => {

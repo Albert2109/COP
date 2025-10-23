@@ -2,9 +2,12 @@
 export default function ResultInfo({winner,time}){
     return(
         <>
-         <p className="fs-3">Гра закінчилась</p>
-      <p className="fs-3">Переміг:{winner}</p>
-      <p className="fs-3">Час гри:{time}</p>
+         {winner === "Нічия"? (
+            <p className="fs-4">Результат <strong>Нічия</strong> </p>
+         ):(
+            <p className="fs-4">Результат <strong>{winner}</strong> </p>
+         )}
+         <p className="fs-4">Час гри: <strong>{time}</strong></p>
         </>
     )
 }
