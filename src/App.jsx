@@ -7,19 +7,29 @@ import ResultsPage from './pages/ResultsPage';
 
 function App() {
   const [page, setPage] = useState("start");
+  const [gameResult, setGameResult] = useState({ winner: '', time: '' });
+
+  const handleEndGame = (result) => {
+    setGameResult(result);
+    setPage("results");
+  };
+
+  const handleRestart = () => {
+    setPage("start");
+  };
 
   return (
-    <>  
+    <div className="container mt-5">
       {page === "start" && <StartPage onStart={() => setPage("game")} />}
-      {page === "game" && <GamePage onEnd={() => setPage("results")} />}
+      {page === "game" && <GamePage onEnd={handleEndGame} />}
       {page === "results" && (
         <ResultsPage
-          onRestart={() => setPage("start")}
-          winner="Червоний"
-          time="02:15"
+          onRestart={handleRestart}
+          winner={gameResult.winner}
+          time={gameResult.time}
         />
       )}
-    </>
+    </div>
   );
 }
 

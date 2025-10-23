@@ -1,27 +1,39 @@
-
-export default function Board({activeCell,setActiveCell}){
-    return(
-        <>
-        <table className='table table-bordered'>
-        <tbody>
-          {Array.from({ length: 6 }).map((_, row) => (
-            <tr key={row}>
-              {Array.from({ length: 7 }).map((_, col) => (
-                <td
-                  key={col}
-                  onClick={() => setActiveCell(`${row}-${col}`)}
-                  style={{ 
-                    width: "10em",
-                    height: "10em",
-                    border: "1px solid black",
-                    backgroundColor: activeCell === `${row}-${col}` ? 'yellow' : 'white' 
+export default function Board({ board, onColumnClick }) {
+  return (
+    <table className='table table-bordered' style={{ backgroundColor: '#4da6ff', borderCollapse: 'collapse' }}>
+      <tbody>
+        {board.map((row, rowIdx) => (
+          <tr key={rowIdx}>
+            {row.map((cell, colIdx) => (
+              <td
+                key={`${rowIdx}-${colIdx}`}
+                onClick={() => onColumnClick(colIdx)}
+                style={{
+                  width: '60px',
+                  height: '60px',
+                  padding: '0',
+                  cursor: 'pointer',
+                  border: '2px solid white',
+                  backgroundColor: '#4da6ff',
+                  textAlign: 'center',
+                  verticalAlign: 'middle'
+                }}
+              >
+                <div
+                  style={{
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '50%',
+                    backgroundColor: cell === null ? 'white' : cell === 'player' ? 'red' : 'yellow',
+                    margin: 'auto',
+                    border: '1px solid rgba(0,0,0,0.1)'
                   }}
-                ></td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-        </>
-    )
+                />
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
