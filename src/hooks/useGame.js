@@ -4,31 +4,48 @@ import { EasyBot } from '../classes/EasyBot.js';
 import { Bot } from '../classes/Bot.js'; 
 import { HardBot } from '../classes/HardBot.js';
 
-const createInitialBoard = () => Array(6).fill(null).map(() => Array(7).fill(null));
-
 export function useGame(settings) {
+
+  const { 
+    LevelBot, playerColor, botColor, firstPlayer,
+    rows: settingsRows, 
+    columns: settingsCols 
+  } = settings;
+
+
+  const rows = parseInt(settingsRows, 10) || 6;
+  const columns = parseInt(settingsCols, 10) || 7;
+
+
+  const createInitialBoard = useCallback(() => {
+    return Array(rows).fill(null).map(() => Array(columns).fill(null));
+  }, [rows, columns]); 
+
   const [board, setBoard] = useState(createInitialBoard);
   const [winner, setWinner] = useState(null);
 
-  const { LevelBot, playerColor, botColor, firstPlayer } = settings;
 
   const player = useMemo(() => {
-    return new Player('Гравець', 'player', playerColor || '#FF0000');
-  }, [playerColor]);
+    return new Player('Гравець', 'player', playerColor || '#FF0000', rows, columns);
+  }, [playerColor, rows, columns]);
+
 
   const bot = useMemo(() => {
     const color = botColor || '#FFFF00';
+
+    const botArgs = [color, rows, columns];
+    
     switch (LevelBot) {
       case 'easy':
-        return new EasyBot(color);
+        return new EasyBot(...botArgs);
       case 'medium':
-        return new Bot(color);
+        return new Bot(...botArgs);
       case 'hard':
-        return new HardBot(color);
+        return new HardBot(...botArgs);
       default:
-        return new EasyBot(color);
+        return new EasyBot(...botArgs);
     }
-  }, [LevelBot, botColor]);
+  }, [LevelBot, botColor, rows, columns]);
   
   const [currentPlayer, setCurrentPlayer] = useState(() => {
     if (firstPlayer === 'random') {
@@ -36,6 +53,7 @@ export function useGame(settings) {
     }
     return firstPlayer || 'player';
   });
+
 
   const checkWinner = useCallback((currentBoard) => {
     return bot.checkWinner(currentBoard);
@@ -45,7 +63,7 @@ export function useGame(settings) {
     if (winner || currentPlayer !== 'player' || board[0][col] !== null) {
       return;
     }
-    const newBoard = player.makeMove(board, col);
+    const newBoard = player.makeMove(board, col); 
     if (!newBoard) return;
 
     const newWinner = checkWinner(newBoard);
@@ -87,14 +105,14 @@ export function useGame(settings) {
   }, [board, currentPlayer, winner, checkWinner, bot]); 
 
   const resetGame = useCallback(() => {
-    setBoard(createInitialBoard());
+    setBoard(createInitialBoard()); 
     if (firstPlayer === 'random') {
       setCurrentPlayer(Math.random() > 0.5 ? 'player' : 'bot');
     } else {
       setCurrentPlayer(firstPlayer || 'player');
     }
     setWinner(null);
-  }, [firstPlayer]);
+  }, [firstPlayer, createInitialBoard]); 
 
   const forceTimeout = useCallback(() => {
     if (winner) return; 
