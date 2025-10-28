@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Four-in-row-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5634196af515b27e2eaecfffe9ce77c6cbf7b46")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2b109ef7697fbb4446ce7f06026a589f82835f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Four-in-row-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Four-in-row-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

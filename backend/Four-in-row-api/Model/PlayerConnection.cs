@@ -4,5 +4,6 @@
     {
         public string Nickname { get; set; }
         public string ConnectionId { get; set; }
+        public bool WantsRestart { get; set; } = false;
     }
 }
