@@ -1,4 +1,9 @@
-export default function Board({ board, onColumnClick }) {
+
+export default function Board({ board, onColumnClick, playerColor, botColor }) {
+  
+  const pColor = playerColor || 'red';
+  const bColor = botColor || 'yellow';
+
   return (
     <table className='table table-bordered' style={{ backgroundColor: '#4da6ff', borderCollapse: 'collapse' }}>
       <tbody>
@@ -24,7 +29,7 @@ export default function Board({ board, onColumnClick }) {
                     width: '50px',
                     height: '50px',
                     borderRadius: '50%',
-                    backgroundColor: cell === null ? 'white' : cell === 'player' ? 'red' : 'yellow',
+                    backgroundColor: cell === null ? 'white' : cell === 'player' ? pColor : bColor,
                     margin: 'auto',
                     border: '1px solid rgba(0,0,0,0.1)'
                   }}

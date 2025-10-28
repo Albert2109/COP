@@ -1,35 +1,39 @@
 import { useState } from 'react';
-import './App.css';
-
+import GameSettingsProvider from './context/GameSettingsProvider';
 import StartPage from './pages/StartPage';
 import GamePage from './pages/GamePage';
-import ResultsPage from './pages/ResultsPage';
+import GameSettingsForm from './components/GameSettingsForm';
+import './App.css';
 
 function App() {
-  const [page, setPage] = useState("start");
-  const [gameResult, setGameResult] = useState({ winner: '', time: '' });
+  const [page, setPage] = useState('start');
+  const [gameSettings, setGameSettings] = useState(null);
 
-  const handleEndGame = (result) => {
-    setGameResult(result);
-    setPage("results");
+  const handleStartClick = () => {
+    setPage('settings');
   };
 
-  const handleRestart = () => {
-    setPage("start");
+  const handleSettingsSubmit = (settings) => {
+    setGameSettings(settings);
+    setPage('game');
+  };
+
+  const handleGameEnd = () => {
+    setPage('start');
   };
 
   return (
-    <div className="container mt-5">
-      {page === "start" && <StartPage onStart={() => setPage("game")} />}
-      {page === "game" && <GamePage onEnd={handleEndGame} />}
-      {page === "results" && (
-        <ResultsPage
-          onRestart={handleRestart}
-          winner={gameResult.winner}
-          time={gameResult.time}
-        />
-      )}
-    </div>
+    <GameSettingsProvider>
+      <div className="container mt-5">
+        {page === 'start' && <StartPage onStart={handleStartClick} />}
+        {page === 'settings' && (
+          <GameSettingsForm onSubmit={handleSettingsSubmit} />
+        )}
+        {page === 'game' && gameSettings && (
+          <GamePage settings={gameSettings} onEnd={handleGameEnd} />
+        )}
+      </div>
+    </GameSettingsProvider>
   );
 }
 
