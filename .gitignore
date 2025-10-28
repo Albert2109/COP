@@ -25,3 +25,6 @@ dist-ssr
 README.md
 src/assets/react.svg
 public/vite.svg
+backend/Four-in-row-api/.vs
+backend/Four-in-row-api/bin
+backend/Four-in-row-api/obj

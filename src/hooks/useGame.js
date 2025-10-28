@@ -22,7 +22,6 @@ export function useGame(settings) {
   const [winner, setWinner] = useState(null);
 
   const player = useMemo(() => {
-    // Прибираємо невикористану змінну 'symbol'
     return new Player('Гравець', 'player', playerColor || '#FF0000', rows, columns);
   }, [playerColor, rows, columns]);
 
@@ -31,7 +30,6 @@ export function useGame(settings) {
     const botArgs = [color, rows, columns];
 
     if (settings.mode === 'online') {
-      // Прибираємо невикористану змінну 'symbol'
       return new Player('Опонент', 'bot', color, rows, columns);
     }
 
@@ -45,26 +43,21 @@ export function useGame(settings) {
       default:
         return new EasyBot(...botArgs);
     }
-    // Додаємо 'settings.mode' в залежності, оскільки ми його читаємо
   }, [LevelBot, botColor, rows, columns, settings.mode]);
 
   const [currentPlayer, setCurrentPlayer] = useState(() => {
     if (settings.mode === 'online') {
-      // Переконайся, що settings.firstPlayer передається коректно для 'online'
       return settings.firstPlayer; 
     }
     if (firstPlayer === 'random') {
       return Math.random() > 0.5 ? 'player' : 'bot';
     }
     return firstPlayer || 'player';
-    // Додаємо 'settings.mode' в залежності
-  }, [settings.mode, firstPlayer]); // Додано settings.mode
+  }, [settings.mode, firstPlayer]); 
 
   const checkWinner = useCallback((currentBoard) => {
-    // Використовуємо 'player' для перевірки, оскільки 'bot' може бути 'Player' в онлайн режимі
-    // (потрібно додати метод checkWinner в Player.js, якщо його немає)
     return player.checkWinner(currentBoard); 
-  }, [player]); // Змінено залежність на player
+  }, [player]); 
 
   const playerMove = useCallback((col) => {
     if (winner || currentPlayer !== 'player' || !board[0] || board[0][col] !== null) { // Додано перевірку board[0]
@@ -78,7 +71,7 @@ export function useGame(settings) {
     if (newWinner) {
       setWinner(newWinner);
     } else {
-      const isDraw = newBoard[0]?.every(cell => cell !== null); // Додано ?.
+      const isDraw = newBoard[0]?.every(cell => cell !== null); 
       if (isDraw) {
         setWinner('draw');
       } else {
@@ -93,14 +86,14 @@ export function useGame(settings) {
     }
 
     let col = forcedCol;
-    if (col === null && settings.mode !== 'online') { // AI обирає хід тільки в 'bot' режимі
+    if (col === null && settings.mode !== 'online') { 
       col = await bot.chooseMove(board);
     }
     
     if (col === null) return; 
 
     const newBoard = bot.makeMove(board, col);
-    if (!newBoard) return; // Додано перевірку результату makeMove
+    if (!newBoard) return; 
 
     const newWinner = checkWinner(newBoard);
 
@@ -108,22 +101,18 @@ export function useGame(settings) {
     if (newWinner) {
       setWinner(newWinner);
     } else {
-      const isDraw = newBoard[0]?.every(cell => cell !== null); // Додано ?.
+      const isDraw = newBoard[0]?.every(cell => cell !== null); 
       if (isDraw) {
         setWinner('draw');
       } else {
         setCurrentPlayer('player');
       }
     }
-    // Додаємо settings.mode в залежності
   }, [board, currentPlayer, winner, checkWinner, bot, settings.mode]); 
 
   const resetGame = useCallback(() => {
     setBoard(createInitialBoard());
     if (settings.mode === 'online') {
-       // В онлайн режимі перший хід визначається сервером, можливо,
-       // тут потрібно повернути стан очікування або передати дані з сервера
-       // Поки що просто ставимо 'player'
        setCurrentPlayer('player'); 
     } else if (firstPlayer === 'random') {
       setCurrentPlayer(Math.random() > 0.5 ? 'player' : 'bot');
@@ -131,17 +120,15 @@ export function useGame(settings) {
       setCurrentPlayer(firstPlayer || 'player');
     }
     setWinner(null);
-    // Додаємо settings.mode в залежності
   }, [settings.mode, firstPlayer, createInitialBoard]);
 
   const forceTimeout = useCallback(() => {
     if (winner) return;
-    // Таймаут застосовуємо тільки в режимі 'bot'
     if (settings.mode === 'bot') {
-        setWinner('bot'); // Гравець програв боту
+        setWinner('bot'); 
         setCurrentPlayer(null);
     }
-    // В онлайн режимі логіка таймауту може бути іншою (наприклад, сервер вирішує)
+   
   }, [winner, settings.mode]);
 
   return {

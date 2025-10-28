@@ -1,22 +1,20 @@
 import { useState, useCallback } from 'react';
-// 1. Виправляємо шляхи імпорту. Припускаємо, що App.jsx знаходиться в src/
 import GameSettingsProvider from './context/GameSettingsProvider';
 import StartPage from './pages/StartPage';
 import GamePage from './pages/GamePage';
 import GameSettingsForm from './components/GameSettingsForm';
 import ResultsPage from './pages/ResultsPage';
 import OnlineGamePage from './pages/OnlineGamePage';
-import './App.css'; // Припускаємо, що App.css теж у src/
+import './App.css'; 
 
-// Завантаження історії з localStorage
+
 const loadHistory = () => {
   const saved = localStorage.getItem('gameSessionHistory');
-  // Додамо try-catch на випадок пошкоджених даних у localStorage
   try {
     return saved ? JSON.parse(saved) : [];
   } catch (e) {
     console.error("Failed to parse game history from localStorage:", e);
-    localStorage.removeItem('gameSessionHistory'); // Очистимо пошкоджені дані
+    localStorage.removeItem('gameSessionHistory'); 
     return [];
   }
 };
@@ -29,7 +27,6 @@ function App() {
     history.length > 0 ? history[0].mode : null
   );
 
-  // Обробник старту нової сесії
   const handleStartClick = () => {
     setHistory([]);
     setLockedMode(null);
@@ -38,7 +35,6 @@ function App() {
     setPage('settings');
   };
 
-  // Обробник відправки налаштувань
   const handleSettingsSubmit = (settings) => {
     let mode = lockedMode;
     if (!mode) {
@@ -58,7 +54,6 @@ function App() {
     }
   };
 
-  // Додавання гри в історію (стабілізовано з useCallback)
   const addGameToHistory = useCallback((result) => {
     if (!gameSettings) {
         console.error("Cannot add game to history: gameSettings is null.");
@@ -80,33 +75,27 @@ function App() {
             localStorage.setItem('gameSessionHistory', JSON.stringify(newHistory));
         } catch (e) {
             console.error("Failed to save game history to localStorage:", e);
-            // Можливо, localStorage переповнений
             alert("Не вдалося зберегти історію гри. Можливо, сховище переповнене.");
         }
         return newHistory;
     });
-  }, [gameSettings]); // Залежить тільки від gameSettings
+  }, [gameSettings]); 
 
-  // Перехід до налаштувань
   const handleGoToSettings = () => {
     setPage('settings');
   };
 
-  // Перехід до результатів
   const handleGoToResults = () => {
     setPage('results');
   };
 
-  // Повернення на головну зі сторінки результатів
   const handleRestart = () => {
     setPage('start');
   };
 
-  // --- Рендеринг ---
   return (
     <GameSettingsProvider>
       <div className="container mt-5">
-        {/* Умовний рендеринг сторінок */}
         {page === 'start' && <StartPage onStart={handleStartClick} />}
 
         {page === 'settings' && (

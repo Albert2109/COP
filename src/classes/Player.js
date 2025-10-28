@@ -18,7 +18,7 @@ export class Player {
     return null;
   }
 
-  // --- ADDED CHECKING METHODS ---
+
 
   checkHorizontal(board) {
     for (let row = 0; row < this.rows; row++) {
@@ -72,5 +72,5 @@ export class Player {
     return this.checkHorizontal(board) || this.checkVertical(board) || 
            this.checkDiagonalDown(board) || this.checkDiagonalUp(board);
   }
-  // --- END OF ADDED METHODS ---
+
 }
