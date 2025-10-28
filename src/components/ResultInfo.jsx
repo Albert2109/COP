@@ -6,7 +6,7 @@ export default function ResultInfo({ winner, time, botLevel, mode }) {
   const getWinnerText = () => {
     if (winner === 'draw') return '🤝 Нічия!';
     if (winner === 'player') return '🎉 Перемога!';
-    if (winner === 'bot') return '🤖 Поразка';
+    if (winner === 'bot') return '💀 Поразка';
     return 'Гра закінчилась';
   };
 

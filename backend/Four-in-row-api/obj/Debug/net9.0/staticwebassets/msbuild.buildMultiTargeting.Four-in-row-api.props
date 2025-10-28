@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Four-in-row-api.props" />
+</Project>
