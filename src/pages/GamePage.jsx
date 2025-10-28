@@ -6,13 +6,18 @@ import { useGameTimer } from '../hooks/useGameTimer';
 import { formatTime } from '../helper/formatTime';
 import '../styles/GamePage.css';
 
-export default function GamePage({ settings, onEnd }) {
+
+export default function GamePage({ settings, onGoToSettings, onGoToResults, onGameFinished }) {
   const { board, currentPlayer, winner, playerMove, botMove, resetGame, forceTimeout } = useGame(settings);
   const [time, setTime] = useState(0);
   const [timeLeft, setTimeLeft] = useState(settings.moveTimeLimit ? parseInt(settings.moveTimeLimit, 10) : null);
   const [showEndPortal, setShowEndPortal] = useState(false);
 
   useGameTimer(!winner, setTime);
+  
+
+  const formattedTime = formatTime(time);
+
 
   useEffect(() => {
     if (currentPlayer === 'bot' && !winner) {
@@ -30,7 +35,6 @@ export default function GamePage({ settings, onEnd }) {
     if (!timeLeft || winner || currentPlayer === 'bot') {
       return;
     }
-
     const interval = setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1) {
@@ -41,25 +45,26 @@ export default function GamePage({ settings, onEnd }) {
         return prev - 1; 
       });
     }, 1000);
-
     return () => clearInterval(interval);
-    
-
   }, [currentPlayer, winner, timeLeft, forceTimeout]);
 
+  useEffect(() => {
+    if (winner) {
+      onGameFinished({
+        winner: winner,
+        time: formattedTime 
+      });
+      setShowEndPortal(true);
+    }
+  }, [winner]);
 
   const handleColumnClick = (col) => {
     if (currentPlayer === 'player' && !winner) {
       playerMove(col);
-
       if (settings.moveTimeLimit) {
         setTimeLeft(settings.moveTimeLimit);
       }
     }
-  };
-
-  const handleGameEnd = () => {
-    setShowEndPortal(true);
   };
 
   const handlePlayAgain = () => {
@@ -72,7 +77,14 @@ export default function GamePage({ settings, onEnd }) {
   };
 
   const handleChangeSettings = () => {
-    onEnd();
+    setShowEndPortal(false);
+    onGoToSettings(); 
+  };
+
+
+  const handleEndGame = () => {
+    setShowEndPortal(false);
+    onGoToResults(); 
   };
 
 
@@ -90,11 +102,10 @@ export default function GamePage({ settings, onEnd }) {
           </div>
           <div className="info-item">
             <span>Час гри:</span>
-            <strong>{formatTime(time)}</strong>
+            <strong>{formattedTime}</strong>
           </div>
         </div>
       </div>
-
 
       {settings.moveTimeLimit && (
         <div className="move-timer">
@@ -122,20 +133,16 @@ export default function GamePage({ settings, onEnd }) {
         playerColor={settings.playerColor}
         botColor={settings.botColor}
       />
-
-      {winner && (
-        <button className="btn btn-danger mt-3" onClick={handleGameEnd}>
-          Завершити гру
-        </button>
-      )}
+      
 
       <GameEndPortal
         isOpen={showEndPortal}
         winner={winner}
-        time={formatTime(time)}
+        time={formattedTime}
         botLevel={settings.LevelBot}
         onPlayAgain={handlePlayAgain}
         onChangeSettings={handleChangeSettings}
+        EndGame={handleEndGame} 
       />
     </div>
   );

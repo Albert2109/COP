@@ -7,6 +7,7 @@ export default function GameEndPortal({
   time, 
   onPlayAgain, 
   onChangeSettings,
+  EndGame,
   botLevel
 }) {
   if (!isOpen) return null;
@@ -57,6 +58,7 @@ export default function GameEndPortal({
           >
             ⚙️ Нові налаштування
           </button>
+          <button className="btn btn-secondary btn-lg" onClick = {EndGame}>Закінчити гру</button>
         </div>
       </div>
     </div>,

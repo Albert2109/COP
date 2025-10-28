@@ -6,22 +6,24 @@ import { useGameSettings } from '../hooks/useGameSettings';
 
 import './GameSettingsForm.css';
 
-export default function GameSettingsForm({ onSubmit }) {
-  const { settings } = useGameSettings();
+export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings }) {
+  const { settings: savedSettings } = useGameSettings(); 
+
+  const defaultData = currentSettings || savedSettings;
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
     resolver: yupResolver(gameSchema),
     defaultValues: {
-      mode: settings?.mode || '',
-      LevelBot: settings?.LevelBot || '',
-      firstPlayer: settings?.firstPlayer || 'player',
-      playerColor: settings?.playerColor || '#FF0000',
-      botColor: settings?.botColor || '#FFFF00',
-      rows: settings?.rows || 6,
-      columns: settings?.columns || 7,
-      moveTimeLimit: settings?.moveTimeLimit || 30,
-      nickname: settings?.nickname || '',
-      roomCode: settings?.roomCode || ''
+      mode: lockedMode || defaultData?.mode || '',
+      LevelBot: defaultData?.LevelBot || '',
+      firstPlayer: defaultData?.firstPlayer || 'player',
+      playerColor: defaultData?.playerColor || '#FF0000',
+      botColor: defaultData?.botColor || '#FFFF00',
+      rows: defaultData?.rows || 6,
+      columns: defaultData?.columns || 7,
+      moveTimeLimit: defaultData?.moveTimeLimit || 30,
+      nickname: defaultData?.nickname || '',
+      roomCode: defaultData?.roomCode || ''
     }
   });
 
@@ -131,7 +133,7 @@ export default function GameSettingsForm({ onSubmit }) {
       </div>
 
       <button type="submit" className="btn btn-primary btn-lg">
-        Почати гру
+        {lockedMode ? 'Грати (оновлені налаштування)' : 'Почати гру'}
       </button>
     </form>
   );
