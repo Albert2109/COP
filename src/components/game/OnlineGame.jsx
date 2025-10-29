@@ -3,13 +3,16 @@ import { useGame } from '../../hooks/game/useGame';
 import { formatTime } from '../../helper/formatTime';
 import { useGameTimer } from '../../hooks/game/useGameTimer';
 import Board from './Board';
-import GameEndPortal from './GameEndPortal/GameEndPortal';
+import GameEndPortal from './GameEndPortal/GameEndPortal'; 
 
 export default function OnlineGame({
   settings, 
   connection, connectionId, roomCode,
-  onGoToSettings, onGoToResults, onGameFinished,
-  opponentLeft, opponentWantsRestart
+  onGoToSettings, onGoToResults, 
+  opponentLeft, opponentWantsRestart,
+  // 1. Прибираємо 'onGameFinished' з пропсів
+  onRestartApproved,
+  isGameFinished 
 }) {
     const {
         board, currentPlayer, winner,
@@ -17,15 +20,15 @@ export default function OnlineGame({
     } = useGame(settings);
 
     const [time, setTime] = useState(0); 
-    const [showEndPortal, setShowEndPortal] = useState(false); 
     const formattedTime = formatTime(time);
     useGameTimer(!winner && !opponentLeft, setTime);
 
-
+    // Обробник ходу опонента
     useEffect(() => {
+        if (isGameFinished) return; 
+
         const moveHandler = (playerConnectionId, column) => {
             if (playerConnectionId !== connectionId) {
-                console.log(`Received move from opponent: col ${column}`);
                 botMove(column); 
             }
         };
@@ -35,51 +38,48 @@ export default function OnlineGame({
         return () => {
             connection?.off("MoveMade", moveHandler); 
         };
-    }, [connection, connectionId, botMove]); 
+    }, [connection, connectionId, botMove, isGameFinished]); 
 
-
+    // 2. Оновлюємо useEffect для завершення гри
     useEffect(() => {
-        if (winner && !opponentLeft) {
-            console.log(`Game ended. Winner: ${winner}. Saving result.`);
-            onGameFinished({ winner, time: formattedTime }); 
-            setShowEndPortal(true); 
+        // Якщо є переможець, гра ще не позначена як завершена, і опонент на місці
+        if (winner && !opponentLeft && !isGameFinished) {
+            console.log(`Detected winner: ${winner}. Notifying server...`);
+            // 🔽🔽🔽 ЗАМІСТЬ onGameFinished ВИКЛИКАЄМО СЕРВЕР 🔽🔽🔽
+            connection?.invoke("NotifyGameEnd", roomCode)
+                .catch(err => console.error("Failed to notify server of game end:", err));
+            // 🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼
         }
-    }, [winner, onGameFinished, formattedTime, opponentLeft]); 
+    // 3. 'onGameFinished' більше не потрібен в залежностях
+    }, [winner, opponentLeft, isGameFinished, connection, roomCode]); // Використовуємо 'connection' і 'roomCode'
 
 
+    // Обробник кліку
     const handleColumnClick = (col) => {
-        if (currentPlayer === 'player' && !winner && !opponentLeft) {
-            console.log(`Player move: col ${col}`);
+        if (currentPlayer === 'player' && !winner && !opponentLeft && !isGameFinished) {
             playerMove(col); 
             connection?.invoke("MakeMove", roomCode, col) 
                 .catch(err => console.error("Failed to send move: ", err));
-        } else {
-            console.warn(`Move blocked: currentPlayer=${currentPlayer}, winner=${winner}, opponentLeft=${opponentLeft}`);
         }
     };
 
-
-
+    // 'handlePlayAgain' тепер просто викликає 'onRestartApproved'
     const handlePlayAgain = useCallback(() => {
         console.log("Requesting restart via SignalR...");
-        setShowEndPortal(false); 
-        setTime(0); 
         connection?.invoke("RequestRestart", roomCode) 
            .catch(err => console.error("Failed to request restart:", err));
-    }, [connection, roomCode]); 
+        
+        onRestartApproved(); 
+
+    }, [connection, roomCode, onRestartApproved]);
 
     const handleEndGame = useCallback(() => {
-        console.log("Ending game session, navigating to results.");
-        setShowEndPortal(false);
         onGoToResults();
     }, [onGoToResults]);
 
     const handleChangeSettings = useCallback(() => {
-        console.warn("Navigating to settings from online game (will disconnect).");
-        setShowEndPortal(false);
         onGoToSettings();
     }, [onGoToSettings]);
-
 
 
     return (
@@ -95,38 +95,44 @@ export default function OnlineGame({
                 </div>
             </div>
 
-            {opponentWantsRestart && !showEndPortal && !opponentLeft && (
+            {opponentWantsRestart && !isGameFinished && !opponentLeft && (
                  <div className="alert alert-info text-center small py-1 mb-2">
-                      Опонент пропонує грати ще раз! Якщо згодні, натисніть "Грати ще раз" у вікні результатів (коли гра завершиться).
+                      Опонент пропонує грати ще раз!
                  </div>
              )}
 
              {opponentLeft && !winner && (
                   <div className="alert alert-warning text-center">
                       <h2>Опонент покинув гру</h2>
-                      <p>Ви можете завершити сесію та переглянути результати.</p>
                       <button className="btn btn-primary mt-2" onClick={handleEndGame}>
                           Переглянути результати
                       </button>
                   </div>
              )}
 
-            {winner && (
+            {/* 4. Тепер 'winner' може бути null, коли портал вже показаний */}
+            {/* Тому краще показувати текст перемоги всередині порталу */}
+            {/*winner && ( ... цей блок можна прибрати або залишити ... )*/}
+            {winner && isGameFinished && ( // Додаємо isGameFinished для надійності
                 <div className={`alert ${winner === 'player' ? 'alert-success' : (winner === 'draw' ? 'alert-info' : 'alert-danger')}`}>
                     {winner === 'draw' ? '🤝 Нічия!' : winner === 'player' ? '🎉 Ви перемогли!' : '🤖 Ви програли!'}
                 </div>
             )}
 
+
             <Board
                 board={board}
-                onColumnClick={currentPlayer !== 'player' || winner || opponentLeft ? () => {} : handleColumnClick}
+                // Блокуємо кліки, якщо гра закінчена офіційно (сервером)
+                onColumnClick={currentPlayer !== 'player' || winner || opponentLeft || isGameFinished ? () => {} : handleColumnClick} 
                 playerColor={settings.playerColor}
                 botColor={settings.botColor}
             />
 
+            {/* 'isOpen' тепер керується 'isGameFinished' */}
             <GameEndPortal
-                isOpen={showEndPortal && !opponentLeft}
-                winner={winner}
+                isOpen={isGameFinished && !opponentLeft}
+                // Передаємо 'winner', щоб портал знав, хто переміг
+                winner={winner} 
                 time={formattedTime}
                 botLevel={null} 
                 isOnline={true} 

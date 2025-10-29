@@ -6,7 +6,7 @@ import { useGameSettings } from '../../hooks/useGameSettings';
 
 import './GameSettingsForm.css';
 
-export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings }) {
+export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings, initialRoomCode }) {
   const { settings: savedSettings } = useGameSettings(); 
 
   const defaultData = currentSettings || savedSettings;
@@ -23,7 +23,7 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
       columns: defaultData?.columns || 7,
       moveTimeLimit: defaultData?.moveTimeLimit || 30,
       nickname: defaultData?.nickname || '',
-      roomCode: defaultData?.roomCode || ''
+      roomCode: initialRoomCode || defaultData?.roomCode || '',
     }
   });
 
@@ -33,7 +33,7 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
     <form onSubmit={handleSubmit(onSubmit)} className="game-settings-form">
       <div className="form-group">
         <label>Режим гри:</label>
-        <select {...register('mode')}>
+        <select {...register('mode')} disabled={!!lockedMode}> 
           <option value="">Оберіть режим гри</option>
           <option value="bot">Гра проти бота</option>
           <option value="online">Онлайн гра з гравцем</option>
@@ -127,6 +127,7 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
           min="5"
           max="120"
           step="5"
+          placeholder="Вимкнено" 
         />
         <small>Залиште пусто щоб вимкнути обмеження часу</small>
         {errors.moveTimeLimit && <span className="error">{errors.moveTimeLimit.message}</span>}
