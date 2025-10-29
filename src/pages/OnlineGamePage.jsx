@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { useSignalR } from '../hooks/api/useSignalR';
+import { useSignalR } from '../hooks/api/useSignalR'; 
 import { HubConnectionState } from '@microsoft/signalr';
 import OnlineGame from '../components/game/OnlineGame';
+import WaitingRoom from '../components/game/WaitingRoom'; 
 
 export default function OnlineGamePage({
     settings, 
@@ -28,11 +29,8 @@ export default function OnlineGamePage({
 
     useEffect(() => {
         if (connection && connection.state === HubConnectionState.Connected && !joinAttempted.current) {
-
             joinAttempted.current = true; 
-
             console.log(`>>> INVOKING JoinOrCreateRoom with code: '${settings.roomCode || ""}', rows: ${settings.rows}, cols: ${settings.columns}`);
-
             connection.invoke("JoinOrCreateRoom",
                 settings.roomCode || "",
                 settings.nickname,
@@ -47,10 +45,8 @@ export default function OnlineGamePage({
         }
 
     }, [connection, connectionId, settings.roomCode, settings.nickname, settings.rows, settings.columns]);
-
     useEffect(() => {
         if (!connection || connection.state !== HubConnectionState.Connected) return;
-
         const joinedHandler = (code, playerList, roomRows, roomCols) => {
             console.log("JoinedRoom event received:", code, playerList, `${roomRows}x${roomCols}`);
             setRoomCode(code); 
@@ -81,8 +77,6 @@ export default function OnlineGamePage({
                  return;
             }
             const iAmFirst = gameData.firstPlayerId === connectionId; 
-
-            
             setGameStartData({
                 playerColor: settings.playerColor,
                 botColor: settings.botColor,
@@ -121,14 +115,12 @@ export default function OnlineGamePage({
              connection?.off("RestartRequested", restartRequestedHandler);
         };
     }, [connection, connectionId, settings.playerColor, settings.botColor, settings.nickname]);
-
     useEffect(() => {
         return () => {
             console.log("Stopping SignalR connection on OnlineGamePage unmount");
             connection?.stop().catch(err => console.error("Error stopping connection:", err));
         };
     }, [connection]); 
-
     if (gameState === 'playing' && gameStartData) {
         return (
             <OnlineGame                 
@@ -145,7 +137,6 @@ export default function OnlineGamePage({
             />
         );
     }
-
      if (opponentLeft && gameState === 'waiting') {
          return (
            <div className="alert alert-warning text-center">
@@ -156,28 +147,11 @@ export default function OnlineGamePage({
            </div>
          );
      }
-
-
     return (
-        <div className="text-center">
-            <h2>Кімната очікування</h2>
-            {roomCode && <h3>Код кімнати: <strong className="text-primary">{roomCode}</strong></h3>}
-            <p>
-                {roomCode ? "Поділіться цим кодом з другом, щоб він приєднався." : "Підключення та створення/пошук кімнати..."}
-            </p>
-            <div className="spinner-border text-primary my-3" role="status">
-                <span className="visually-hidden">Завантаження...</span>
-            </div>
-            <h4 className="mt-4">Гравці в кімнаті:</h4>
-            <ul className="list-group" style={{ maxWidth: '400px', margin: 'auto' }}>
-                {players.map(p => (
-                    <li key={p.connectionId} className="list-group-item d-flex justify-content-between align-items-center">
-                       <span>{p.nickname}</span> 
-                        {p.connectionId === connectionId && <span className="badge bg-success rounded-pill">Це ви</span>}
-                    </li>
-                ))}
-                {players.length < 2 && <li className="list-group-item text-muted">Очікування другого гравця...</li>}
-            </ul>
-        </div>
+        <WaitingRoom 
+            roomCode={roomCode}
+            players={players}
+            connectionId={connectionId}
+        />
     );
 }

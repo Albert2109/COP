@@ -3,7 +3,7 @@ import { useGame } from '../../hooks/game/useGame';
 import { formatTime } from '../../helper/formatTime';
 import { useGameTimer } from '../../hooks/game/useGameTimer';
 import Board from './Board';
-import GameEndPortal from './GameEndPortal';
+import GameEndPortal from './GameEndPortal/GameEndPortal';
 
 export default function OnlineGame({
   settings, 
