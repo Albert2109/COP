@@ -1,44 +1,92 @@
-
 export default function Board({ board, onColumnClick, playerColor, botColor }) {
   
-  const pColor = playerColor || 'red';
-  const bColor = botColor || 'yellow';
+  const pColor = playerColor || '#FF0000';
+  const bColor = botColor || '#FFFF00';
 
   return (
-    <table className='table table-bordered' style={{ backgroundColor: '#4da6ff', borderCollapse: 'collapse' }}>
-      <tbody>
-        {board.map((row, rowIdx) => (
-          <tr key={rowIdx}>
-            {row.map((cell, colIdx) => (
-              <td
-                key={`${rowIdx}-${colIdx}`}
-                onClick={() => onColumnClick(colIdx)}
-                style={{
-                  width: '60px',
-                  height: '60px',
-                  padding: '0',
-                  cursor: 'pointer',
-                  border: '2px solid white',
-                  backgroundColor: '#4da6ff',
-                  textAlign: 'center',
-                  verticalAlign: 'middle'
-                }}
-              >
-                <div
-                  style={{
-                    width: '50px',
-                    height: '50px',
-                    borderRadius: '50%',
-                    backgroundColor: cell === null ? 'white' : cell === 'player' ? pColor : bColor,
-                    margin: 'auto',
-                    border: '1px solid rgba(0,0,0,0.1)'
-                  }}
-                />
-              </td>
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 p-4">
+      <div className="relative">
+        {/* Glow effect background */}
+        <div className="absolute -inset-4 bg-gradient-to-r from-pink-400 to-purple-400 rounded-3xl blur-xl opacity-40"></div>
+        
+        {/* Board Container */}
+        <div className="relative bg-gradient-to-b from-blue-600 to-blue-800 rounded-3xl p-3 shadow-2xl">
+          {/* Top decoration */}
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 flex gap-2">
+            <div className="w-4 h-4 bg-yellow-400 rounded-full shadow-lg"></div>
+            <div className="w-4 h-4 bg-red-500 rounded-full shadow-lg"></div>
+            <div className="w-4 h-4 bg-yellow-400 rounded-full shadow-lg"></div>
+          </div>
+
+          {/* Game Grid */}
+          <div className="grid gap-2 bg-gradient-to-b from-blue-500 to-blue-700 p-4 rounded-2xl shadow-inner">
+            {board.map((row, rowIdx) => (
+              <div key={rowIdx} className="flex gap-2">
+                {row.map((cell, colIdx) => (
+                  <button
+                    key={`${rowIdx}-${colIdx}`}
+                    onClick={() => onColumnClick(colIdx)}
+                    className="relative group transition-all duration-200 hover:scale-110 active:scale-95"
+                  >
+                    {/* Cell background */}
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full border-2 border-blue-900 shadow-lg flex items-center justify-center overflow-hidden group-hover:shadow-xl group-hover:from-blue-300 transition-all">
+                      
+                      {/* Empty cell effect */}
+                      {cell === null && (
+                        <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-b from-blue-300 to-blue-500 rounded-full border border-blue-400 shadow-inner"></div>
+                      )}
+                      
+                      {/* Player piece */}
+                      {cell === 'player' && (
+                        <div className="relative w-12 h-12 md:w-16 md:h-16">
+                          <div 
+                            className="w-full h-full rounded-full shadow-2xl border-2 border-white animate-pulse"
+                            style={{ 
+                              backgroundColor: pColor,
+                              boxShadow: `0 0 20px ${pColor}, 0 0 40px ${pColor}80`
+                            }}
+                          ></div>
+                          <div className="absolute inset-0 rounded-full opacity-30 animate-ping" style={{ backgroundColor: pColor }}></div>
+                        </div>
+                      )}
+                      
+                      {/* Bot piece */}
+                      {cell === 'bot' && (
+                        <div className="relative w-12 h-12 md:w-16 md:h-16">
+                          <div 
+                            className="w-full h-full rounded-full shadow-2xl border-2 border-white animate-pulse"
+                            style={{ 
+                              backgroundColor: bColor,
+                              boxShadow: `0 0 20px ${bColor}, 0 0 40px ${bColor}80`
+                            }}
+                          ></div>
+                          <div className="absolute inset-0 rounded-full opacity-30 animate-ping" style={{ backgroundColor: bColor }}></div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Hover indicator */}
+                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all">
+                      <div className="w-2 h-2 bg-yellow-300 rounded-full mx-auto mb-1 animate-bounce"></div>
+                      <div className="text-xs font-bold text-white drop-shadow-lg">▼</div>
+                    </div>
+                  </button>
+                ))}
+              </div>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          </div>
+
+          {/* Bottom decoration */}
+          <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-2xl">
+            🎮
+          </div>
+        </div>
+
+        {/* Instruction text */}
+        <div className="text-center mt-12 text-white drop-shadow-lg">
+          <p className="text-lg font-bold">Клацніть на колону щоб зробити хід!</p>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -43,11 +43,6 @@ namespace Four_in_row_api.Hubs
                     await Clients.Caller.SendAsync("Error", $"Кімната '{roomCode}' повна.");
                     return;
                 }
-                if (room.Rows != rows || room.Columns != columns)
-                {
-                    await Clients.Caller.SendAsync("Error", $"Налаштування поля кімнати ({room.Rows}x{room.Columns}) не збігаються з вашими.");
-                    return;
-                }
             }
 
             if (!room.Players.Any(p => p.ConnectionId == Context.ConnectionId))

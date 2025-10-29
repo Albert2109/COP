@@ -143,11 +143,22 @@ export default function OnlineGamePage({
             }
         };
         
-        const gameFinishedHandler = () => {
-             console.log("Received GameFinished from server. Showing portal.");
-             setGameFinished(true); 
-             // Тут можна було б викликати onGameFinished для збереження історії, 
-             // але ми не маємо даних про переможця/час.
+       const gameFinishedHandler = (winnerConnectionId, time) => {
+             console.log(`GameFinished received. WinnerId: ${winnerConnectionId ?? "DRAW"}, Time: ${time}.`);
+             if (!isGameFinishedRef.current) { 
+                 setGameFinished(true); // Показуємо портал
+
+                 // Зберігаємо історію!
+                 if (winnerConnectionId !== undefined && time && onGameFinished) {
+                    let relativeWinner = 'draw';
+                    if (winnerConnectionId === connectionId) relativeWinner = 'player';
+                    else if (winnerConnectionId) relativeWinner = 'bot';
+                    console.log("Saving result to history:", { winner: relativeWinner, time });
+                    onGameFinished({ winner: relativeWinner, time });
+                 } else {
+                      console.warn("Could not save history: data missing or onGameFinished missing!");
+                 }
+             }
         };
 
         const playerLeftHandler = (nickname) => {
