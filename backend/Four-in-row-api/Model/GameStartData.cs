@@ -1,4 +1,4 @@
-﻿// Переконайся, що namespace правильний
+﻿
 namespace Four_in_row_api.Model
 {
     public class GameStartData

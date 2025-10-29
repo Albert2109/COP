@@ -36,7 +36,6 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-3xl shadow-2xl p-8 md:p-10">
-          {/* Game Mode */}
           <div className="mb-8">
             <label className="block text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mb-3">
               Режим гри
@@ -142,7 +141,6 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
             </div>
           )}
 
-          {/* Board Settings */}
           <div className="mb-8 p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl border-2 border-purple-200 space-y-4">
             <h3 className="text-lg font-semibold text-purple-700 mb-4">🎮 Налаштування дошки</h3>
 
@@ -188,7 +186,6 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
             </div>
           </div>
 
-          {/* Submit Button */}
           <button 
             type="submit"
             className="w-full py-4 px-6 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold text-lg rounded-xl transition duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-2xl"

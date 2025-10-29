@@ -41,7 +41,6 @@ export default function GameEndPortal({
   const portal = ReactDOM.createPortal(
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
       <div className="relative w-full max-w-md">
-        {/* Glow background */}
         <div className={`absolute -inset-2 bg-gradient-to-r ${
           isPlayerWon 
             ? 'from-green-400 to-emerald-500' 
@@ -50,9 +49,7 @@ export default function GameEndPortal({
             : 'from-orange-400 to-red-500'
         } rounded-3xl blur-xl opacity-50 animate-pulse`}></div>
 
-        {/* Modal Content */}
         <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
-          {/* Header with gradient */}
           <div className={`bg-gradient-to-r ${
             isPlayerWon 
               ? 'from-green-500 to-emerald-600' 
@@ -68,18 +65,14 @@ export default function GameEndPortal({
             </h2>
           </div>
 
-          {/* Body */}
           <div className="p-8 space-y-6">
-            {/* Level Info */}
             <div className="text-center">
               <p className="text-gray-700 font-bold text-lg mb-2">
                 {getLevelText()}
               </p>
             </div>
 
-            {/* Stats Cards */}
             <div className="grid grid-cols-1 gap-3">
-              {/* Time Stat */}
               <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-4 border-2 border-blue-200">
                 <div className="flex items-center justify-between">
                   <span className="text-gray-700 font-bold">⏱️ Час гри:</span>
@@ -89,7 +82,6 @@ export default function GameEndPortal({
                 </div>
               </div>
 
-              {/* Result Stat */}
               <div className={`bg-gradient-to-r ${
                 isPlayerWon 
                   ? 'from-green-50 to-emerald-50' 
@@ -118,7 +110,6 @@ export default function GameEndPortal({
               </div>
             </div>
 
-            {/* Decorative separator */}
             <div className="flex items-center gap-3 my-6">
               <div className="flex-1 h-1 bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 rounded-full"></div>
               <span className="text-2xl">🎮</span>
@@ -126,7 +117,6 @@ export default function GameEndPortal({
             </div>
           </div>
 
-          {/* Footer with buttons */}
           <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 space-y-3">
             <button 
               onClick={onPlayAgain}
@@ -150,7 +140,6 @@ export default function GameEndPortal({
             </button>
           </div>
 
-          {/* Celebration particles effect */}
           {isPlayerWon && (
             <>
               <div className="absolute top-4 left-4 text-2xl animate-bounce" style={{ animationDelay: '0s' }}>🎉</div>

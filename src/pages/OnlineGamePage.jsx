@@ -9,7 +9,7 @@ export default function OnlineGamePage({
     settings, 
     onGoToSettings,
     onGoToResults,
-    onGameFinished // Для історії
+    onGameFinished 
 }) {
     const { roomCode: codeFromUrl } = useParams();
     const navigate = useNavigate(); 
@@ -29,13 +29,11 @@ export default function OnlineGamePage({
     const { connection, startConnection, connectionId } = useSignalR();
     const joinAttempted = useRef(false);
 
-    // Сеттер для isGameFinished
     const setGameFinished = useCallback((value) => {
         setIsGameFinished(value);
         isGameFinishedRef.current = value;
     }, []); 
 
-    // useEffect для підключення
     useEffect(() => {
      if (connection && connection.state === HubConnectionState.Disconnected) {
          startConnection().catch(() => {
@@ -44,7 +42,6 @@ export default function OnlineGamePage({
      }
     }, [connection, startConnection]);
 
-    // useEffect для входу в кімнату
     useEffect(() => {
      if (connection && connection.state === HubConnectionState.Connected && !joinAttempted.current) {
          joinAttempted.current = true; 
@@ -64,7 +61,6 @@ export default function OnlineGamePage({
      }
     }, [connection, connectionId, settings.nickname, settings.rows, settings.columns, codeFromUrl, navigate]); 
 
-    // Функція запуску гри
     const startGameWithData = useCallback((gameData) => {
         if (!connectionId || !gameData || !gameData.players) { 
             console.error("Invalid data in startGameWithData"); return;
@@ -98,7 +94,6 @@ export default function OnlineGamePage({
         didIClickPlayAgainRef.current = false; 
     }, [connectionId, settings.playerColor, settings.botColor, settings.nickname, setGameFinished]);
 
-    // Обробник натискання "Грати ще" (викликається з OnlineGame)
     const handleRestartApproved = useCallback(() => {
         console.log("User clicked 'Play Again'.");
         didIClickPlayAgainRef.current = true; 
@@ -108,11 +103,9 @@ export default function OnlineGamePage({
             startGameWithData(pendingGameData); 
         } else {
             console.log("Waiting for opponent to approve restart.");
-            // Нічого не робимо, чекаємо 'GameStart'
         }
     }, [pendingGameData, startGameWithData]);
 
-    // ГОЛОВНИЙ useEffect для слухачів SignalR
     useEffect(() => {
         if (!connection || connection.state !== HubConnectionState.Connected) return;
 
@@ -146,9 +139,8 @@ export default function OnlineGamePage({
        const gameFinishedHandler = (winnerConnectionId, time) => {
              console.log(`GameFinished received. WinnerId: ${winnerConnectionId ?? "DRAW"}, Time: ${time}.`);
              if (!isGameFinishedRef.current) { 
-                 setGameFinished(true); // Показуємо портал
+                 setGameFinished(true); 
 
-                 // Зберігаємо історію!
                  if (winnerConnectionId !== undefined && time && onGameFinished) {
                     let relativeWinner = 'draw';
                     if (winnerConnectionId === connectionId) relativeWinner = 'player';
@@ -171,7 +163,6 @@ export default function OnlineGamePage({
              setTimeout(() => setOpponentWantsRestart(false), 7000);
         };
 
-        // Підписка
         connection.on("JoinedRoom", joinedHandler);
         connection.on("UpdatePlayerList", updateHandler);
         connection.on("Error", errorHandler);
@@ -180,7 +171,6 @@ export default function OnlineGamePage({
         connection.on("PlayerLeft", playerLeftHandler);
         connection.on("RestartRequested", restartRequestedHandler);
 
-        // Відписка
         return () => {
              connection?.off("JoinedRoom", joinedHandler);
              connection?.off("UpdatePlayerList", updateHandler);
@@ -190,19 +180,16 @@ export default function OnlineGamePage({
              connection?.off("PlayerLeft", playerLeftHandler);
              connection?.off("RestartRequested", restartRequestedHandler);
         };
-    }, [connection, codeFromUrl, navigate, startGameWithData, setGameFinished]); // Додали setGameFinished
+    }, [connection, codeFromUrl, navigate, startGameWithData, setGameFinished]); 
 
-    // useEffect для відключення
     useEffect(() => {
      return () => {
          connection?.stop().catch(err => console.error("Error stopping connection:", err));
      };
     }, [connection]);
 
-    // --- Рендер ---
 
-    // 🔽🔽🔽 НОВА УМОВА ТУТ 🔽🔽🔽
-    // Якщо гра офіційно завершена І опонент після цього вийшов
+
     if (isGameFinished && opponentLeft) {
          console.log("Rendering 'Opponent Left After Game Finished' message.");
          return (
@@ -215,9 +202,7 @@ export default function OnlineGamePage({
            </div>
          );
     }
-    // 🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼
 
-    // Якщо гра в процесі (або тільки-но завершилась, але опонент ще тут)
     if (gameState === 'playing' && gameStartData) {
         return (
             <OnlineGame                 
@@ -228,16 +213,14 @@ export default function OnlineGamePage({
                 roomCode={roomCode} 
                 onGoToSettings={onGoToSettings}
                 onGoToResults={onGoToResults}
-                // 'onGameFinished' більше не потрібен тут
                 onRestartApproved={handleRestartApproved} 
-                opponentLeft={opponentLeft} // Передаємо, щоб портал знав
+                opponentLeft={opponentLeft} 
                 opponentWantsRestart={opponentWantsRestart}
                 isGameFinished={isGameFinished} 
             />
         );
     }
 
-     // Якщо опонент вийшов з ЛОБІ (до початку гри)
      if (opponentLeft && gameState === 'waiting') {
          return (
            <div className="alert alert-warning text-center">
@@ -249,7 +232,6 @@ export default function OnlineGamePage({
          );
      }
 
-    // Рендер лобі очікування
     return (
         <WaitingRoom 
             roomCode={roomCode}

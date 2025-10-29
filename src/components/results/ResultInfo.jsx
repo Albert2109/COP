@@ -26,17 +26,14 @@ export default function ResultInfo({ winner, time, botLevel, mode }) {
 
  return (
   <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-sm mx-auto text-center animate-fadeIn">
-    {/* Заголовок */}
     <h4 className="text-2xl font-extrabold text-purple-700 dark:text-purple-400 mb-2 drop-shadow-md">
       {getWinnerText()}
     </h4>
 
-    {/* Режим гри */}
     <p className="text-gray-700 dark:text-gray-300 text-lg mb-4">
       {getModeText()}
     </p>
 
-    {/* Час гри */}
     <div className="flex justify-between items-center bg-gray-100 dark:bg-gray-700 rounded-lg p-3 text-gray-800 dark:text-gray-200 font-medium shadow-inner">
       <span>⏱ Час гри:</span>
       <span className="font-bold text-gray-900 dark:text-white">{time}</span>

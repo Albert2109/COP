@@ -88,7 +88,7 @@ onGoToResults();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 flex flex-col">
-      {/* Header */}
+
       <div className="w-full">
         <GameHeader 
           currentPlayer={currentPlayer}
@@ -96,9 +96,7 @@ onGoToResults();
         />
       </div>
 
-      {/* Main Game Content */}
       <div className="flex-1 flex flex-col items-center justify-center p-4 md:p-6 overflow-auto">
-        {/* Timer - shown only if time limit exists */}
         {settings.moveTimeLimit && (
           <div className="w-full mb-4 md:mb-6">
             <MoveTimer 
@@ -108,7 +106,6 @@ onGoToResults();
           </div>
         )}
 
-        {/* Winner Alert */}
         {winner && (
           <div className={`mb-4 md:mb-6 w-full max-w-md px-6 py-4 rounded-2xl text-center font-bold text-lg shadow-2xl border-2 ${
             winner === 'player' 
@@ -121,7 +118,6 @@ onGoToResults();
           </div>
         )}
 
-        {/* Game Board */}
         <div className="flex justify-center items-center">
           <Board 
             board={board} 
@@ -132,7 +128,7 @@ onGoToResults();
         </div>
       </div>
 
-      {/* Game End Portal */}
+
       <GameEndPortal
         isOpen={showEndPortal}
         winner={winner}

@@ -8,7 +8,7 @@
         public int Rows { get; set; }
         public int Columns { get; set; }
         public bool IsFinished { get; set; } = false;
-        // Зберігаємо ID переможця (null для нічиєї)
+
         public string? LastWinnerConnectionId { get; set; }
         public string? LastGameTime { get; set; }
     }

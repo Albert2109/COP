@@ -5,7 +5,6 @@ export default function GameHeader({ currentPlayer, formattedTime }) {
 
   return (
     <div className="w-full bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 p-6 md:p-8 shadow-2xl">
-      {/* Main Title */}
       <div className="text-center mb-6">
         <h2 className="text-4xl md:text-5xl font-black text-white drop-shadow-lg flex items-center justify-center gap-3">
           <span className="animate-bounce">🎮</span>
@@ -14,18 +13,14 @@ export default function GameHeader({ currentPlayer, formattedTime }) {
         </h2>
       </div>
 
-      {/* Game Info Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-        {/* Current Player Card */}
         <div className={`relative group transition-all duration-300`}>
-          {/* Glow effect */}
           <div className={`absolute -inset-1 bg-gradient-to-r ${
             isPlayerTurn 
               ? 'from-green-400 to-emerald-500' 
               : 'from-yellow-400 to-orange-500'
           } rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-all`}></div>
 
-          {/* Card content */}
           <div className={`relative bg-white rounded-2xl p-6 shadow-2xl transition-all duration-300 ${
             isPlayerTurn ? 'border-2 border-green-500' : 'border-2 border-yellow-500'
           }`}>
@@ -49,7 +44,6 @@ export default function GameHeader({ currentPlayer, formattedTime }) {
               </div>
             </div>
 
-            {/* Status indicator */}
             <div className="mt-4 flex gap-2">
               <div className={`h-2 flex-1 rounded-full ${
                 isPlayerTurn 
@@ -65,12 +59,10 @@ export default function GameHeader({ currentPlayer, formattedTime }) {
           </div>
         </div>
 
-        {/* Game Time Card */}
+
         <div className="relative group transition-all duration-300">
-          {/* Glow effect */}
           <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-all"></div>
 
-          {/* Card content */}
           <div className="relative bg-white rounded-2xl p-6 shadow-2xl border-2 border-cyan-500">
             <div className="flex items-center justify-between">
               <div>
@@ -86,7 +78,6 @@ export default function GameHeader({ currentPlayer, formattedTime }) {
               </div>
             </div>
 
-            {/* Decorative progress */}
             <div className="mt-4 flex gap-1">
               {[...Array(5)].map((_, i) => (
                 <div
@@ -103,7 +94,6 @@ export default function GameHeader({ currentPlayer, formattedTime }) {
         </div>
       </div>
 
-      {/* Action indicator */}
       <div className="mt-6 text-center">
         {isPlayerTurn ? (
           <div className="bg-green-500 bg-opacity-20 border-2 border-green-500 rounded-xl py-3 px-4">

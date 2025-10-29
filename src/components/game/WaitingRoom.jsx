@@ -11,12 +11,10 @@ export default function WaitingRoom({ roomCode, players, connectionId }) {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 flex items-center justify-center p-4 overflow-hidden relative">
-            {/* Animated background elements */}
             <div className="absolute top-10 left-10 w-32 h-32 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
             <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
             
             <div className="w-full max-w-2xl relative z-10">
-                {/* Header */}
                 <div className="text-center mb-8">
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <div className="text-5xl animate-bounce">🎮</div>
@@ -25,9 +23,7 @@ export default function WaitingRoom({ roomCode, players, connectionId }) {
                     <p className="text-white text-xl font-semibold drop-shadow-md">Кімната очікування</p>
                 </div>
 
-                {/* Main Content Card */}
                 <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-                    {/* Status Section */}
                     <div className="bg-gradient-to-r from-pink-500 to-purple-600 p-8 text-white">
                         <div className="flex items-center justify-center gap-3 mb-4">
                             <div className="text-3xl animate-pulse">⚡</div>
@@ -39,7 +35,6 @@ export default function WaitingRoom({ roomCode, players, connectionId }) {
                     </div>
 
                     <div className="p-8 md:p-10 space-y-8">
-                        {/* Room Code Section */}
                         {roomCode && (
                             <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 border-2 border-pink-200">
                                 <p className="text-gray-600 text-sm font-semibold mb-3 text-center">КОД КІМНАТИ</p>
@@ -80,7 +75,6 @@ export default function WaitingRoom({ roomCode, players, connectionId }) {
                             </div>
                         )}
 
-                        {/* Players Section */}
                         <div>
                             <div className="flex items-center gap-2 mb-4">
                                 <span className="text-2xl">👥</span>
@@ -141,7 +135,6 @@ export default function WaitingRoom({ roomCode, players, connectionId }) {
                             </div>
                         </div>
 
-                        {/* Ready Indicator */}
                         {players.length === 2 && (
                             <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-6 text-white text-center shadow-2xl animate-pulse">
                                 <p className="text-3xl mb-2">🎉</p>
@@ -152,7 +145,6 @@ export default function WaitingRoom({ roomCode, players, connectionId }) {
                     </div>
                 </div>
 
-                {/* Footer */}
                 <div className="text-center mt-8">
                     <p className="text-white text-sm font-medium drop-shadow-lg">
                         🎮 Connect Four Online 🎮
