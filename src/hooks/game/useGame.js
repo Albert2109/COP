@@ -1,8 +1,8 @@
 import { useState, useCallback, useMemo } from 'react';
-import { Player } from '../classes/Player.js';
-import { EasyBot } from '../classes/EasyBot.js';
-import { Bot } from '../classes/Bot.js';
-import { HardBot } from '../classes/HardBot.js';
+import { Player } from '../../classes/Player.js';
+import { EasyBot } from '../../classes/bots/EasyBot.js';
+import { Bot } from '../../classes/bots/Bot.js';
+import { HardBot } from '../../classes/bots/HardBot.js';
 
 export function useGame(settings) {
   const {

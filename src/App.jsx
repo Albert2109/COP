@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import GameSettingsProvider from './context/GameSettingsProvider';
 import StartPage from './pages/StartPage';
 import GamePage from './pages/GamePage';
-import GameSettingsForm from './components/GameSettingsForm';
+import GameSettingsForm from './components/settings/GameSettingsForm';
 import ResultsPage from './pages/ResultsPage';
 import OnlineGamePage from './pages/OnlineGamePage';
 import './App.css'; 

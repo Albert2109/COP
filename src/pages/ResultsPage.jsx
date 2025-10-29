@@ -1,4 +1,4 @@
-import ResultInfo from "../components/ResultInfo";
+import ResultInfo from "../components/results/ResultInfo";
 
 export default function ResultsPage({ onRestart, history }) {
   

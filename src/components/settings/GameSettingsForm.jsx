@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { gameSchema } from '../validation/GameSchema';
+import { gameSchema } from '../../validation/GameSchema';
 
-import { useGameSettings } from '../hooks/useGameSettings';
+import { useGameSettings } from '../../hooks/useGameSettings';
 
 import './GameSettingsForm.css';
 

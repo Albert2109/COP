@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import Board from '../components/Board';
-import GameEndPortal from '../components/GameEndPortal';
-import { useGame } from '../hooks/useGame';
-import { useGameTimer } from '../hooks/useGameTimer';
+import Board from '../components/game/Board';
+import GameEndPortal from '../components/game/GameEndPortal';
+import { useGame } from '../hooks/game/useGame';
+import { useGameTimer } from '../hooks/game/useGameTimer';
 import { formatTime } from '../helper/formatTime';
 import '../styles/GamePage.css';
 
