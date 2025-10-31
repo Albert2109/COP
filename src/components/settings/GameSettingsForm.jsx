@@ -1,13 +1,14 @@
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { gameSchema } from '../../validation/GameSchema';
-
-import { useGameSettings } from '../../hooks/useGameSettings';
+import { useGameStore } from '../../store/gameStore';
 
 export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings, initialRoomCode }) {
-  const { settings: savedSettings } = useGameSettings(); 
+  // беремо збережені налаштування з глобального стора
+  const savedSettings = useGameStore((state) => state.gameSettings);
 
-  const defaultData = currentSettings || savedSettings;
+  const defaultData = currentSettings || savedSettings || {};
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
     resolver: yupResolver(gameSchema),
@@ -17,9 +18,9 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
       firstPlayer: defaultData?.firstPlayer || 'player',
       playerColor: defaultData?.playerColor || '#FF0000',
       botColor: defaultData?.botColor || '#FFFF00',
-      rows: defaultData?.rows || 6,
-      columns: defaultData?.columns || 7,
-      moveTimeLimit: defaultData?.moveTimeLimit || 30,
+      rows: defaultData?.rows ?? 6,
+      columns: defaultData?.columns ?? 7,
+      moveTimeLimit: defaultData?.moveTimeLimit ?? '',
       nickname: defaultData?.nickname || '',
       roomCode: initialRoomCode || defaultData?.roomCode || '',
     }
@@ -40,7 +41,7 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
             <label className="block text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mb-3">
               Режим гри
             </label>
-            <select 
+            <select
               {...register('mode')}
               disabled={!!lockedMode}
               className="w-full px-4 py-3 border-2 border-pink-300 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition disabled:bg-gray-100 disabled:cursor-not-allowed text-gray-700 font-medium"
@@ -58,7 +59,7 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Рівень бота</label>
-                <select 
+                <select
                   {...register('LevelBot')}
                   className="w-full px-4 py-2 border-2 border-pink-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition text-gray-700 font-medium"
                 >
@@ -72,7 +73,7 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Хто першим робить хід</label>
-                <select 
+                <select
                   {...register('firstPlayer')}
                   className="w-full px-4 py-2 border-2 border-pink-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition text-gray-700 font-medium"
                 >
@@ -87,8 +88,8 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Ваш колір</label>
                   <div className="flex items-center gap-3">
-                    <input 
-                      type="color" 
+                    <input
+                      type="color"
                       {...register('playerColor')}
                       className="w-16 h-12 rounded-lg cursor-pointer border-2 border-pink-300 hover:border-pink-500 transition"
                     />
@@ -99,8 +100,8 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Колір бота</label>
                   <div className="flex items-center gap-3">
-                    <input 
-                      type="color" 
+                    <input
+                      type="color"
                       {...register('botColor')}
                       className="w-16 h-12 rounded-lg cursor-pointer border-2 border-pink-300 hover:border-pink-500 transition"
                     />
@@ -147,10 +148,10 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Рядків</label>
-                <input 
-                  type="number" 
+                <input
+                  type="number"
                   {...register('rows')}
-                  min="4" 
+                  min="4"
                   max="10"
                   className="w-full px-4 py-2 border-2 border-purple-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition text-gray-700 font-medium"
                 />
@@ -159,10 +160,10 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Колонок</label>
-                <input 
-                  type="number" 
+                <input
+                  type="number"
                   {...register('columns')}
-                  min="4" 
+                  min="4"
                   max="10"
                   className="w-full px-4 py-2 border-2 border-purple-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition text-gray-700 font-medium"
                 />
@@ -186,7 +187,7 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
             </div>
           </div>
 
-          <button 
+          <button
             type="submit"
             className="w-full py-4 px-6 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold text-lg rounded-xl transition duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-2xl"
           >
