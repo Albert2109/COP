@@ -1,0 +1,242 @@
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useSignalR } from '../hooks/api/useSignalR'; 
+import { HubConnectionState } from '@microsoft/signalr';
+import OnlineGame from '../components/game/OnlineGame';
+import WaitingRoom from '../components/game/WaitingRoom'; 
+
+export default function OnlineGamePage({
+    settings, 
+    onGoToSettings,
+    onGoToResults,
+    onGameFinished 
+}) {
+    const { roomCode: codeFromUrl } = useParams();
+    const navigate = useNavigate(); 
+
+    const [gameState, setGameState] = useState('waiting'); 
+    const [players, setPlayers] = useState([]); 
+    const [roomCode, setRoomCode] = useState(codeFromUrl === 'new' ? "" : codeFromUrl); 
+    const [gameStartData, setGameStartData] = useState(null);
+    const [opponentLeft, setOpponentLeft] = useState(false);
+    const [opponentWantsRestart, setOpponentWantsRestart] = useState(false); 
+    const [pendingGameData, setPendingGameData] = useState(null);
+
+    const [isGameFinished, setIsGameFinished] = useState(false);
+    const isGameFinishedRef = useRef(isGameFinished); 
+    const didIClickPlayAgainRef = useRef(false);
+
+    const { connection, startConnection, connectionId } = useSignalR();
+    const joinAttempted = useRef(false);
+
+    const setGameFinished = useCallback((value) => {
+        setIsGameFinished(value);
+        isGameFinishedRef.current = value;
+    }, []); 
+
+    useEffect(() => {
+     if (connection && connection.state === HubConnectionState.Disconnected) {
+         startConnection().catch(() => {
+             alert("Не вдалося підключитися до ігрового сервера. Спробуйте оновити сторінку.");
+         });
+     }
+    }, [connection, startConnection]);
+
+    useEffect(() => {
+     if (connection && connection.state === HubConnectionState.Connected && !joinAttempted.current) {
+         joinAttempted.current = true; 
+         const codeToJoin = codeFromUrl === 'new' ? "" : codeFromUrl;
+         connection.invoke("JoinOrCreateRoom",
+             codeToJoin, 
+             settings.nickname,
+             settings.rows || 6,
+             settings.columns || 7
+         )
+         .catch(err => {
+             console.error("Failed to join room: ", err);
+             alert(`Не вдалося приєднатися до кімнати: ${err.message || 'Помилка сервера'}`);
+             joinAttempted.current = false; 
+             navigate('/settings'); 
+         });
+     }
+    }, [connection, connectionId, settings.nickname, settings.rows, settings.columns, codeFromUrl, navigate]); 
+
+    const startGameWithData = useCallback((gameData) => {
+        if (!connectionId || !gameData || !gameData.players) { 
+            console.error("Invalid data in startGameWithData"); return;
+        }
+        
+        const actualPlayers = gameData.players; 
+        setPlayers(actualPlayers);
+        const myPlayer = actualPlayers.find(p => p.connectionId === connectionId); 
+
+        if (!myPlayer) {
+            console.error("Cannot find myself in player list"); return;
+        }
+        const iAmFirst = gameData.firstPlayerId === connectionId; 
+        
+        setGameStartData({
+            playerColor: settings.playerColor,
+            botColor: settings.botColor,
+            nickname: settings.nickname,
+            mode: 'online',
+            rows: gameData.rows,      
+            columns: gameData.columns,    
+            firstPlayer: iAmFirst ? 'player' : 'bot',
+            gameId: new Date().toISOString() 
+        });
+
+        setGameState('playing');      
+        setOpponentLeft(false);        
+        setOpponentWantsRestart(false); 
+        setGameFinished(false); 
+        setPendingGameData(null);
+        didIClickPlayAgainRef.current = false; 
+    }, [connectionId, settings.playerColor, settings.botColor, settings.nickname, setGameFinished]);
+
+    const handleRestartApproved = useCallback(() => {
+        console.log("User clicked 'Play Again'.");
+        didIClickPlayAgainRef.current = true; 
+
+        if (pendingGameData) {
+            console.log("Opponent already agreed. Restarting.");
+            startGameWithData(pendingGameData); 
+        } else {
+            console.log("Waiting for opponent to approve restart.");
+        }
+    }, [pendingGameData, startGameWithData]);
+
+    useEffect(() => {
+        if (!connection || connection.state !== HubConnectionState.Connected) return;
+
+        const joinedHandler = (code, playerList) => {
+            setRoomCode(code); 
+            setPlayers(playerList);
+            if (codeFromUrl !== code) {
+                navigate(`/online-game/${code}`, { replace: true });
+            }
+        };
+        const updateHandler = (playerList) => {
+            setPlayers(playerList);
+        };
+        const errorHandler = (message) => {
+            console.error("SignalR Hub Error:", message);
+            alert(`Помилка сервера: ${message}`);
+        };
+
+        const gameStartHandler = (gameData) => {
+            console.log("GameStart event received.");
+            if (isGameFinishedRef.current) {
+                setPendingGameData(gameData);
+                if (didIClickPlayAgainRef.current) {
+                    startGameWithData(gameData);
+                } 
+            } else {
+                startGameWithData(gameData);
+            }
+        };
+        
+       const gameFinishedHandler = (winnerConnectionId, time) => {
+             console.log(`GameFinished received. WinnerId: ${winnerConnectionId ?? "DRAW"}, Time: ${time}.`);
+             if (!isGameFinishedRef.current) { 
+                 setGameFinished(true); 
+
+                 if (winnerConnectionId !== undefined && time && onGameFinished) {
+                    let relativeWinner = 'draw';
+                    if (winnerConnectionId === connectionId) relativeWinner = 'player';
+                    else if (winnerConnectionId) relativeWinner = 'bot';
+                    console.log("Saving result to history:", { winner: relativeWinner, time });
+                    onGameFinished({ winner: relativeWinner, time });
+                 } else {
+                      console.warn("Could not save history: data missing or onGameFinished missing!");
+                 }
+             }
+        };
+
+        const playerLeftHandler = (nickname) => {
+            console.log("PlayerLeft event received:", nickname);
+            setOpponentLeft(true); 
+        };
+        const restartRequestedHandler = (nickname) => {
+             console.log("RestartRequested by:", nickname);
+             setOpponentWantsRestart(true); 
+             setTimeout(() => setOpponentWantsRestart(false), 7000);
+        };
+
+        connection.on("JoinedRoom", joinedHandler);
+        connection.on("UpdatePlayerList", updateHandler);
+        connection.on("Error", errorHandler);
+        connection.on("GameStart", gameStartHandler);
+        connection.on("GameFinished", gameFinishedHandler); 
+        connection.on("PlayerLeft", playerLeftHandler);
+        connection.on("RestartRequested", restartRequestedHandler);
+
+        return () => {
+             connection?.off("JoinedRoom", joinedHandler);
+             connection?.off("UpdatePlayerList", updateHandler);
+             connection?.off("Error", errorHandler);
+             connection?.off("GameStart", gameStartHandler);
+             connection?.off("GameFinished", gameFinishedHandler); 
+             connection?.off("PlayerLeft", playerLeftHandler);
+             connection?.off("RestartRequested", restartRequestedHandler);
+        };
+    }, [connection, codeFromUrl, navigate, startGameWithData, setGameFinished]); 
+
+    useEffect(() => {
+     return () => {
+         connection?.stop().catch(err => console.error("Error stopping connection:", err));
+     };
+    }, [connection]);
+
+
+
+    if (isGameFinished && opponentLeft) {
+         console.log("Rendering 'Opponent Left After Game Finished' message.");
+         return (
+           <div className="alert alert-warning text-center">
+               <h2>Опонент покинув гру після її завершення</h2>
+               <p>Ви можете перейти до результатів.</p>
+               <button className="btn btn-primary mt-3" onClick={onGoToResults}>
+                   Переглянути результати
+               </button>
+           </div>
+         );
+    }
+
+    if (gameState === 'playing' && gameStartData) {
+        return (
+            <OnlineGame                 
+                key={gameStartData.gameId} 
+                settings={gameStartData} 
+                connection={connection}
+                connectionId={connectionId}
+                roomCode={roomCode} 
+                onGoToSettings={onGoToSettings}
+                onGoToResults={onGoToResults}
+                onRestartApproved={handleRestartApproved} 
+                opponentLeft={opponentLeft} 
+                opponentWantsRestart={opponentWantsRestart}
+                isGameFinished={isGameFinished} 
+            />
+        );
+    }
+
+     if (opponentLeft && gameState === 'waiting') {
+         return (
+           <div className="alert alert-warning text-center">
+               <h2>Опонент покинув кімнату</h2>
+               <button className="btn btn-primary mt-3" onClick={onGoToResults}>
+                   На головну
+               </button>
+           </div>
+         );
+     }
+
+    return (
+        <WaitingRoom 
+            roomCode={roomCode}
+            players={players}
+            connectionId={connectionId}
+        />
+    );
+}
