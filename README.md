@@ -4,24 +4,22 @@ A real-time multiplayer implementation of the classic "Four-in-row" game, built 
 
 ---
 
-## ✍️ Authorship & Project Info
-* **Author:** Albert Renkas
-* **Role:** Software Engineering Student
-* **Project Type:** University Course Work (КОП)
-* **Year:** 2026
-* **Stack:** .NET 9.0 (C#), React 19 (Vite), SignalR, Tailwind CSS.
-
----
-
 ## ⚖️ License & Compliance
 
-This project is licensed under the **[MIT License](LICENSE)**. 
+This project is licensed under the **[MIT License](LICENSE)**.
 
-### 🔍 License Verification
-To comply with university requirements, all third-party dependencies have been verified using automated tools. Reports are committed to the project root:
+### 🔍 Automated License Audit
+All third-party dependencies have been verified for compatibility. You can access the full reports here:
+* 📄 **Backend Dependency Audit:** [license-backend-report.txt](license-backend-report.txt) (.NET Ecosystem)
+* 📄 **Frontend Dependency Audit:** [license-frontend-report.txt](license-frontend-report.txt) (NPM Tree)
 
-* **Backend Report:** [license-backend-report.txt](license-backend-report.txt) — *Verified via custom metadata parser and `dotnet-project-licenses`.*
-* **Frontend Report:** [license-frontend-report.txt](license-frontend-report.txt) — *Verified via `license-checker`.*
+### ✍️ Authorship
+* **Developer:** Albert Renkas
+* **Role:** Software Engineering Student
+* **Project:** University Laboratory Works
+* **Year:** 2026
+
+---
 
 ### ⚠️ Legal Disclaimer
 * **Original Game:** This project is a digital implementation of the board game "Connect Four".
