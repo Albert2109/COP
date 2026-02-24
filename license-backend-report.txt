@@ -1,0 +1,55 @@
+﻿==============================================================================
+HIERARCHICAL LICENSE COMPLIANCE REPORT - CONNECT FOUR API
+==============================================================================
+This report analyzes packages by their Parent Frameworks and Ecosystems.
+Date: 2026-02-24 18:03
+
+| Package (Component)                      | Parent Framework / Project | License |
+|------------------------------------------|---------------------------|---------|
+| Microsoft.AspNetCore.Authentication.Abstractions | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Authorization       | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Authorization.Policy | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Connections.Abstractions | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Hosting.Abstractions | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Hosting.Server.Abstractions | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Http                | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Http.Abstractions   | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Http.Connections    | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Http.Connections.Common | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Http.Extensions     | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Http.Features       | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.OpenApi             | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Routing             | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.Routing.Abstractions | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.SignalR             | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.SignalR.Common      | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.SignalR.Core        | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.SignalR.Protocols.Json | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.WebSockets          | ASP.NET Core Framework    | MIT     |
+| Microsoft.AspNetCore.WebUtilities        | ASP.NET Core Framework    | MIT     |
+| Microsoft.Extensions.Configuration.Abstractions | Core .NET Extensions      | MIT     |
+| Microsoft.Extensions.DependencyInjection.Abstractions | Core .NET Extensions      | MIT     |
+| Microsoft.Extensions.Diagnostics.Abstractions | Core .NET Extensions      | MIT     |
+| Microsoft.Extensions.FileProviders.Abstractions | Core .NET Extensions      | MIT     |
+| Microsoft.Extensions.Hosting.Abstractions | Core .NET Extensions      | MIT     |
+| Microsoft.Extensions.Logging.Abstractions | Core .NET Extensions      | MIT     |
+| Microsoft.Extensions.ObjectPool          | Core .NET Extensions      | MIT     |
+| Microsoft.Extensions.Options             | Core .NET Extensions      | MIT     |
+| Microsoft.Extensions.Primitives          | Core .NET Extensions      | MIT     |
+| Microsoft.Net.Http.Headers               | Independent Package       | Permissive |
+| Microsoft.OpenApi                        | Microsoft OpenAPI SDK     | MIT     |
+| Newtonsoft.Json                          | Newtonsoft Json.NET       | MIT     |
+| System.Buffers                           | Standard .NET Runtime     | MIT     |
+| System.IO.Pipelines                      | Standard .NET Runtime     | MIT     |
+| System.Net.WebSockets.WebSocketProtocol  | Standard .NET Runtime     | MIT     |
+| System.Reflection.Emit                   | Standard .NET Runtime     | MIT     |
+| System.Text.Encodings.Web                | Standard .NET Runtime     | MIT     |
+| System.Threading.Channels                | Standard .NET Runtime     | MIT     |
+------------------------------------------------------------------------------
+VERIFICATION SUMMARY:
+- ASP.NET Core Components: Verified via dotnet/aspnetcore repo (MIT)
+- .NET Runtime Components: Verified via dotnet/runtime repo (MIT)
+- External Dependencies:  Verified via NuGet metadata (MIT/Permissive)
+
+RESULT: 100% Compliance with MIT target license.
+==============================================================================

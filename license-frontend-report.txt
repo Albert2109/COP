@@ -1,0 +1,1312 @@
+├─ @babel/code-frame@7.27.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\code-frame
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\code-frame\LICENSE
+├─ @babel/compat-data@7.28.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\compat-data
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\compat-data\LICENSE
+├─ @babel/core@7.28.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\core
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\core\LICENSE
+├─ @babel/generator@7.28.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\generator
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\generator\LICENSE
+├─ @babel/helper-compilation-targets@7.27.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-compilation-targets
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-compilation-targets\LICENSE
+├─ @babel/helper-globals@7.28.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-globals
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-globals\LICENSE
+├─ @babel/helper-module-imports@7.27.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-module-imports
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-module-imports\LICENSE
+├─ @babel/helper-module-transforms@7.28.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-module-transforms
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-module-transforms\LICENSE
+├─ @babel/helper-plugin-utils@7.27.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-plugin-utils
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-plugin-utils\LICENSE
+├─ @babel/helper-string-parser@7.27.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-string-parser
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-string-parser\LICENSE
+├─ @babel/helper-validator-identifier@7.27.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-validator-identifier
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-validator-identifier\LICENSE
+├─ @babel/helper-validator-option@7.27.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-validator-option
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\helper-validator-option\LICENSE
+├─ @babel/helpers@7.28.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\helpers
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\helpers\LICENSE
+├─ @babel/parser@7.28.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\parser
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\parser\LICENSE
+├─ @babel/plugin-transform-react-jsx-self@7.27.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\plugin-transform-react-jsx-self
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\plugin-transform-react-jsx-self\LICENSE
+├─ @babel/plugin-transform-react-jsx-source@7.27.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\plugin-transform-react-jsx-source
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\plugin-transform-react-jsx-source\LICENSE
+├─ @babel/template@7.27.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\template
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\template\LICENSE
+├─ @babel/traverse@7.28.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\traverse
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\traverse\LICENSE
+├─ @babel/types@7.28.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@babel\types
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@babel\types\LICENSE
+├─ @esbuild/win32-x64@0.25.10
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/evanw/esbuild
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@esbuild\win32-x64
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@esbuild\win32-x64\README.md
+├─ @eslint-community/eslint-utils@4.9.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/eslint-community/eslint-utils
+│  ├─ publisher: Toru Nagashima
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint-community\eslint-utils
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint-community\eslint-utils\LICENSE
+├─ @eslint-community/regexpp@4.12.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/eslint-community/regexpp
+│  ├─ publisher: Toru Nagashima
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint-community\regexpp
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint-community\regexpp\LICENSE
+├─ @eslint/config-array@0.21.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/rewrite
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint\config-array
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint\config-array\LICENSE
+├─ @eslint/config-helpers@0.3.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/rewrite
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint\config-helpers
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint\config-helpers\LICENSE
+├─ @eslint/core@0.15.2
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/rewrite
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint\core
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint\core\LICENSE
+├─ @eslint/eslintrc@3.3.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/eslint/eslintrc
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint\eslintrc
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint\eslintrc\LICENSE
+├─ @eslint/js@9.36.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/eslint/eslint
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint\js
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint\js\LICENSE
+├─ @eslint/object-schema@2.1.6
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/rewrite
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint\object-schema
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint\object-schema\LICENSE
+├─ @eslint/plugin-kit@0.3.5
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/rewrite
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint\plugin-kit
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint\plugin-kit\LICENSE
+├─ @hookform/resolvers@5.2.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/react-hook-form/resolvers
+│  ├─ publisher: bluebill1049
+│  ├─ email: bluebill1049@hotmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@hookform\resolvers
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@hookform\resolvers\LICENSE
+├─ @humanfs/core@0.19.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/humanwhocodes/humanfs
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@humanfs\core
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@humanfs\core\LICENSE
+├─ @humanfs/node@0.16.7
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/humanwhocodes/humanfs
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@humanfs\node
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@humanfs\node\LICENSE
+├─ @humanwhocodes/module-importer@1.0.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/humanwhocodes/module-importer
+│  ├─ publisher: Nicholas C. Zaks
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@humanwhocodes\module-importer
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@humanwhocodes\module-importer\LICENSE
+├─ @humanwhocodes/retry@0.4.3
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/humanwhocodes/retry
+│  ├─ publisher: Nicholas C. Zaks
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@humanwhocodes\retry
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@humanwhocodes\retry\LICENSE
+├─ @jridgewell/gen-mapping@0.3.13
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@jridgewell\gen-mapping
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@jridgewell\gen-mapping\LICENSE
+├─ @jridgewell/remapping@2.3.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@jridgewell\remapping
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@jridgewell\remapping\LICENSE
+├─ @jridgewell/resolve-uri@3.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/resolve-uri
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@jridgewell\resolve-uri
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@jridgewell\resolve-uri\LICENSE
+├─ @jridgewell/sourcemap-codec@1.5.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@jridgewell\sourcemap-codec
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@jridgewell\sourcemap-codec\LICENSE
+├─ @jridgewell/trace-mapping@0.3.31
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@jridgewell\trace-mapping
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@jridgewell\trace-mapping\LICENSE
+├─ @microsoft/signalr@9.0.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/dotnet/aspnetcore
+│  ├─ publisher: Microsoft
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@microsoft\signalr
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@microsoft\signalr\README.md
+├─ @popperjs/core@2.11.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/popperjs/popper-core
+│  ├─ publisher: Federico Zivolo
+│  ├─ email: federico.zivolo@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@popperjs\core
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@popperjs\core\LICENSE.md
+├─ @rolldown/pluginutils@1.0.0-beta.38
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rolldown/rolldown
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@rolldown\pluginutils
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@rolldown\pluginutils\LICENSE
+├─ @rollup/rollup-win32-x64-gnu@4.52.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rollup/rollup
+│  ├─ publisher: Lukas Taegert-Atkinson
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@rollup\rollup-win32-x64-gnu
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@rollup\rollup-win32-x64-gnu\README.md
+├─ @rollup/rollup-win32-x64-msvc@4.52.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rollup/rollup
+│  ├─ publisher: Lukas Taegert-Atkinson
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@rollup\rollup-win32-x64-msvc
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@rollup\rollup-win32-x64-msvc\README.md
+├─ @standard-schema/utils@0.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/standard-schema/standard-schema
+│  ├─ publisher: Fabian Hiller
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@standard-schema\utils
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@standard-schema\utils\LICENSE
+├─ @tailwindcss/node@4.1.16
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@tailwindcss\node
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@tailwindcss\node\LICENSE
+├─ @tailwindcss/oxide-win32-x64-msvc@4.1.16
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@tailwindcss\oxide-win32-x64-msvc
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@tailwindcss\oxide-win32-x64-msvc\LICENSE
+├─ @tailwindcss/oxide@4.1.16
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@tailwindcss\oxide
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@tailwindcss\oxide\LICENSE
+├─ @tailwindcss/vite@4.1.16
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@tailwindcss\vite
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@tailwindcss\vite\LICENSE
+├─ @types/babel__core@7.20.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@types\babel__core
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@types\babel__core\LICENSE
+├─ @types/babel__generator@7.27.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@types\babel__generator
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@types\babel__generator\LICENSE
+├─ @types/babel__template@7.4.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@types\babel__template
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@types\babel__template\LICENSE
+├─ @types/babel__traverse@7.28.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@types\babel__traverse
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@types\babel__traverse\LICENSE
+├─ @types/estree@1.0.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@types\estree
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@types\estree\LICENSE
+├─ @types/json-schema@7.0.15
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@types\json-schema
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@types\json-schema\LICENSE
+├─ @types/react-dom@19.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@types\react-dom
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@types\react-dom\LICENSE
+├─ @types/react@19.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@types\react
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@types\react\LICENSE
+├─ @vitejs/plugin-react@5.0.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vitejs/vite-plugin-react
+│  ├─ publisher: Evan You
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@vitejs\plugin-react
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@vitejs\plugin-react\LICENSE
+├─ abort-controller@3.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mysticatea/abort-controller
+│  ├─ publisher: Toru Nagashima
+│  ├─ url: https://github.com/mysticatea
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\abort-controller
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\abort-controller\LICENSE
+├─ acorn-jsx@5.3.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/acornjs/acorn-jsx
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\acorn-jsx
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\acorn-jsx\LICENSE
+├─ acorn@8.15.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/acornjs/acorn
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\acorn
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\acorn\LICENSE
+├─ ajv@6.12.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ajv-validator/ajv
+│  ├─ publisher: Evgeny Poberezkin
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\ajv
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\ajv\LICENSE
+├─ ansi-styles@4.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/ansi-styles
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\ansi-styles
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\ansi-styles\license
+├─ argparse@2.0.1
+│  ├─ licenses: Python-2.0
+│  ├─ repository: https://github.com/nodeca/argparse
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\argparse
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\argparse\LICENSE
+├─ balanced-match@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/juliangruber/balanced-match
+│  ├─ publisher: Julian Gruber
+│  ├─ email: mail@juliangruber.com
+│  ├─ url: http://juliangruber.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\balanced-match
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\balanced-match\LICENSE.md
+├─ baseline-browser-mapping@2.8.11
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/web-platform-dx/baseline-browser-mapping
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\baseline-browser-mapping
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\baseline-browser-mapping\LICENSE.txt
+├─ bootstrap@5.3.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/twbs/bootstrap
+│  ├─ publisher: The Bootstrap Authors
+│  ├─ url: https://github.com/twbs/bootstrap/graphs/contributors
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\bootstrap
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\bootstrap\LICENSE
+├─ brace-expansion@1.1.12
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/juliangruber/brace-expansion
+│  ├─ publisher: Julian Gruber
+│  ├─ email: mail@juliangruber.com
+│  ├─ url: http://juliangruber.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\brace-expansion
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\brace-expansion\LICENSE
+├─ browserslist@4.26.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/browserslist/browserslist
+│  ├─ publisher: Andrey Sitnik
+│  ├─ email: andrey@sitnik.ru
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\browserslist
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\browserslist\LICENSE
+├─ callsites@3.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/callsites
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\callsites
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\callsites\license
+├─ caniuse-lite@1.0.30001747
+│  ├─ licenses: CC-BY-4.0
+│  ├─ repository: https://github.com/browserslist/caniuse-lite
+│  ├─ publisher: Ben Briggs
+│  ├─ email: beneb.info@gmail.com
+│  ├─ url: http://beneb.info
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\caniuse-lite
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\caniuse-lite\LICENSE
+├─ chalk@4.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/chalk
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\chalk
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\chalk\license
+├─ color-convert@2.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Qix-/color-convert
+│  ├─ publisher: Heather Arthur
+│  ├─ email: fayearthur@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\color-convert
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\color-convert\LICENSE
+├─ color-name@1.1.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/colorjs/color-name
+│  ├─ publisher: DY
+│  ├─ email: dfcreative@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\color-name
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\color-name\LICENSE
+├─ concat-map@0.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/node-concat-map
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\concat-map
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\concat-map\LICENSE
+├─ convert-source-map@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/thlorenz/convert-source-map
+│  ├─ publisher: Thorsten Lorenz
+│  ├─ email: thlorenz@gmx.de
+│  ├─ url: http://thlorenz.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\convert-source-map
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\convert-source-map\LICENSE
+├─ cookie@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jshttp/cookie
+│  ├─ publisher: Roman Shtylman
+│  ├─ email: shtylman@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\cookie
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\cookie\LICENSE
+├─ cross-spawn@7.0.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/moxystudio/node-cross-spawn
+│  ├─ publisher: André Cruz
+│  ├─ email: andre@moxy.studio
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\cross-spawn
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\cross-spawn\LICENSE
+├─ csstype@3.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/frenic/csstype
+│  ├─ publisher: Fredrik Nicol
+│  ├─ email: fredrik.nicol@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\csstype
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\csstype\LICENSE
+├─ debug@4.4.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/debug-js/debug
+│  ├─ publisher: Josh Junon
+│  ├─ url: https://github.com/qix-
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\debug
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\debug\LICENSE
+├─ deep-is@0.1.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/thlorenz/deep-is
+│  ├─ publisher: Thorsten Lorenz
+│  ├─ email: thlorenz@gmx.de
+│  ├─ url: http://thlorenz.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\deep-is
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\deep-is\LICENSE
+├─ detect-libc@2.1.2
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/lovell/detect-libc
+│  ├─ publisher: Lovell Fuller
+│  ├─ email: npm@lovell.info
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\detect-libc
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\detect-libc\LICENSE
+├─ electron-to-chromium@1.5.230
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/kilian/electron-to-chromium
+│  ├─ publisher: Kilian Valkhof
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\electron-to-chromium
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\electron-to-chromium\LICENSE
+├─ enhanced-resolve@5.18.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/webpack/enhanced-resolve
+│  ├─ publisher: Tobias Koppers @sokra
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\enhanced-resolve
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\enhanced-resolve\LICENSE
+├─ esbuild@0.25.10
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/evanw/esbuild
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\esbuild
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\esbuild\LICENSE.md
+├─ escalade@3.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/lukeed/escalade
+│  ├─ publisher: Luke Edwards
+│  ├─ email: luke.edwards05@gmail.com
+│  ├─ url: https://lukeed.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\escalade
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\escalade\license
+├─ escape-string-regexp@4.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/escape-string-regexp
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\escape-string-regexp
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\escape-string-regexp\license
+├─ eslint-plugin-react-hooks@5.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\eslint-plugin-react-hooks
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\eslint-plugin-react-hooks\LICENSE
+├─ eslint-plugin-react-refresh@0.4.23
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ArnaudBarre/eslint-plugin-react-refresh
+│  ├─ publisher: Arnaud Barré
+│  ├─ url: https://github.com/ArnaudBarre
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\eslint-plugin-react-refresh
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\eslint-plugin-react-refresh\LICENSE
+├─ eslint-scope@8.4.0
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/eslint/js
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\eslint-scope
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\eslint-scope\LICENSE
+├─ eslint-visitor-keys@3.4.3
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/eslint-visitor-keys
+│  ├─ publisher: Toru Nagashima
+│  ├─ url: https://github.com/mysticatea
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint-community\eslint-utils\node_modules\eslint-visitor-keys
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint-community\eslint-utils\node_modules\eslint-visitor-keys\LICENSE
+├─ eslint-visitor-keys@4.2.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/js
+│  ├─ publisher: Toru Nagashima
+│  ├─ url: https://github.com/mysticatea
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\eslint-visitor-keys
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\eslint-visitor-keys\LICENSE
+├─ eslint@9.36.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/eslint/eslint
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ email: nicholas+npm@nczconsulting.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\eslint
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\eslint\LICENSE
+├─ espree@10.4.0
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/eslint/js
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ email: nicholas+npm@nczconsulting.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\espree
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\espree\LICENSE
+├─ esquery@1.6.0
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/estools/esquery
+│  ├─ publisher: Joel Feenstra
+│  ├─ email: jrfeenst+esquery@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\esquery
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\esquery\license.txt
+├─ esrecurse@4.3.0
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/estools/esrecurse
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\esrecurse
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\esrecurse\README.md
+├─ estraverse@5.3.0
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/estools/estraverse
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\estraverse
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\estraverse\LICENSE.BSD
+├─ esutils@2.0.3
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/estools/esutils
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\esutils
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\esutils\LICENSE.BSD
+├─ event-target-shim@5.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mysticatea/event-target-shim
+│  ├─ publisher: Toru Nagashima
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\event-target-shim
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\event-target-shim\LICENSE
+├─ eventsource@2.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/EventSource/eventsource
+│  ├─ publisher: Aslak Hellesøy
+│  ├─ email: aslak.hellesoy@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\eventsource
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\eventsource\LICENSE
+├─ fast-deep-equal@3.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/epoberezkin/fast-deep-equal
+│  ├─ publisher: Evgeny Poberezkin
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\fast-deep-equal
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\fast-deep-equal\LICENSE
+├─ fast-json-stable-stringify@2.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/epoberezkin/fast-json-stable-stringify
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\fast-json-stable-stringify
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\fast-json-stable-stringify\LICENSE
+├─ fast-levenshtein@2.0.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/hiddentao/fast-levenshtein
+│  ├─ publisher: Ramesh Nair
+│  ├─ email: ram@hiddentao.com
+│  ├─ url: http://www.hiddentao.com/
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\fast-levenshtein
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\fast-levenshtein\LICENSE.md
+├─ fdir@6.5.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/thecodrr/fdir
+│  ├─ publisher: thecodrr
+│  ├─ email: thecodrr@protonmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\fdir
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\fdir\LICENSE
+├─ fetch-cookie@2.2.0
+│  ├─ licenses: Unlicense
+│  ├─ repository: https://github.com/valeriangalliat/fetch-cookie
+│  ├─ publisher: Val
+│  ├─ url: https://val.codejam.info
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\fetch-cookie
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\fetch-cookie\README.md
+├─ file-entry-cache@8.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jaredwray/file-entry-cache
+│  ├─ publisher: Jared Wray
+│  ├─ url: https://jaredwray.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\file-entry-cache
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\file-entry-cache\LICENSE
+├─ find-up@5.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/find-up
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\find-up
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\find-up\license
+├─ flat-cache@4.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jaredwray/flat-cache
+│  ├─ publisher: Jared Wray
+│  ├─ url: https://jaredwray.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\flat-cache
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\flat-cache\LICENSE
+├─ flatted@3.3.3
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/WebReflection/flatted
+│  ├─ publisher: Andrea Giammarchi
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\flatted
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\flatted\LICENSE
+├─ four-in-row@0.0.0
+│  ├─ licenses: [1m[31mUNLICENSED[39m[22m
+│  ├─ private: true
+│  ├─ path: C:\3курс\КОП\four-in-row
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\LICENSE
+├─ gensync@1.0.0-beta.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/loganfsmyth/gensync
+│  ├─ publisher: Logan Smyth
+│  ├─ email: loganfsmyth@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\gensync
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\gensync\LICENSE
+├─ glob-parent@6.0.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/gulpjs/glob-parent
+│  ├─ publisher: Gulp Team
+│  ├─ email: team@gulpjs.com
+│  ├─ url: https://gulpjs.com/
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\glob-parent
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\glob-parent\LICENSE
+├─ globals@14.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/globals
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\@eslint\eslintrc\node_modules\globals
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\@eslint\eslintrc\node_modules\globals\license
+├─ globals@16.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/globals
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\globals
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\globals\license
+├─ graceful-fs@4.2.11
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/node-graceful-fs
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\graceful-fs
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\graceful-fs\LICENSE
+├─ has-flag@4.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/has-flag
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\has-flag
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\has-flag\license
+├─ ignore@5.3.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/kaelzhang/node-ignore
+│  ├─ publisher: kael
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\ignore
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\ignore\LICENSE-MIT
+├─ import-fresh@3.3.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/import-fresh
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\import-fresh
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\import-fresh\license
+├─ imurmurhash@0.1.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jensyt/imurmurhash-js
+│  ├─ publisher: Jens Taylor
+│  ├─ email: jensyt@gmail.com
+│  ├─ url: https://github.com/homebrewing
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\imurmurhash
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\imurmurhash\README.md
+├─ is-extglob@2.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jonschlinkert/is-extglob
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\is-extglob
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\is-extglob\LICENSE
+├─ is-glob@4.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/micromatch/is-glob
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\is-glob
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\is-glob\LICENSE
+├─ isexe@2.0.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/isexe
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\isexe
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\isexe\LICENSE
+├─ jiti@2.6.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/unjs/jiti
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\jiti
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\jiti\LICENSE
+├─ js-tokens@4.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/lydell/js-tokens
+│  ├─ publisher: Simon Lydell
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\js-tokens
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\js-tokens\LICENSE
+├─ js-yaml@4.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nodeca/js-yaml
+│  ├─ publisher: Vladimir Zapparov
+│  ├─ email: dervus.grim@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\js-yaml
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\js-yaml\LICENSE
+├─ jsesc@3.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mathiasbynens/jsesc
+│  ├─ publisher: Mathias Bynens
+│  ├─ url: https://mathiasbynens.be/
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\jsesc
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\jsesc\LICENSE-MIT.txt
+├─ json-buffer@3.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/dominictarr/json-buffer
+│  ├─ publisher: Dominic Tarr
+│  ├─ email: dominic.tarr@gmail.com
+│  ├─ url: http://dominictarr.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\json-buffer
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\json-buffer\LICENSE
+├─ json-schema-traverse@0.4.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/epoberezkin/json-schema-traverse
+│  ├─ publisher: Evgeny Poberezkin
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\json-schema-traverse
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\json-schema-traverse\LICENSE
+├─ json-stable-stringify-without-jsonify@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/samn/json-stable-stringify
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\json-stable-stringify-without-jsonify
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\json-stable-stringify-without-jsonify\LICENSE
+├─ json5@2.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/json5/json5
+│  ├─ publisher: Aseem Kishore
+│  ├─ email: aseem.kishore@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\json5
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\json5\LICENSE.md
+├─ keyv@4.5.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jaredwray/keyv
+│  ├─ publisher: Jared Wray
+│  ├─ email: me@jaredwray.com
+│  ├─ url: http://jaredwray.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\keyv
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\keyv\README.md
+├─ levn@0.4.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/levn
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\levn
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\levn\LICENSE
+├─ lightningcss-win32-x64-msvc@1.30.2
+│  ├─ licenses: MPL-2.0
+│  ├─ repository: https://github.com/parcel-bundler/lightningcss
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\lightningcss-win32-x64-msvc
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\lightningcss-win32-x64-msvc\LICENSE
+├─ lightningcss@1.30.2
+│  ├─ licenses: MPL-2.0
+│  ├─ repository: https://github.com/parcel-bundler/lightningcss
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\lightningcss
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\lightningcss\LICENSE
+├─ locate-path@6.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/locate-path
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\locate-path
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\locate-path\license
+├─ lodash.merge@4.6.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/lodash/lodash
+│  ├─ publisher: John-David Dalton
+│  ├─ email: john.david.dalton@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\lodash.merge
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\lodash.merge\LICENSE
+├─ lru-cache@5.1.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/node-lru-cache
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\lru-cache
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\lru-cache\LICENSE
+├─ magic-string@0.30.21
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Rich-Harris/magic-string
+│  ├─ publisher: Rich Harris
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\magic-string
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\magic-string\LICENSE
+├─ minimatch@3.1.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/minimatch
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\minimatch
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\minimatch\LICENSE
+├─ ms@2.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vercel/ms
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\ms
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\ms\license.md
+├─ nanoid@3.3.11
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ai/nanoid
+│  ├─ publisher: Andrey Sitnik
+│  ├─ email: andrey@sitnik.ru
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\nanoid
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\nanoid\LICENSE
+├─ natural-compare@1.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/litejs/natural-compare-lite
+│  ├─ publisher: Lauri Rooden
+│  ├─ url: https://github.com/litejs/natural-compare-lite
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\natural-compare
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\natural-compare\README.md
+├─ node-fetch@2.7.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/bitinn/node-fetch
+│  ├─ publisher: David Frank
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\node-fetch
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\node-fetch\LICENSE.md
+├─ node-releases@2.0.21
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chicoxyzzy/node-releases
+│  ├─ publisher: Sergey Rubanov
+│  ├─ email: chi187@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\node-releases
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\node-releases\LICENSE
+├─ optionator@0.9.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/optionator
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\optionator
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\optionator\LICENSE
+├─ p-limit@3.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/p-limit
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\p-limit
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\p-limit\license
+├─ p-locate@5.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/p-locate
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\p-locate
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\p-locate\license
+├─ parent-module@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/parent-module
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\parent-module
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\parent-module\license
+├─ path-exists@4.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/path-exists
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\path-exists
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\path-exists\license
+├─ path-key@3.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/path-key
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\path-key
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\path-key\license
+├─ picocolors@1.1.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/alexeyraspopov/picocolors
+│  ├─ publisher: Alexey Raspopov
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\picocolors
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\picocolors\LICENSE
+├─ picomatch@4.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/micromatch/picomatch
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\picomatch
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\picomatch\LICENSE
+├─ postcss@8.5.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/postcss/postcss
+│  ├─ publisher: Andrey Sitnik
+│  ├─ email: andrey@sitnik.ru
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\postcss
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\postcss\LICENSE
+├─ prelude-ls@1.2.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/prelude-ls
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\prelude-ls
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\prelude-ls\LICENSE
+├─ property-expr@2.0.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jquense/expr
+│  ├─ publisher: @monasticpanic Jason Quense
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\property-expr
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\property-expr\LICENSE.txt
+├─ psl@1.15.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/lupomontero/psl
+│  ├─ publisher: Lupo Montero
+│  ├─ email: lupomontero@gmail.com
+│  ├─ url: https://lupomontero.com/
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\psl
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\psl\LICENSE
+├─ punycode@2.3.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mathiasbynens/punycode.js
+│  ├─ publisher: Mathias Bynens
+│  ├─ url: https://mathiasbynens.be/
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\punycode
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\punycode\LICENSE-MIT.txt
+├─ querystringify@2.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/unshiftio/querystringify
+│  ├─ publisher: Arnout Kazemier
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\querystringify
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\querystringify\LICENSE
+├─ react-dom@19.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\react-dom
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\react-dom\LICENSE
+├─ react-hook-form@7.65.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/react-hook-form/react-hook-form
+│  ├─ publisher: Beier
+│  ├─ email: bluebill1049@hotmail.com
+│  ├─ url: Bill
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\react-hook-form
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\react-hook-form\LICENSE
+├─ react-refresh@0.17.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\react-refresh
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\react-refresh\LICENSE
+├─ react-router-dom@7.9.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/remix-run/react-router
+│  ├─ publisher: Remix Software
+│  ├─ email: hello@remix.run
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\react-router-dom
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\react-router-dom\LICENSE.md
+├─ react-router@7.9.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/remix-run/react-router
+│  ├─ publisher: Remix Software
+│  ├─ email: hello@remix.run
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\react-router
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\react-router\LICENSE.md
+├─ react@19.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\react
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\react\LICENSE
+├─ requires-port@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/unshiftio/requires-port
+│  ├─ publisher: Arnout Kazemier
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\requires-port
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\requires-port\LICENSE
+├─ resolve-from@4.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/resolve-from
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\resolve-from
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\resolve-from\license
+├─ rollup@4.52.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rollup/rollup
+│  ├─ publisher: Rich Harris
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\rollup
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\rollup\LICENSE.md
+├─ scheduler@0.27.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\scheduler
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\scheduler\LICENSE
+├─ semver@6.3.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/node-semver
+│  ├─ publisher: GitHub Inc.
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\semver
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\semver\LICENSE
+├─ set-cookie-parser@2.7.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nfriedly/set-cookie-parser
+│  ├─ publisher: Nathan Friedly
+│  ├─ url: http://nfriedly.com/
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\set-cookie-parser
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\set-cookie-parser\LICENSE
+├─ shebang-command@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/kevva/shebang-command
+│  ├─ publisher: Kevin Mårtensson
+│  ├─ email: kevinmartensson@gmail.com
+│  ├─ url: github.com/kevva
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\shebang-command
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\shebang-command\license
+├─ shebang-regex@3.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/shebang-regex
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\shebang-regex
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\shebang-regex\license
+├─ source-map-js@1.2.1
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/7rulnik/source-map-js
+│  ├─ publisher: Valentin 7rulnik Semirulnik
+│  ├─ email: v7rulnik@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\source-map-js
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\source-map-js\LICENSE
+├─ strip-json-comments@3.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/strip-json-comments
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\strip-json-comments
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\strip-json-comments\license
+├─ supports-color@7.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/supports-color
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\supports-color
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\supports-color\license
+├─ tailwindcss@4.1.16
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\tailwindcss
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\tailwindcss\LICENSE
+├─ tapable@2.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/webpack/tapable
+│  ├─ publisher: Tobias Koppers @sokra
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\tapable
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\tapable\LICENSE
+├─ tiny-case@1.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jquense/tiny-case
+│  ├─ publisher: Jason Quense
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\tiny-case
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\tiny-case\README.md
+├─ tinyglobby@0.2.15
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/SuperchupuDev/tinyglobby
+│  ├─ publisher: Superchupu
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\tinyglobby
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\tinyglobby\LICENSE
+├─ toposort@2.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/marcelklehr/toposort
+│  ├─ publisher: Marcel Klehr
+│  ├─ email: mklehr@gmx.net
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\toposort
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\toposort\License
+├─ tough-cookie@4.1.4
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/salesforce/tough-cookie
+│  ├─ publisher: Jeremy Stashewsky
+│  ├─ email: jstash@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\tough-cookie
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\tough-cookie\LICENSE
+├─ tr46@0.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Sebmaster/tr46.js
+│  ├─ publisher: Sebastian Mayr
+│  ├─ email: npm@smayr.name
+│  └─ path: C:\3курс\КОП\four-in-row\node_modules\tr46
+├─ type-check@0.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/type-check
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\type-check
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\type-check\LICENSE
+├─ type-fest@2.19.0
+│  ├─ licenses: (MIT OR CC0-1.0)
+│  ├─ repository: https://github.com/sindresorhus/type-fest
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\type-fest
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\type-fest\readme.md
+├─ universalify@0.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/RyanZim/universalify
+│  ├─ publisher: Ryan Zimmerman
+│  ├─ email: opensrc@ryanzim.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\universalify
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\universalify\LICENSE
+├─ update-browserslist-db@1.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/browserslist/update-db
+│  ├─ publisher: Andrey Sitnik
+│  ├─ email: andrey@sitnik.ru
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\update-browserslist-db
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\update-browserslist-db\LICENSE
+├─ uri-js@4.4.1
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/garycourt/uri-js
+│  ├─ publisher: Gary Court
+│  ├─ email: gary.court@gmail.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\uri-js
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\uri-js\LICENSE
+├─ url-parse@1.5.10
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/unshiftio/url-parse
+│  ├─ publisher: Arnout Kazemier
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\url-parse
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\url-parse\LICENSE
+├─ vite@7.1.9
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vitejs/vite
+│  ├─ publisher: Evan You
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\vite
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\vite\LICENSE.md
+├─ webidl-conversions@3.0.1
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/jsdom/webidl-conversions
+│  ├─ publisher: Domenic Denicola
+│  ├─ email: d@domenic.me
+│  ├─ url: https://domenic.me/
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\webidl-conversions
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\webidl-conversions\LICENSE.md
+├─ whatwg-url@5.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jsdom/whatwg-url
+│  ├─ publisher: Sebastian Mayr
+│  ├─ email: github@smayr.name
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\whatwg-url
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\whatwg-url\LICENSE.txt
+├─ which@2.0.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/node-which
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\which
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\which\LICENSE
+├─ word-wrap@1.2.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jonschlinkert/word-wrap
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\word-wrap
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\word-wrap\LICENSE
+├─ ws@7.5.10
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/websockets/ws
+│  ├─ publisher: Einar Otto Stangvik
+│  ├─ email: einaros@gmail.com
+│  ├─ url: http://2x.io
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\ws
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\ws\LICENSE
+├─ yallist@3.1.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/yallist
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\yallist
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\yallist\LICENSE
+├─ yocto-queue@0.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/yocto-queue
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\yocto-queue
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\yocto-queue\license
+├─ yup@1.7.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jquense/yup
+│  ├─ publisher: @monasticpanic Jason Quense
+│  ├─ path: C:\3курс\КОП\four-in-row\node_modules\yup
+│  └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\yup\LICENSE.md
+└─ zustand@5.0.8
+   ├─ licenses: MIT
+   ├─ repository: https://github.com/pmndrs/zustand
+   ├─ publisher: Paul Henschel
+   ├─ path: C:\3курс\КОП\four-in-row\node_modules\zustand
+   └─ licenseFile: C:\3курс\КОП\four-in-row\node_modules\zustand\LICENSE

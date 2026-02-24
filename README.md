@@ -42,7 +42,7 @@ dotnet build
 dotnet run
 ```
 
-### Step2: Run the Frontend (React + Vite)
+### Step 2: Run the Frontend (React + Vite)
 
 
 ```bash
