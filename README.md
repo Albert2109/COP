@@ -10,8 +10,8 @@ This project is licensed under the **[MIT License](LICENSE)**.
 
 ### 🔍 Automated License Audit
 All third-party dependencies have been verified for compatibility. You can access the full reports here:
-* 📄 **Backend Dependency Audit:** [license-backend-report.txt](license-backend-report.txt) (.NET Ecosystem)
-* 📄 **Frontend Dependency Audit:** [license-frontend-report.txt](license-frontend-report.txt) (NPM Tree)
+* 📄 **Backend Dependency Audit:** [backend-dependencies.txt](backend-dependencies.txt) (.NET Ecosystem)
+* 📄 **Frontend Dependency Audit:** [frontend-dependencies.txt](frontend-dependencies.txt) (NPM Tree)
 
 ### ✍️ Authorship
 * **Developer:** Albert Renkas
