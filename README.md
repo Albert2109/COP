@@ -1,3 +1,36 @@
+# 🔵 Connect Four - Online Multiplayer Game
+
+A real-time multiplayer implementation of the classic "Four-in-row" game, built with a modern stack focusing on scalability and clean architecture.
+
+---
+
+## ✍️ Authorship & Project Info
+* **Author:** Albert Renkas
+* **Role:** Software Engineering Student
+* **Project Type:** University Course Work (КОП)
+* **Year:** 2026
+* **Stack:** .NET 9.0 (C#), React 19 (Vite), SignalR, Tailwind CSS.
+
+---
+
+## ⚖️ License & Compliance
+
+This project is licensed under the **[MIT License](LICENSE)**. 
+
+### 🔍 License Verification
+To comply with university requirements, all third-party dependencies have been verified using automated tools. Reports are committed to the project root:
+
+* **Backend Report:** [license-backend-report.txt](license-backend-report.txt) — *Verified via custom metadata parser and `dotnet-project-licenses`.*
+* **Frontend Report:** [license-frontend-report.txt](license-frontend-report.txt) — *Verified via `license-checker`.*
+
+### ⚠️ Legal Disclaimer
+* **Original Game:** This project is a digital implementation of the board game "Connect Four".
+* **Trademark:** "Connect Four" is a trademark of **Hasbro, Inc.**
+* **Non-Commercial:** This is an educational project created for university purposes only.
+* **No Affiliation:** The author is not affiliated with, endorsed by, or sponsored by Hasbro.
+
+---
+
 ## ⚙️ Configurations
 
 To ensure the frontend and backend communicate correctly, you need to verify the following configurations in the code:
