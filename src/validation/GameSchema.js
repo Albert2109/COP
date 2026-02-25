@@ -57,10 +57,11 @@ export const gameSchema = yup.object({
     .max(120, 'Максимум 120 секунд')
     .integer('Має бути ціле число'),
 
-  nickname: yup.string().when('mode', {
-    is: 'online',
-    then: (schema) => schema.required('Введіть нікнейм'),
-    otherwise: (schema) => schema.notRequired(),
+  nickname: yup.string().when(['mode', '$canUseNickname'], ([mode, canUseNickname], schema) => {
+    if (mode === 'online' && canUseNickname) {
+      return schema.required('Введіть нікнейм');
+    }
+    return schema.notRequired();
   }),
 
   roomCode: yup.string().when('mode', {

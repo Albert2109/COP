@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { gameSchema } from '../../validation/GameSchema';
 import { useGameStore } from '../../store/gameStore';
+import { useConsentStore } from '../../store/useConsentStore';
 
 export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings, initialRoomCode }) {
-  // беремо збережені налаштування з глобального стора
   const savedSettings = useGameStore((state) => state.gameSettings);
+
+  const { preferences, status } = useConsentStore();
+  const canUseOnline = preferences.session;
+  const canUseNickname = preferences.nickname; 
 
   const defaultData = currentSettings || savedSettings || {};
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+  const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(gameSchema),
+    context: { canUseNickname },
     defaultValues: {
       mode: lockedMode || defaultData?.mode || '',
       LevelBot: defaultData?.LevelBot || '',
@@ -21,12 +26,21 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
       rows: defaultData?.rows ?? 6,
       columns: defaultData?.columns ?? 7,
       moveTimeLimit: defaultData?.moveTimeLimit ?? '',
-      nickname: defaultData?.nickname || '',
+      nickname: canUseNickname ? (defaultData?.nickname || '') : '',
       roomCode: initialRoomCode || defaultData?.roomCode || '',
     }
   });
 
   const mode = watch('mode');
+
+  useEffect(() => {
+    if (mode === 'online' && !canUseOnline) {
+      setValue('mode', '');
+    }
+    if (!canUseNickname) {
+      setValue('nickname', '');
+    }
+  }, [canUseOnline, canUseNickname, mode, setValue]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 p-4 md:p-8 flex items-center justify-center">
@@ -37,6 +51,7 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-3xl shadow-2xl p-8 md:p-10">
+
           <div className="mb-8">
             <label className="block text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mb-3">
               Режим гри
@@ -48,8 +63,17 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
             >
               <option value="">Оберіть режим гри</option>
               <option value="bot">Гра проти бота</option>
-              <option value="online">Онлайн гра з гравцем</option>
+              <option value="online" disabled={!canUseOnline}>
+                Онлайн гра з гравцем {!canUseOnline && "(Потрібна згода на технічні Cookies)"}
+              </option>
             </select>
+
+            {!canUseOnline && status !== 'undecided' && (
+              <p className="text-amber-600 text-xs mt-2 font-medium">
+                ⚠️ Онлайн-режим недоступний, оскільки ви відхилили збереження даних ігрової сесії.
+              </p>
+            )}
+            
             {errors.mode && <span className="text-red-500 text-sm mt-2 block font-medium">{errors.mode.message}</span>}
           </div>
 
@@ -114,17 +138,23 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
           )}
 
           {mode === 'online' && (
-            <div className="mb-8 p-6 bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl border-2 border-pink-200 space-y-4">
-              <h3 className="text-lg font-semibold text-purple-700 mb-4">🌐 Онлайн налаштування</h3>
+            <div className="mb-8 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border-2 border-blue-200 space-y-4">
+              <h3 className="text-lg font-semibold text-blue-700 mb-4">🌐 Онлайн налаштування</h3>
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Ваш нікнейм</label>
                 <input
                   type="text"
                   {...register('nickname')}
-                  placeholder="Введіть свій нікнейм"
-                  className="w-full px-4 py-2 border-2 border-pink-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition text-gray-700 placeholder-gray-400 font-medium"
+                  disabled={!canUseNickname}
+                  placeholder={canUseNickname ? "Введіть свій нікнейм" : "Функція вимкнена в налаштуваннях конфіденційності"}
+                  className="w-full px-4 py-2 border-2 border-blue-300 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition text-gray-700 placeholder-gray-400 font-medium disabled:bg-gray-100 disabled:placeholder-gray-400 disabled:cursor-not-allowed"
                 />
+                {!canUseNickname && (
+                  <p className="text-gray-500 text-xs mt-2 italic">
+                    ℹ️ Щоб вводити та зберігати нікнейм, дозвольте "Персоналізацію" в налаштуваннях Cookies.
+                  </p>
+                )}
                 {errors.nickname && <span className="text-red-500 text-sm mt-2 block">{errors.nickname.message}</span>}
               </div>
 
@@ -134,7 +164,7 @@ export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings
                   type="text"
                   {...register('roomCode')}
                   placeholder="Залиште порожнім для створення нової гри"
-                  className="w-full px-4 py-2 border-2 border-pink-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition text-gray-700 placeholder-gray-400 font-medium"
+                  className="w-full px-4 py-2 border-2 border-blue-300 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition text-gray-700 placeholder-gray-400 font-medium"
                 />
                 <small className="text-gray-600 block mt-2">Якщо приєднуєтесь - введіть код, якщо створюєте - залиште порожнім.</small>
                 {errors.roomCode && <span className="text-red-500 text-sm mt-2 block">{errors.roomCode.message}</span>}
