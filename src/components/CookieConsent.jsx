@@ -1,29 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useConsentStore } from '../store/useConsentStore';
-
+import { Link } from 'react-router-dom';
 const CookieConsent = () => {
-  const { status, preferences, setPreferences, acceptAll, declineAll } = useConsentStore();
+  const { status, preferences, setPreferences, acceptAll, declineAll, isModalOpen, closeModal } = useConsentStore();
   const [isConfiguring, setIsConfiguring] = useState(false);
 
+  useEffect(() => {
+    if (isModalOpen) setIsConfiguring(true);
+  }, [isModalOpen]);
 
-  if (status !== 'undecided' && !isConfiguring) return null;
+  const shouldShow = status === 'undecided' || isModalOpen;
+
+  if (!shouldShow) return null;
 
   return (
     <div className="fixed bottom-8 left-1/2 -translate-x-1/2 w-[95%] max-w-2xl z-[100] animate-in fade-in slide-in-from-bottom-10 duration-700">
-      <div className="bg-slate-900 border border-blue-500/40 p-6 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
-        
+      <div className="bg-slate-900 border border-blue-500/40 p-6 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] relative">
+
+        {status !== 'undecided' && (
+          <button 
+            onClick={closeModal}
+            className="absolute top-4 right-5 text-slate-400 hover:text-white transition-colors text-xl font-bold"
+          >
+            ✕
+          </button>
+        )}
+
         <div className="flex items-start gap-4 mb-6">
           <div className="bg-blue-600/20 p-3 rounded-2xl text-3xl shrink-0">🍪</div>
           <div className="text-left">
             <h4 className="text-white font-bold text-lg tracking-tight">Privacy settings</h4>
             <p className="text-slate-300 text-sm leading-relaxed mt-1">
               This project uses local storage to run the game.
-              Check out the <a href="/PRIVACY_POLICY.md" className="text-blue-400 hover:text-blue-300 underline underline-offset-4 font-semibold">Privacy Policy</a>.
+              Check out the <Link to="/privacy-policy" className="text-blue-400 hover:text-blue-300 underline underline-offset-4 font-semibold">Privacy Policy</Link>
             </p>
           </div>
         </div>
 
-        {isConfiguring && (
+        {(isConfiguring || isModalOpen) && (
           <div className="space-y-4 mb-6 p-4 bg-slate-800/50 rounded-2xl border border-slate-700">
             <div className="flex items-center justify-between">
               <div>
@@ -34,7 +48,7 @@ const CookieConsent = () => {
                 type="checkbox" 
                 checked={preferences.session}
                 onChange={(e) => setPreferences({ session: e.target.checked })}
-                className="w-5 h-5 accent-blue-500"
+                className="w-5 h-5 accent-blue-500 cursor-pointer"
               />
             </div>
 
@@ -47,14 +61,14 @@ const CookieConsent = () => {
                 type="checkbox" 
                 checked={preferences.nickname}
                 onChange={(e) => setPreferences({ nickname: e.target.checked })}
-                className="w-5 h-5 accent-blue-500"
+                className="w-5 h-5 accent-blue-500 cursor-pointer"
               />
             </div>
           </div>
         )}
 
         <div className="flex flex-col md:flex-row gap-3">
-          {!isConfiguring ? (
+          {(!isConfiguring && status === 'undecided') ? (
             <>
               <button 
                 onClick={declineAll}
@@ -77,7 +91,10 @@ const CookieConsent = () => {
             </>
           ) : (
             <button 
-              onClick={() => setIsConfiguring(false)}
+              onClick={() => {
+                setIsConfiguring(false);
+                closeModal(); 
+              }}
               className="w-full px-8 py-3 rounded-xl bg-green-600 text-black text-sm font-black hover:bg-green-500 transition-all"
             >
               Save selection
