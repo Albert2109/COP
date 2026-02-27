@@ -5,6 +5,24 @@ import { useGameTimer } from '../../hooks/game/useGameTimer';
 import Board from './Board';
 import GameEndPortal from './GameEndPortal/GameEndPortal'; 
 
+/**
+ * Renders the multiplayer game interface and manages real-time synchronization.
+ * Uses SignalR (via the `connection` prop) to send and receive moves, handle opponent 
+ * disconnections, and manage game restarts within a specific matchmaking room.
+ * * @component
+ * @param {Object} props - The component properties.
+ * @param {Object} props.settings - Game configuration settings (e.g., player/bot colors).
+ * @param {Object|null} props.connection - The active SignalR WebSocket connection instance.
+ * @param {string} props.connectionId - The unique identifier for the local player's network connection.
+ * @param {string} props.roomCode - The specific room code where the multiplayer match is taking place.
+ * @param {Function} props.onGoToSettings - Callback to navigate back to the game settings menu.
+ * @param {Function} props.onGoToResults - Callback to navigate to the session results page.
+ * @param {boolean} props.opponentLeft - Flag indicating whether the opponent has disconnected or left the room.
+ * @param {boolean} props.opponentWantsRestart - Flag indicating the opponent has proposed a rematch.
+ * @param {Function} props.onRestartApproved - Callback triggered when the local player accepts a rematch request.
+ * @param {boolean} props.isGameFinished - Flag indicating if the current match has officially concluded.
+ * @returns {JSX.Element} The rendered multiplayer game interface.
+ */
 export default function OnlineGame({
   settings, 
   connection, connectionId, roomCode,

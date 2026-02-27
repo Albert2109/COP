@@ -1,3 +1,15 @@
+/**
+ * Renders the interactive visual game board for Connect Four.
+ * Maps through the 2D board array to display empty slots, player pieces, and bot pieces
+ * with corresponding colors, animations, and hover effects.
+ * * @component
+ * @param {Object} props - The component properties.
+ * @param {Array<Array<string|null>>} props.board - A 2D array representing the current state of the game grid.
+ * @param {Function} props.onColumnClick - Callback function triggered when a player clicks on a specific column. Passes the column index.
+ * @param {string} [props.playerColor] - Hex code or CSS color string for the player's pieces. Defaults to '#FF0000' (Red).
+ * @param {string} [props.botColor] - Hex code or CSS color string for the bot's pieces. Defaults to '#FFFF00' (Yellow).
+ * @returns {JSX.Element} The rendered game board interface.
+ */
 export default function Board({ board, onColumnClick, playerColor, botColor }) {
   
   const pColor = playerColor || '#FF0000';

@@ -1,3 +1,13 @@
+/**
+ * A reusable, styled button component used throughout the application.
+ * Applies consistent gradient backgrounds, hover states, and click animations 
+ * (scaling) using Tailwind CSS to maintain uniform UI design.
+ * * @component
+ * @param {Object} props - The component properties.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the button (e.g., text, icons).
+ * @param {Function} props.onClick - The callback function executed when the button is clicked.
+ * @returns {JSX.Element} The rendered styled button.
+ */
 export default function Button({ children, onClick }) {
   return (
     <button

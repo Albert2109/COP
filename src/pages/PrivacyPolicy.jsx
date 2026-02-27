@@ -1,11 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * A static legal and information page component.
+ * Displays the application's Privacy Policy, GDPR compliance details, and usage instructions.
+ * This component outlines the granular consent model, data processing via SignalR, 
+ * and user rights regarding the erasure of local storage data.
+ * * 
+ * * @component
+ * @returns {JSX.Element} The rendered Privacy Policy page with navigation back to the game.
+ */
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-slate-900 py-12 px-4 sm:px-6 lg:px-8 font-sans text-slate-300">
       <div className="max-w-4xl mx-auto">
         
+        {/* Navigation back to the main application */}
         <div className="mb-8">
           <Link 
             to="/" 
@@ -17,6 +27,7 @@ const PrivacyPolicy = () => {
 
         <div className="bg-slate-800 p-8 md:p-12 rounded-3xl shadow-2xl border border-slate-700 space-y-8">
           
+          {/* Header section with metadata */}
           <div className="border-b border-slate-700 pb-8">
             <h1 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">
               Privacy Policy & User Instructions
@@ -28,6 +39,7 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
+          {/* Section 1: Application Purpose */}
           <section>
             <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
               <span className="text-blue-500">1.</span> Overview
@@ -37,6 +49,7 @@ const PrivacyPolicy = () => {
             </p>
           </section>
 
+          {/* Section 2: Technical Consent Logic */}
           <section>
             <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
               <span className="text-blue-500">2.</span> Granular Consent Model
@@ -50,6 +63,7 @@ const PrivacyPolicy = () => {
             </ul>
           </section>
 
+          {/* Section 3: Data Transmission Details */}
           <section>
             <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
               <span className="text-blue-500">3.</span> Data Processing Details
@@ -61,6 +75,7 @@ const PrivacyPolicy = () => {
             </ul>
           </section>
 
+          {/* Section 4: Local Storage Persistence */}
           <section>
             <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
               <span className="text-blue-500">4.</span> Storage & Persistence
@@ -72,6 +87,7 @@ const PrivacyPolicy = () => {
             </ul>
           </section>
 
+          {/* Section 5: GDPR Rights implementation */}
           <section>
             <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
               <span className="text-blue-500">5.</span> User Rights (GDPR)
@@ -82,6 +98,7 @@ const PrivacyPolicy = () => {
             </ul>
           </section>
 
+          {/* Section 6: Legal Disclaimers */}
           <section>
             <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
               <span className="text-blue-500">6.</span> Disclaimers & Limitations (EULA)

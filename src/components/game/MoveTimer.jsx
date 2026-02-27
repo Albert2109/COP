@@ -1,5 +1,15 @@
 import React from 'react';
 
+/**
+ * Renders a dynamic visual countdown timer for a player's turn.
+ * The component calculates the percentage of time remaining and adjusts its color palette 
+ * and CSS animations accordingly (Green for >50%, Yellow for >25%, Red for <=25%).
+ * * @component
+ * @param {Object} props - The component properties.
+ * @param {number} props.timeLeft - The current amount of time remaining for the move (in seconds).
+ * @param {number} props.moveTimeLimit - The maximum total time allowed for a single move (in seconds).
+ * @returns {JSX.Element} The rendered timer interface with dynamic progress bar.
+ */
 export default function MoveTimer({ timeLeft, moveTimeLimit }) {
   const timePercentage = timeLeft ? (timeLeft / moveTimeLimit) * 100 : 100;
   

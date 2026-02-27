@@ -1,5 +1,18 @@
 import React from 'react';
 
+/**
+ * Renders the matchmaking lobby interface where users wait for an opponent to join.
+ * Displays the unique room code with a copy-to-clipboard feature and dynamically lists 
+ * the connected players. Transitions automatically when the room is full.
+ * * @component
+ * @param {Object} props - The component properties.
+ * @param {string} props.roomCode - The unique alphanumeric identifier for the current game session.
+ * @param {Array<Object>} props.players - An array of player objects currently connected to the room.
+ * @param {string} props.players[].connectionId - The unique SignalR connection ID of the player.
+ * @param {string} props.players[].nickname - The display name of the player.
+ * @param {string} props.connectionId - The local user's SignalR connection ID, used to identify "You" in the list.
+ * @returns {JSX.Element} The rendered waiting room interface.
+ */
 export default function WaitingRoom({ roomCode, players, connectionId }) {
     const [copied, setCopied] = React.useState(false);
 

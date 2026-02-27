@@ -1,5 +1,15 @@
 import React from 'react';
 
+/**
+ * Renders the top status bar during active gameplay.
+ * Displays the current turn indicator (Player vs. Bot) and the elapsed game time,
+ * utilizing dynamic CSS classes for pulse and bounce animations to reflect the game state.
+ * * @component
+ * @param {Object} props - The component properties.
+ * @param {string} props.currentPlayer - Identifier for whose turn it currently is ('player' or 'bot').
+ * @param {string} props.formattedTime - The total elapsed time of the game, formatted as a string (e.g., "01:23").
+ * @returns {JSX.Element} The rendered game header interface.
+ */
 export default function GameHeader({ currentPlayer, formattedTime }) {
   const isPlayerTurn = currentPlayer === 'player';
 

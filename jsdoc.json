@@ -1,0 +1,18 @@
+{
+  "source": {
+    "include": ["src"],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": ["plugins/markdown"],
+  "opts": {
+    "destination": "./docs",
+    "recurse": true,
+    "template": "node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "theme": "dark",
+      "title": "Connect Four Documentation",
+      "displayModuleHeader": true
+    }
+  }
+}

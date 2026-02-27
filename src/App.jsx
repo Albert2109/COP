@@ -14,21 +14,40 @@ import PrivacyFooter from './components/PrivacyFooter';
 
 import './App.css';
 
+/**
+ * The root component of the Connect Four application.
+ * Responsibilities:
+ * - Orchestrates top-level routing using React Router.
+ * - Connects the UI to the global Zustand `useGameStore`.
+ * - Manages the transition logic between settings, active gameplay, and results history.
+ * - Global injection of GDPR-related components (CookieConsent, PrivacyFooter).
+ * * @component
+ */
 function App() {
+  /** * Hook to programmatically trigger navigation between routes.
+   */
   const navigate = useNavigate();
 
+  // --- Store State & Actions ---
   const gameSettings = useGameStore((state) => state.gameSettings);
   const lockedMode = useGameStore((state) => state.lockedMode);
-
   const clearSession = useGameStore((state) => state.clearSession);
   const setGameSession = useGameStore((state) => state.setGameSession);
   const addGameToHistoryFromStore = useGameStore((state) => state.addGameToHistory);
 
+  /**
+   * Resets the current session and directs the user to the initial setup.
+   */
   const handleStartClick = () => {
     clearSession(); 
     navigate('/settings');
   };
 
+  /**
+   * Processes the settings form submission.
+   * Determines the final game mode (Bot or Online) and navigates to the appropriate route.
+   * @param {Object} settings - Validated form data from GameSettingsForm.
+   */
   const handleSettingsSubmit = (settings) => {
     let mode = lockedMode;
     if (!mode) {
@@ -49,6 +68,11 @@ function App() {
     }
   };
 
+  /**
+   * Memoized callback to record match results into the global history.
+   * Enriches raw result data with current session metadata (mode, bot difficulty, grid size).
+   * @param {Object} result - Result object containing winner and elapsed time.
+   */
   const addGameToHistory = useCallback((result) => {
     if (!gameSettings) {
       console.error("Cannot add game to history: gameSettings is null.");
@@ -67,17 +91,15 @@ function App() {
     addGameToHistoryFromStore(gameResult); 
   }, [gameSettings, addGameToHistoryFromStore]); 
 
-  const handleGoToSettings = () => {
-    navigate('/settings');
-  };
-  const handleGoToResults = () => {
-    navigate('/results');
-  };
+  // --- Navigation Handlers ---
+  const handleGoToSettings = () => navigate('/settings');
+  const handleGoToResults = () => navigate('/results');
+  const handleRestart = () => navigate('/');
 
-  const handleRestart = () => {
-    navigate('/');
-  };
-
+  /**
+   * HOC-like wrapper for the Settings Page to handle optional URL room codes.
+   * @returns {JSX.Element}
+   */
   function SettingsPageWrapper() {
     const { roomCode } = useParams();
     return (
@@ -90,6 +112,12 @@ function App() {
     );
   }
 
+  /**
+   * Safeguard wrapper for the Online Game Page.
+   * Ensures that game settings exist and mode is 'online' before rendering.
+   * Redirects back to settings if the state is invalid or missing.
+   * @returns {JSX.Element}
+   */
   function OnlineGamePageWrapper() {
     const { roomCode } = useParams();
 
@@ -108,11 +136,14 @@ function App() {
   return (
     <div className="container mt-5">
       <Routes>
+        {/* Entrance Route */}
         <Route path="/" element={<StartPage onStart={handleStartClick} />} />
 
+        {/* Configuration Routes */}
         <Route path="/settings" element={<SettingsPageWrapper />} />
         <Route path="/settings/:roomCode" element={<SettingsPageWrapper />} />
 
+        {/* Local Gameplay Route (Player vs Bot) */}
         <Route
           path="/game"
           element={
@@ -129,17 +160,20 @@ function App() {
           }
         />
 
+        {/* Multiplayer Gameplay Route (SignalR) */}
         <Route
           path="/online-game/:roomCode"
           element={<OnlineGamePageWrapper />}
         />
 
+        {/* Session Results & Privacy Routes */}
         <Route
           path="/results"
           element={<ResultsPage onRestart={handleRestart} />}
         />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
+        {/* Fallback 404 Handling */}
         <Route
           path="*"
           element={
@@ -152,6 +186,8 @@ function App() {
           }
         />
       </Routes>
+
+      {/* Persistent Overlay Components */}
       <CookieConsent />
       <PrivacyFooter />
     </div>

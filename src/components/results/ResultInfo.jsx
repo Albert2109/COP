@@ -1,15 +1,25 @@
 import React from 'react';
 
+/**
+ * Renders a summary card displaying the results of a completed game session.
+ * Shows the outcome (win/loss/draw), the game mode or bot difficulty, and the total elapsed time.
+ * Designed with a glassmorphism effect and dark mode support.
+ * * @component
+ * @param {Object} props - The component properties.
+ * @param {string|null} props.winner - The outcome of the match ('player', 'bot', or 'draw').
+ * @param {string} props.time - The formatted string of the total time played (e.g., "05:12").
+ * @param {string} [props.botLevel] - The difficulty level of the bot ('easy', 'medium', 'hard'). Relevant only if mode is 'bot'.
+ * @param {string} props.mode - The type of game played ('online' or 'bot').
+ * @returns {JSX.Element} The rendered result information card.
+ */
 export default function ResultInfo({ winner, time, botLevel, mode }) {
   
-
   const getWinnerText = () => {
     if (winner === 'draw') return '🤝 Нічия!';
     if (winner === 'player') return '🎉 Перемога!';
     if (winner === 'bot') return '💀 Поразка';
     return 'Гра закінчилась';
   };
-
 
   const getModeText = () => {
     if (mode === 'online') return 'Онлайн гра';
@@ -40,6 +50,5 @@ export default function ResultInfo({ winner, time, botLevel, mode }) {
     </div>
   </div>
 );
-
 
 }
