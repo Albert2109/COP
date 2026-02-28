@@ -28,7 +28,9 @@ All third-party dependencies have been verified for compatibility. You can acces
 * **No Affiliation:** The author is not affiliated with, endorsed by, or sponsored by Hasbro.
 
 ---
-
+## Video Demos:
+* **Storybook:** [Link to video](https://drive.google.com/file/d/1QnhEQCpkXmyy6F6HCTUqG07r_FvFxp5T/view?usp=sharing)
+* **JSDoc Documentation:** [Link to video](https://drive.google.com/file/d/1BjIn7oMv6UPGQonRPzpuquoCE6z4JxXa/view?usp=sharing)
 ## ⚙️ Configurations
 
 To ensure the frontend and backend communicate correctly, you need to verify the following configurations in the code:
