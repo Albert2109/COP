@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>components/game/Board.jsx - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Bot.html">Bot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Bot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="Bot.html#evaluatePosition">evaluatePosition</a></li><li data-type='method' style='display: none;'><a href="Bot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="Bot.html#makeMove">makeMove</a></li></ul></li><li><a href="EasyBot.html">EasyBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findDefensiveMove">findDefensiveMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findWinningMove">findWinningMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#makeMove">makeMove</a></li></ul></li><li><a href="HardBot.html">HardBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateBoard">evaluateBoard</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateCell">evaluateCell</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#isBoardFull">isBoardFull</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#makeMove">makeMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#minimax">minimax</a></li></ul></li><li><a href="Player.html">Player</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Player.html#makeMove">makeMove</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#BoardProps">BoardProps</a></li><li><a href="global.html#ButtonProps">ButtonProps</a></li><li><a href="global.html#ConsentPreferences">ConsentPreferences</a></li><li><a href="global.html#ConsentStore">ConsentStore</a></li><li><a href="global.html#CookieConsent">CookieConsent</a></li><li><a href="global.html#GameEndPortalProps">GameEndPortalProps</a></li><li><a href="global.html#GameHeaderProps">GameHeaderProps</a></li><li><a href="global.html#GamePageProps">GamePageProps</a></li><li><a href="global.html#GameResult">GameResult</a></li><li><a href="global.html#GameSessionSlice">GameSessionSlice</a></li><li><a href="global.html#GameSettings">GameSettings</a></li><li><a href="global.html#GameSettingsFormProps">GameSettingsFormProps</a></li><li><a href="global.html#GameSettingsFormValues">GameSettingsFormValues</a></li><li><a href="global.html#HistorySlice">HistorySlice</a></li><li><a href="global.html#LevelBot">LevelBot</a></li><li><a href="global.html#MoveTimerProps">MoveTimerProps</a></li><li><a href="global.html#OnlineGamePageProps">OnlineGamePageProps</a></li><li><a href="global.html#OnlineGameProps">OnlineGameProps</a></li><li><a href="global.html#PrivacyFooter">PrivacyFooter</a></li><li><a href="global.html#PrivacyPolicy">PrivacyPolicy</a></li><li><a href="global.html#ResultInfoProps">ResultInfoProps</a></li><li><a href="global.html#ResultsPageProps">ResultsPageProps</a></li><li><a href="global.html#StartPageProps">StartPageProps</a></li><li><a href="global.html#UseGameReturn">UseGameReturn</a></li><li><a href="global.html#UseSignalRReturn">UseSignalRReturn</a></li><li><a href="global.html#WaitingRoomPlayer">WaitingRoomPlayer</a></li><li><a href="global.html#WaitingRoomProps">WaitingRoomProps</a></li><li><a href="global.html#addGameToHistory">addGameToHistory</a></li><li><a href="global.html#botColor">botColor</a></li><li><a href="global.html#clearSession">clearSession</a></li><li><a href="global.html#columns">columns</a></li><li><a href="global.html#createGameSessionSlice">createGameSessionSlice</a></li><li><a href="global.html#createHistorySlice">createHistorySlice</a></li><li><a href="global.html#firstPlayer">firstPlayer</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#gameSchema">gameSchema</a></li><li><a href="global.html#gameSettings">gameSettings</a></li><li><a href="global.html#history">history</a></li><li><a href="global.html#isModalOpen">isModalOpen</a></li><li><a href="global.html#lockedMode">lockedMode</a></li><li><a href="global.html#mode">mode</a></li><li><a href="global.html#moveTimeLimit">moveTimeLimit</a></li><li><a href="global.html#nickname">nickname</a></li><li><a href="global.html#playerColor">playerColor</a></li><li><a href="global.html#preferences">preferences</a></li><li><a href="global.html#roomCode">roomCode</a></li><li><a href="global.html#rows">rows</a></li><li><a href="global.html#setGameSession">setGameSession</a></li><li><a href="global.html#status">status</a></li><li><a href="global.html#useConsentStore">useConsentStore</a></li><li><a href="global.html#useGame">useGame</a></li><li><a href="global.html#useGameStore">useGameStore</a></li><li><a href="global.html#useGameTimer">useGameTimer</a></li><li><a href="global.html#useSignalR">useSignalR</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">components/game/Board.jsx</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Props for the Board component.
+ * @typedef {Object} BoardProps
+ * @property {Array&lt;Array&lt;string|null>>} board - A 2D array representing the current state of the game grid (null for empty, 'player' or 'bot' for pieces).
+ * @property {Function} onColumnClick - Callback function triggered when a player clicks on a specific column. Passes the column index.
+ * @property {string} [playerColor] - Hex code or CSS color string for the player's pieces. Defaults to '#FF0000' (Red).
+ * @property {string} [botColor] - Hex code or CSS color string for the bot's pieces. Defaults to '#FFFF00' (Yellow).
+ */
+
+/**
+ * Renders the interactive visual game board for Connect Four.
+ * Maps through the 2D board array to display empty slots, player pieces, and bot pieces
+ * with corresponding colors, animations, and hover effects.
+ * * @component
+ * @category Components
+ * @param {BoardProps} props - The component properties.
+ * @returns {JSX.Element} The rendered game board interface.
+ */
+export default function Board({ board, onColumnClick, playerColor, botColor }) {
+  
+  const pColor = playerColor || '#FF0000';
+  const bColor = botColor || '#FFFF00';
+
+  return (
+    &lt;div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 p-4">
+      &lt;div className="relative">
+
+        &lt;div className="absolute -inset-4 bg-gradient-to-r from-pink-400 to-purple-400 rounded-3xl blur-xl opacity-40">&lt;/div>
+        
+
+        &lt;div className="relative bg-gradient-to-b from-blue-600 to-blue-800 rounded-3xl p-3 shadow-2xl">
+
+          &lt;div className="absolute -top-8 left-1/2 transform -translate-x-1/2 flex gap-2">
+            &lt;div className="w-4 h-4 bg-yellow-400 rounded-full shadow-lg">&lt;/div>
+            &lt;div className="w-4 h-4 bg-red-500 rounded-full shadow-lg">&lt;/div>
+            &lt;div className="w-4 h-4 bg-yellow-400 rounded-full shadow-lg">&lt;/div>
+          &lt;/div>
+
+
+          &lt;div className="grid gap-2 bg-gradient-to-b from-blue-500 to-blue-700 p-4 rounded-2xl shadow-inner">
+            {board.map((row, rowIdx) => (
+              &lt;div key={rowIdx} className="flex gap-2">
+                {row.map((cell, colIdx) => (
+                  &lt;button
+                    key={`${rowIdx}-${colIdx}`}
+                    onClick={() => onColumnClick(colIdx)}
+                    className="relative group transition-all duration-200 hover:scale-110 active:scale-95"
+                  >
+
+                    &lt;div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full border-2 border-blue-900 shadow-lg flex items-center justify-center overflow-hidden group-hover:shadow-xl group-hover:from-blue-300 transition-all">
+
+                      {cell === null &amp;&amp; (
+                        &lt;div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-b from-blue-300 to-blue-500 rounded-full border border-blue-400 shadow-inner">&lt;/div>
+                      )}
+                      
+                      {cell === 'player' &amp;&amp; (
+                        &lt;div className="relative w-12 h-12 md:w-16 md:h-16">
+                          &lt;div 
+                            className="w-full h-full rounded-full shadow-2xl border-2 border-white animate-pulse"
+                            style={{ 
+                              backgroundColor: pColor,
+                              boxShadow: `0 0 20px ${pColor}, 0 0 40px ${pColor}80`
+                            }}
+                          >&lt;/div>
+                          &lt;div className="absolute inset-0 rounded-full opacity-30 animate-ping" style={{ backgroundColor: pColor }}>&lt;/div>
+                        &lt;/div>
+                      )}
+                      
+                      {cell === 'bot' &amp;&amp; (
+                        &lt;div className="relative w-12 h-12 md:w-16 md:h-16">
+                          &lt;div 
+                            className="w-full h-full rounded-full shadow-2xl border-2 border-white animate-pulse"
+                            style={{ 
+                              backgroundColor: bColor,
+                              boxShadow: `0 0 20px ${bColor}, 0 0 40px ${bColor}80`
+                            }}
+                          >&lt;/div>
+                          &lt;div className="absolute inset-0 rounded-full opacity-30 animate-ping" style={{ backgroundColor: bColor }}>&lt;/div>
+                        &lt;/div>
+                      )}
+                    &lt;/div>
+
+                    &lt;div className="absolute -top-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all">
+                      &lt;div className="w-2 h-2 bg-yellow-300 rounded-full mx-auto mb-1 animate-bounce">&lt;/div>
+                      &lt;div className="text-xs font-bold text-white drop-shadow-lg">▼&lt;/div>
+                    &lt;/div>
+                  &lt;/button>
+                ))}
+              &lt;/div>
+            ))}
+          &lt;/div>
+
+
+          &lt;div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-2xl">
+            🎮
+          &lt;/div>
+        &lt;/div>
+
+
+        &lt;div className="text-center mt-12 text-white drop-shadow-lg">
+          &lt;p className="text-lg font-bold">Клацніть на колону щоб зробити хід!&lt;/p>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  );
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Sat Feb 28 2026 13:19:31 GMT+0200 (Восточная Европа, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

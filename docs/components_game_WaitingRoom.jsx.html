@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>components/game/WaitingRoom.jsx - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Bot.html">Bot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Bot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="Bot.html#evaluatePosition">evaluatePosition</a></li><li data-type='method' style='display: none;'><a href="Bot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="Bot.html#makeMove">makeMove</a></li></ul></li><li><a href="EasyBot.html">EasyBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findDefensiveMove">findDefensiveMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findWinningMove">findWinningMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#makeMove">makeMove</a></li></ul></li><li><a href="HardBot.html">HardBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateBoard">evaluateBoard</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateCell">evaluateCell</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#isBoardFull">isBoardFull</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#makeMove">makeMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#minimax">minimax</a></li></ul></li><li><a href="Player.html">Player</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Player.html#makeMove">makeMove</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#BoardProps">BoardProps</a></li><li><a href="global.html#ButtonProps">ButtonProps</a></li><li><a href="global.html#ConsentPreferences">ConsentPreferences</a></li><li><a href="global.html#ConsentStore">ConsentStore</a></li><li><a href="global.html#CookieConsent">CookieConsent</a></li><li><a href="global.html#GameEndPortalProps">GameEndPortalProps</a></li><li><a href="global.html#GameHeaderProps">GameHeaderProps</a></li><li><a href="global.html#GamePageProps">GamePageProps</a></li><li><a href="global.html#GameResult">GameResult</a></li><li><a href="global.html#GameSessionSlice">GameSessionSlice</a></li><li><a href="global.html#GameSettings">GameSettings</a></li><li><a href="global.html#GameSettingsFormProps">GameSettingsFormProps</a></li><li><a href="global.html#GameSettingsFormValues">GameSettingsFormValues</a></li><li><a href="global.html#HistorySlice">HistorySlice</a></li><li><a href="global.html#LevelBot">LevelBot</a></li><li><a href="global.html#MoveTimerProps">MoveTimerProps</a></li><li><a href="global.html#OnlineGamePageProps">OnlineGamePageProps</a></li><li><a href="global.html#OnlineGameProps">OnlineGameProps</a></li><li><a href="global.html#PrivacyFooter">PrivacyFooter</a></li><li><a href="global.html#PrivacyPolicy">PrivacyPolicy</a></li><li><a href="global.html#ResultInfoProps">ResultInfoProps</a></li><li><a href="global.html#ResultsPageProps">ResultsPageProps</a></li><li><a href="global.html#StartPageProps">StartPageProps</a></li><li><a href="global.html#UseGameReturn">UseGameReturn</a></li><li><a href="global.html#UseSignalRReturn">UseSignalRReturn</a></li><li><a href="global.html#WaitingRoomPlayer">WaitingRoomPlayer</a></li><li><a href="global.html#WaitingRoomProps">WaitingRoomProps</a></li><li><a href="global.html#addGameToHistory">addGameToHistory</a></li><li><a href="global.html#botColor">botColor</a></li><li><a href="global.html#clearSession">clearSession</a></li><li><a href="global.html#columns">columns</a></li><li><a href="global.html#createGameSessionSlice">createGameSessionSlice</a></li><li><a href="global.html#createHistorySlice">createHistorySlice</a></li><li><a href="global.html#firstPlayer">firstPlayer</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#gameSchema">gameSchema</a></li><li><a href="global.html#gameSettings">gameSettings</a></li><li><a href="global.html#history">history</a></li><li><a href="global.html#isModalOpen">isModalOpen</a></li><li><a href="global.html#lockedMode">lockedMode</a></li><li><a href="global.html#mode">mode</a></li><li><a href="global.html#moveTimeLimit">moveTimeLimit</a></li><li><a href="global.html#nickname">nickname</a></li><li><a href="global.html#playerColor">playerColor</a></li><li><a href="global.html#preferences">preferences</a></li><li><a href="global.html#roomCode">roomCode</a></li><li><a href="global.html#rows">rows</a></li><li><a href="global.html#setGameSession">setGameSession</a></li><li><a href="global.html#status">status</a></li><li><a href="global.html#useConsentStore">useConsentStore</a></li><li><a href="global.html#useGame">useGame</a></li><li><a href="global.html#useGameStore">useGameStore</a></li><li><a href="global.html#useGameTimer">useGameTimer</a></li><li><a href="global.html#useSignalR">useSignalR</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">components/game/WaitingRoom.jsx</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+
+/**
+ * Represents a player currently connected to the matchmaking room.
+ * @typedef {Object} WaitingRoomPlayer
+ * @property {string} connectionId - The unique SignalR connection ID of the player.
+ * @property {string} nickname - The display name of the player.
+ */
+
+/**
+ * Props for the WaitingRoom component.
+ * @typedef {Object} WaitingRoomProps
+ * @property {string} roomCode - The unique alphanumeric identifier for the current game session.
+ * @property {Array&lt;WaitingRoomPlayer>} players - An array of player objects currently connected to the room.
+ * @property {string} connectionId - The local user's SignalR connection ID, used to identify "You" in the list.
+ */
+
+/**
+ * Renders the matchmaking lobby interface where users wait for an opponent to join.
+ * Displays the unique room code with a copy-to-clipboard feature and dynamically lists 
+ * the connected players. Transitions automatically when the room is full.
+ * 
+ * * @component
+ * @category Components
+ * @param {WaitingRoomProps} props - The component properties.
+ * @returns {JSX.Element} The rendered waiting room interface.
+ */
+export default function WaitingRoom({ roomCode, players, connectionId }) {
+    const [copied, setCopied] = React.useState(false);
+
+    const handleCopyCode = () => {
+        navigator.clipboard.writeText(roomCode);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
+    return (
+        &lt;div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 flex items-center justify-center p-4 overflow-hidden relative">
+            &lt;div className="absolute top-10 left-10 w-32 h-32 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse">&lt;/div>
+            &lt;div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse">&lt;/div>
+            
+            &lt;div className="w-full max-w-2xl relative z-10">
+                &lt;div className="text-center mb-8">
+                    &lt;div className="flex items-center justify-center gap-3 mb-4">
+                        &lt;div className="text-5xl animate-bounce">🎮&lt;/div>
+                        &lt;h1 className="text-5xl font-black text-white drop-shadow-lg">Connect Four&lt;/h1>
+                    &lt;/div>
+                    &lt;p className="text-white text-xl font-semibold drop-shadow-md">Кімната очікування&lt;/p>
+                &lt;/div>
+
+                &lt;div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                    &lt;div className="bg-gradient-to-r from-pink-500 to-purple-600 p-8 text-white">
+                        &lt;div className="flex items-center justify-center gap-3 mb-4">
+                            &lt;div className="text-3xl animate-pulse">⚡&lt;/div>
+                            &lt;h2 className="text-3xl font-bold">Готуйтеся до гри!&lt;/h2>
+                        &lt;/div>
+                        &lt;p className="text-center text-lg opacity-90">
+                            {roomCode ? "Ваша кімната створена ✨" : "З'єднання та створення кімнати..."}
+                        &lt;/p>
+                    &lt;/div>
+
+                    &lt;div className="p-8 md:p-10 space-y-8">
+                        {roomCode &amp;&amp; (
+                            &lt;div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 border-2 border-pink-200">
+                                &lt;p className="text-gray-600 text-sm font-semibold mb-3 text-center">КОД КІМНАТИ&lt;/p>
+                                &lt;div className="flex items-center gap-3 justify-center">
+                                    &lt;div className="bg-white rounded-xl p-4 border-3 border-purple-400 shadow-lg">
+                                        &lt;p className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 tracking-widest">
+                                            {roomCode}
+                                        &lt;/p>
+                                    &lt;/div>
+                                    &lt;button
+                                        onClick={handleCopyCode}
+                                        className={`p-4 rounded-xl transition-all duration-300 transform ${
+                                            copied
+                                                ? 'bg-green-500 scale-110'
+                                                : 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 hover:scale-105'
+                                        } text-white shadow-lg hover:shadow-xl`}
+                                    >
+                                        {copied ? '✓' : '📋'}
+                                    &lt;/button>
+                                &lt;/div>
+                                &lt;p className="text-center text-gray-600 text-sm mt-3 font-medium">
+                                    {copied ? '✓ Скопійовано!' : 'Клацніть щоб скопіювати'}
+                                &lt;/p>
+                                &lt;p className="text-center text-gray-700 text-sm mt-4 font-semibold">
+                                    📋 Поділіться цим кодом з другом, щоб він приєднався до гри!
+                                &lt;/p>
+                            &lt;/div>
+                        )}
+
+                        {!roomCode &amp;&amp; (
+                            &lt;div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border-2 border-blue-200 text-center">
+                                &lt;div className="inline-block">
+                                    &lt;div className="w-16 h-16 rounded-full border-4 border-transparent border-t-purple-500 border-r-purple-500 animate-spin mx-auto mb-4">&lt;/div>
+                                &lt;/div>
+                                &lt;p className="text-gray-700 font-semibold text-lg">
+                                    З'єднуємось з сервером...
+                                &lt;/p>
+                            &lt;/div>
+                        )}
+
+                        &lt;div>
+                            &lt;div className="flex items-center gap-2 mb-4">
+                                &lt;span className="text-2xl">👥&lt;/span>
+                                &lt;h3 className="text-xl font-bold text-gray-800">
+                                    Гравці в кімнаті ({players.length}/2)
+                                &lt;/h3>
+                            &lt;/div>
+
+                            &lt;div className="space-y-3">
+                                {players.length === 0 ? (
+                                    &lt;div className="bg-gray-50 rounded-xl p-6 text-center border-2 border-dashed border-gray-300">
+                                        &lt;p className="text-gray-500 font-medium">Завантаження гравців...&lt;/p>
+                                    &lt;/div>
+                                ) : (
+                                    &lt;>
+                                        {players.map((p, idx) => (
+                                            &lt;div
+                                                key={p.connectionId}
+                                                className={`rounded-xl p-4 border-2 transition-all duration-300 transform ${
+                                                    p.connectionId === connectionId
+                                                        ? 'bg-gradient-to-r from-green-100 to-emerald-100 border-green-500 shadow-lg scale-105'
+                                                        : 'bg-gradient-to-r from-pink-100 to-purple-100 border-pink-300 hover:scale-102'
+                                                }`}
+                                            >
+                                                &lt;div className="flex items-center justify-between">
+                                                    &lt;div className="flex items-center gap-3">
+                                                        &lt;div className={`w-3 h-3 rounded-full ${
+                                                            p.connectionId === connectionId ? 'bg-green-500 animate-pulse' : 'bg-purple-500'
+                                                        }`}>&lt;/div>
+                                                        &lt;span className="font-bold text-gray-800 text-lg">
+                                                            {p.nickname}
+                                                        &lt;/span>
+                                                    &lt;/div>
+                                                    {p.connectionId === connectionId &amp;&amp; (
+                                                        &lt;span className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md">
+                                                            👑 Це ви
+                                                        &lt;/span>
+                                                    )}
+                                                &lt;/div>
+                                            &lt;/div>
+                                        ))}
+
+                                        {players.length &lt; 2 &amp;&amp; (
+                                            &lt;div className="rounded-xl p-6 border-3 border-dashed border-yellow-400 bg-yellow-50 text-center">
+                                                &lt;div className="inline-block animate-bounce">
+                                                    &lt;p className="text-5xl mb-2">⏳&lt;/p>
+                                                &lt;/div>
+                                                &lt;p className="text-yellow-800 font-bold text-lg">
+                                                    Очікування другого гравця...
+                                                &lt;/p>
+                                                &lt;p className="text-yellow-700 text-sm mt-2">
+                                                    Поділіться кодом кімнати вище 👆
+                                                &lt;/p>
+                                            &lt;/div>
+                                        )}
+                                    &lt;/>
+                                )}
+                            &lt;/div>
+                        &lt;/div>
+
+                        {players.length === 2 &amp;&amp; (
+                            &lt;div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-6 text-white text-center shadow-2xl animate-pulse">
+                                &lt;p className="text-3xl mb-2">🎉&lt;/p>
+                                &lt;p className="text-xl font-bold">Обидва гравці готові!&lt;/p>
+                                &lt;p className="text-sm opacity-90 mt-2">Гра почнеться автоматично...&lt;/p>
+                            &lt;/div>
+                        )}
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div className="text-center mt-8">
+                    &lt;p className="text-white text-sm font-medium drop-shadow-lg">
+                        🎮 Connect Four Online 🎮
+                    &lt;/p>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    );
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Sat Feb 28 2026 13:19:31 GMT+0200 (Восточная Европа, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

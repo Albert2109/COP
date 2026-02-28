@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Board from '../components/game/Board';
 import GameEndPortal from '../components/game/GameEndPortal/GameEndPortal';
 import { useGame } from '../hooks/game/useGame';
@@ -9,86 +9,147 @@ import '../styles/GamePage.css';
 import GameHeader from '../components/game/GameHeader';
 import MoveTimer from '../components/game/MoveTimer';
 
+/**
+ * Props for the GamePage component.
+ * @typedef {Object} GamePageProps
+ * @property {Object} settings - The configuration object for the match (difficulty, colors, time limits).
+ * @property {Function} onGoToSettings - Callback to return to the configuration screen.
+ * @property {Function} onGoToResults - Callback to navigate to the session statistics/history.
+ * @property {Function} onGameFinished - Callback triggered when a winner is declared to save session data.
+ */
 
+/**
+ * The primary container component for the local game mode (Player vs. Bot).
+ * It orchestrates the game flow by managing the session timer, turn-based move timers,
+ * and bot execution timing. It also handles navigation callbacks for settings and results.
+ * 
+ * @component
+ * @category Pages
+ * @param {GamePageProps} props - The component properties.
+ * @returns {JSX.Element} The rendered game page including header, timer, board, and portals.
+ */
 export default function GamePage({ settings, onGoToSettings, onGoToResults, onGameFinished }) {
+  /**
+   * Destructured game state and actions from the core game hook.
+   */
   const { board, currentPlayer, winner, playerMove, botMove, resetGame, forceTimeout } = useGame(settings);
+  
+  /** * Local state for tracking the total session duration in seconds.
+   * @type {Array} 
+   */
   const [time, setTime] = useState(0);
+
+  /** * Local state for the countdown timer of the current move.
+   * @type {Array} 
+   */
   const [timeLeft, setTimeLeft] = useState(settings.moveTimeLimit ? parseInt(settings.moveTimeLimit, 10) : null);
+
+  /** * Visibility state for the game result modal.
+   * @type {Array} 
+   */
   const [showEndPortal, setShowEndPortal] = useState(false);
 
+  /**
+   * Primary session timer hook. Increments 'time' state every second while no winner exists.
+   */
   useGameTimer(!winner, setTime);
   const formattedTime = formatTime(time);
 
+  /**
+   * Effect: Handles the Bot's move delay.
+   * Introduces a 500ms artificial delay to make the bot's actions feel natural.
+   */
   useEffect(() => {
- if (currentPlayer === 'bot' && !winner) {
- const timer = setTimeout(() => {
-   botMove();
- if (settings.moveTimeLimit) {
- setTimeLeft(settings.moveTimeLimit);
- }
- }, 500); 
- return () => clearTimeout(timer);
- }
- }, [currentPlayer, winner, botMove, settings.moveTimeLimit]);
+    if (currentPlayer === 'bot' && !winner) {
+      const timer = setTimeout(() => {
+        botMove();
+        if (settings.moveTimeLimit) {
+          setTimeLeft(settings.moveTimeLimit);
+        }
+      }, 500); 
+      return () => clearTimeout(timer);
+    }
+  }, [currentPlayer, winner, botMove, settings.moveTimeLimit]);
 
- useEffect(() => {
- if (!timeLeft || winner || currentPlayer === 'bot') {
- return;
- }
- const interval = setInterval(() => {
-setTimeLeft(prev => {
- if (prev <= 1) {
-   clearInterval(interval); 
- forceTimeout(); 
- return 0;
- }
- return prev - 1; 
- });
- }, 1000);
- return () => clearInterval(interval);
- }, [currentPlayer, winner, timeLeft, forceTimeout]);
+  /**
+   * Effect: Handles the move countdown (Turn Timer).
+   * Decrements 'timeLeft' and triggers 'forceTimeout' if it reaches zero.
+   */
+  useEffect(() => {
+    if (!timeLeft || winner || currentPlayer === 'bot') {
+      return;
+    }
+    const interval = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(interval); 
+          forceTimeout(); 
+          return 0;
+        }
+        return prev - 1; 
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [currentPlayer, winner, timeLeft, forceTimeout]);
 
- useEffect(() => {
- if (winner) {
- onGameFinished({
- winner: winner,
- time: formattedTime 
- });
-setShowEndPortal(true);
-}
-}, [winner, onGameFinished, formattedTime]); 
+  /**
+   * Effect: Handles game termination.
+   * Triggers the finish callback and displays the results portal.
+   */
+  useEffect(() => {
+    if (winner) {
+      onGameFinished({
+        winner: winner,
+        time: formattedTime 
+      });
+      setShowEndPortal(true);
+    }
+  }, [winner, onGameFinished, formattedTime]); 
 
- const handleColumnClick = (col) => {
- if (currentPlayer === 'player' && !winner) {
- playerMove(col);
-if (settings.moveTimeLimit) {
- setTimeLeft(settings.moveTimeLimit);
- }
- }
-};
+  /**
+   * Processes a column click for the human player.
+   * Resets the move timer upon a valid move.
+   * @param {number} col - The column index selected by the user.
+   */
+  const handleColumnClick = (col) => {
+    if (currentPlayer === 'player' && !winner) {
+      playerMove(col);
+      if (settings.moveTimeLimit) {
+        setTimeLeft(settings.moveTimeLimit);
+      }
+    }
+  };
 
- const handlePlayAgain = () => {
-resetGame();
-setShowEndPortal(false);
- setTime(0);
-if (settings.moveTimeLimit) {
-setTimeLeft(settings.moveTimeLimit);
-}
-};
+  /**
+   * Resets the game state and local timers for a rematch.
+   */
+  const handlePlayAgain = () => {
+    resetGame();
+    setShowEndPortal(false);
+    setTime(0);
+    if (settings.moveTimeLimit) {
+      setTimeLeft(settings.moveTimeLimit);
+    }
+  };
 
-const handleChangeSettings = () => {
-setShowEndPortal(false);
-onGoToSettings(); 
-};
+  /**
+   * Closes portal and triggers settings navigation.
+   */
+  const handleChangeSettings = () => {
+    setShowEndPortal(false);
+    onGoToSettings(); 
+  };
 
-const handleEndGame = () => {
-setShowEndPortal(false);
-onGoToResults(); 
-};
+  /**
+   * Closes portal and triggers results navigation.
+   */
+  const handleEndGame = () => {
+    setShowEndPortal(false);
+    onGoToResults(); 
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 flex flex-col">
-
       <div className="w-full">
         <GameHeader 
           currentPlayer={currentPlayer}
@@ -127,7 +188,6 @@ onGoToResults();
           />
         </div>
       </div>
-
 
       <GameEndPortal
         isOpen={showEndPortal}

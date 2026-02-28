@@ -1,0 +1,21 @@
+{
+    "plugins": ["plugins/markdown"],
+    "source": {
+        "include": ["src", "README.md"],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_|node_modules|docs"
+    },
+    "opts": {
+        "template": "node_modules/docdash",
+        "destination": "./docs",
+        "recurse": true,
+        "readme": "./README.md",
+        "encoding": "utf8"
+    },
+    "docdash": {
+        "search": true,
+        "collapse": true,
+        "typedefs": true,
+        "removeModulePrefix": true
+    }
+}

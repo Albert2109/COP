@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>validation/GameSchema.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Bot.html">Bot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Bot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="Bot.html#evaluatePosition">evaluatePosition</a></li><li data-type='method' style='display: none;'><a href="Bot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="Bot.html#makeMove">makeMove</a></li></ul></li><li><a href="EasyBot.html">EasyBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findDefensiveMove">findDefensiveMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findWinningMove">findWinningMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#makeMove">makeMove</a></li></ul></li><li><a href="HardBot.html">HardBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateBoard">evaluateBoard</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateCell">evaluateCell</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#isBoardFull">isBoardFull</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#makeMove">makeMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#minimax">minimax</a></li></ul></li><li><a href="Player.html">Player</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Player.html#makeMove">makeMove</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#BoardProps">BoardProps</a></li><li><a href="global.html#ButtonProps">ButtonProps</a></li><li><a href="global.html#ConsentPreferences">ConsentPreferences</a></li><li><a href="global.html#ConsentStore">ConsentStore</a></li><li><a href="global.html#CookieConsent">CookieConsent</a></li><li><a href="global.html#GameEndPortalProps">GameEndPortalProps</a></li><li><a href="global.html#GameHeaderProps">GameHeaderProps</a></li><li><a href="global.html#GamePageProps">GamePageProps</a></li><li><a href="global.html#GameResult">GameResult</a></li><li><a href="global.html#GameSessionSlice">GameSessionSlice</a></li><li><a href="global.html#GameSettings">GameSettings</a></li><li><a href="global.html#GameSettingsFormProps">GameSettingsFormProps</a></li><li><a href="global.html#GameSettingsFormValues">GameSettingsFormValues</a></li><li><a href="global.html#HistorySlice">HistorySlice</a></li><li><a href="global.html#LevelBot">LevelBot</a></li><li><a href="global.html#MoveTimerProps">MoveTimerProps</a></li><li><a href="global.html#OnlineGamePageProps">OnlineGamePageProps</a></li><li><a href="global.html#OnlineGameProps">OnlineGameProps</a></li><li><a href="global.html#PrivacyFooter">PrivacyFooter</a></li><li><a href="global.html#PrivacyPolicy">PrivacyPolicy</a></li><li><a href="global.html#ResultInfoProps">ResultInfoProps</a></li><li><a href="global.html#ResultsPageProps">ResultsPageProps</a></li><li><a href="global.html#StartPageProps">StartPageProps</a></li><li><a href="global.html#UseGameReturn">UseGameReturn</a></li><li><a href="global.html#UseSignalRReturn">UseSignalRReturn</a></li><li><a href="global.html#WaitingRoomPlayer">WaitingRoomPlayer</a></li><li><a href="global.html#WaitingRoomProps">WaitingRoomProps</a></li><li><a href="global.html#addGameToHistory">addGameToHistory</a></li><li><a href="global.html#botColor">botColor</a></li><li><a href="global.html#clearSession">clearSession</a></li><li><a href="global.html#columns">columns</a></li><li><a href="global.html#createGameSessionSlice">createGameSessionSlice</a></li><li><a href="global.html#createHistorySlice">createHistorySlice</a></li><li><a href="global.html#firstPlayer">firstPlayer</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#gameSchema">gameSchema</a></li><li><a href="global.html#gameSettings">gameSettings</a></li><li><a href="global.html#history">history</a></li><li><a href="global.html#isModalOpen">isModalOpen</a></li><li><a href="global.html#lockedMode">lockedMode</a></li><li><a href="global.html#mode">mode</a></li><li><a href="global.html#moveTimeLimit">moveTimeLimit</a></li><li><a href="global.html#nickname">nickname</a></li><li><a href="global.html#playerColor">playerColor</a></li><li><a href="global.html#preferences">preferences</a></li><li><a href="global.html#roomCode">roomCode</a></li><li><a href="global.html#rows">rows</a></li><li><a href="global.html#setGameSession">setGameSession</a></li><li><a href="global.html#status">status</a></li><li><a href="global.html#useConsentStore">useConsentStore</a></li><li><a href="global.html#useGame">useGame</a></li><li><a href="global.html#useGameStore">useGameStore</a></li><li><a href="global.html#useGameTimer">useGameTimer</a></li><li><a href="global.html#useSignalR">useSignalR</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">validation/GameSchema.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import * as yup from 'yup';
+
+/**
+ * Expected shape of the data validated by the game settings schema.
+ * @typedef {Object} GameSettingsFormValues
+ * @property {'bot'|'online'} mode - Defines the primary game mode.
+ * @property {string} [LevelBot] - Bot difficulty level. Required if mode is 'bot'.
+ * @property {string} [firstPlayer] - Determines who makes the first move. Required if mode is 'bot'.
+ * @property {string} [playerColor] - Hex color for the human player's pieces. Required if mode is 'bot'.
+ * @property {string} [botColor] - Hex color for the bot's pieces. Required if mode is 'bot'.
+ * @property {number} rows - Number of rows in the game grid (4-10).
+ * @property {number} columns - Number of columns in the game grid (4-10).
+ * @property {number|null} [moveTimeLimit] - Optional time limit for a single turn in seconds (5-120).
+ * @property {string} [nickname] - User nickname for online identity. Contextually required based on GDPR consent.
+ * @property {string} [roomCode] - Code to join a specific multiplayer room.
+ */
+
+/**
+ * Validation schema for the Game Settings form.
+ * Utilizes `yup` to enforce data types, constraints, and complex conditional requirements.
+ * This schema ensures that board dimensions are within technical limits and that 
+ * specific configurations (like bot difficulty or online nicknames) are provided 
+ * only when the relevant game mode is selected.
+ * @constant
+ * @category Validation
+ * @type {yup.ObjectSchema&lt;GameSettingsFormValues>}
+ */
+export const gameSchema = yup.object({
+  /**
+   * Defines the primary game mode. 
+   * Must be either 'bot' (Local) or 'online' (SignalR).
+   */
+  mode: yup
+    .string()
+    .required('Оберіть режим гри')
+    .oneOf(['bot', 'online'], 'Невірний режим гри'),
+
+  /**
+   * Bot difficulty level. Required only if 'mode' is set to 'bot'.
+   */
+  LevelBot: yup.string().when('mode', {
+    is: 'bot',
+    then: (schema) => schema.required('Оберіть рівень бота'),
+    otherwise: (schema) => schema.notRequired(), 
+  }),
+
+  /**
+   * Determines who makes the first move. Required only if 'mode' is set to 'bot'.
+   */
+  firstPlayer: yup.string().when('mode', {
+    is: 'bot',
+    then: (schema) => schema.required('Оберіть першого гравця'),
+    otherwise: (schema) => schema.notRequired(),
+  }),
+
+  /**
+   * Visual color for the human player's pieces. Required only if 'mode' is set to 'bot'.
+   */
+  playerColor: yup.string().when('mode', {
+    is: 'bot',
+    then: (schema) => schema.required('Оберіть колір ваших фішок'),
+    otherwise: (schema) => schema.notRequired(),
+  }),
+
+  /**
+   * Visual color for the AI bot's pieces. Required only if 'mode' is set to 'bot'.
+   */
+  botColor: yup.string().when('mode', {
+    is: 'bot',
+    then: (schema) => schema.required('Оберіть колір фішок бота'),
+    otherwise: (schema) => schema.notRequired(),
+  }),
+
+  /**
+   * Number of rows in the game grid. Range: 4 to 10.
+   */
+  rows: yup
+    .number()
+    .typeError('Має бути число')
+    .required('Введіть кількість рядків')
+    .min(4, 'Мінімум 4 рядки')
+    .max(10, 'Максимум 10 рядків')
+    .integer('Має бути ціле число'),
+
+  /**
+   * Number of columns in the game grid. Range: 4 to 10.
+   */
+  columns: yup
+    .number()
+    .typeError('Має бути число')
+    .required('Введіть кількість колонок')
+    .min(4, 'Мінімум 4 колонки')
+    .max(10, 'Максимум 10 колонки')
+    .integer('Має бути ціле число'),
+
+  /**
+   * Optional time limit for a single turn in seconds. 
+   * Range: 5 to 120 seconds. Empty strings are transformed to null.
+   */
+  moveTimeLimit: yup
+    .number()
+    .nullable()
+    .transform((value, originalValue) =>
+      String(originalValue).trim() === '' ? null : value
+    )
+    .typeError('Має бути число')
+    .min(5, 'Мінімум 5 секунд')
+    .max(120, 'Максимум 120 секунд')
+    .integer('Має бути ціле число'),
+
+  /**
+   * User nickname for online identity. 
+   * Required only if 'mode' is 'online' and the GDPR consent for nickname usage ($canUseNickname) is granted.
+   */
+  nickname: yup.string().when(['mode', '$canUseNickname'], ([mode, canUseNickname], schema) => {
+    if (mode === 'online' &amp;&amp; canUseNickname) {
+      return schema.required('Введіть нікнейм');
+    }
+    return schema.notRequired();
+  }),
+
+  /**
+   * Code to join a specific multiplayer room. Optional during creation, required contextually.
+   */
+  roomCode: yup.string().when('mode', {
+    is: 'online',
+    then: (schema) => schema,
+    otherwise: (schema) => schema.notRequired(),
+  }),
+});</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Sat Feb 28 2026 13:19:31 GMT+0200 (Восточная Европа, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

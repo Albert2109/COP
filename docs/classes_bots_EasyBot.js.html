@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>classes/bots/EasyBot.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Bot.html">Bot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Bot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="Bot.html#evaluatePosition">evaluatePosition</a></li><li data-type='method' style='display: none;'><a href="Bot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="Bot.html#makeMove">makeMove</a></li></ul></li><li><a href="EasyBot.html">EasyBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findDefensiveMove">findDefensiveMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findWinningMove">findWinningMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#makeMove">makeMove</a></li></ul></li><li><a href="HardBot.html">HardBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateBoard">evaluateBoard</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateCell">evaluateCell</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#isBoardFull">isBoardFull</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#makeMove">makeMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#minimax">minimax</a></li></ul></li><li><a href="Player.html">Player</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Player.html#makeMove">makeMove</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#BoardProps">BoardProps</a></li><li><a href="global.html#ButtonProps">ButtonProps</a></li><li><a href="global.html#ConsentPreferences">ConsentPreferences</a></li><li><a href="global.html#ConsentStore">ConsentStore</a></li><li><a href="global.html#CookieConsent">CookieConsent</a></li><li><a href="global.html#GameEndPortalProps">GameEndPortalProps</a></li><li><a href="global.html#GameHeaderProps">GameHeaderProps</a></li><li><a href="global.html#GamePageProps">GamePageProps</a></li><li><a href="global.html#GameResult">GameResult</a></li><li><a href="global.html#GameSessionSlice">GameSessionSlice</a></li><li><a href="global.html#GameSettings">GameSettings</a></li><li><a href="global.html#GameSettingsFormProps">GameSettingsFormProps</a></li><li><a href="global.html#GameSettingsFormValues">GameSettingsFormValues</a></li><li><a href="global.html#HistorySlice">HistorySlice</a></li><li><a href="global.html#LevelBot">LevelBot</a></li><li><a href="global.html#MoveTimerProps">MoveTimerProps</a></li><li><a href="global.html#OnlineGamePageProps">OnlineGamePageProps</a></li><li><a href="global.html#OnlineGameProps">OnlineGameProps</a></li><li><a href="global.html#PrivacyFooter">PrivacyFooter</a></li><li><a href="global.html#PrivacyPolicy">PrivacyPolicy</a></li><li><a href="global.html#ResultInfoProps">ResultInfoProps</a></li><li><a href="global.html#ResultsPageProps">ResultsPageProps</a></li><li><a href="global.html#StartPageProps">StartPageProps</a></li><li><a href="global.html#UseGameReturn">UseGameReturn</a></li><li><a href="global.html#UseSignalRReturn">UseSignalRReturn</a></li><li><a href="global.html#WaitingRoomPlayer">WaitingRoomPlayer</a></li><li><a href="global.html#WaitingRoomProps">WaitingRoomProps</a></li><li><a href="global.html#addGameToHistory">addGameToHistory</a></li><li><a href="global.html#botColor">botColor</a></li><li><a href="global.html#clearSession">clearSession</a></li><li><a href="global.html#columns">columns</a></li><li><a href="global.html#createGameSessionSlice">createGameSessionSlice</a></li><li><a href="global.html#createHistorySlice">createHistorySlice</a></li><li><a href="global.html#firstPlayer">firstPlayer</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#gameSchema">gameSchema</a></li><li><a href="global.html#gameSettings">gameSettings</a></li><li><a href="global.html#history">history</a></li><li><a href="global.html#isModalOpen">isModalOpen</a></li><li><a href="global.html#lockedMode">lockedMode</a></li><li><a href="global.html#mode">mode</a></li><li><a href="global.html#moveTimeLimit">moveTimeLimit</a></li><li><a href="global.html#nickname">nickname</a></li><li><a href="global.html#playerColor">playerColor</a></li><li><a href="global.html#preferences">preferences</a></li><li><a href="global.html#roomCode">roomCode</a></li><li><a href="global.html#rows">rows</a></li><li><a href="global.html#setGameSession">setGameSession</a></li><li><a href="global.html#status">status</a></li><li><a href="global.html#useConsentStore">useConsentStore</a></li><li><a href="global.html#useGame">useGame</a></li><li><a href="global.html#useGameStore">useGameStore</a></li><li><a href="global.html#useGameTimer">useGameTimer</a></li><li><a href="global.html#useSignalR">useSignalR</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">classes/bots/EasyBot.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Player } from "../Player";
+
+/**
+ * Class representing an easy-level bot (Beginner).
+ * It primarily makes random moves but has a small probability
+ * of noticing and executing a winning move or blocking the opponent.
+ * @class
+ * @extends Player
+ */
+export class EasyBot extends Player {
+  /**
+   * Creates an instance of the easy bot.
+   * @param {string} color - The color of the bot's pieces ('red' or 'yellow').
+   * @param {number} rows - The number of rows on the game board.
+   * @param {number} columns - The number of columns on the game board.
+   */
+  constructor(color, rows, columns) {
+    super('Простий Бот', 'bot', color, rows, columns);
+  }
+
+  /**
+   * Asynchronously chooses a move based on simple probabilities.
+   * - 30% chance to attempt blocking the opponent's winning move.
+   * - 20% chance to attempt a winning move if available.
+   * - Otherwise, it picks a completely random available column.
+   * @param {Array&lt;Array&lt;string|null>>} board - The current state of the game board.
+   * @returns {Promise&lt;number|null>} A promise that resolves to the index of the chosen column, or null if no moves are available.
+   */
+  async chooseMove(board) {
+    const available = this.getAvailableMoves(board);
+    if (available.length === 0) return Promise.resolve(null); 
+
+    // 30% chance to play defensively
+    if (Math.random() &lt; 0.3) {
+      const defendCol = this.findDefensiveMove(board, available);
+      if (defendCol !== null) return Promise.resolve(defendCol); 
+    }
+
+    // 20% chance to play offensively (go for the win)
+    if (Math.random() &lt; 0.2) {
+      const winCol = this.findWinningMove(board, available);
+      if (winCol !== null) return Promise.resolve(winCol); 
+    }
+    
+    // Fallback: completely random move
+    return Promise.resolve(available[Math.floor(Math.random() * available.length)]);
+  }
+  
+  /**
+   * Scans available columns to find a move that results in an immediate win for the bot.
+   * @param {Array&lt;Array&lt;string|null>>} board - The current state of the game board.
+   * @param {Array&lt;number>} available - An array of available column indices.
+   * @returns {number|null} The column index that leads to a win, or null if none exists.
+   */
+  findWinningMove(board, available) {
+    for (const col of available) {
+      const testBoard = this.makeMove(board, col);
+      if (testBoard &amp;&amp; this.checkWinner(testBoard) === this.symbol) {
+        return col;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Scans available columns to find a move that would block the opponent from winning on their next turn.
+   * @param {Array&lt;Array&lt;string|null>>} board - The current state of the game board.
+   * @param {Array&lt;number>} available - An array of available column indices.
+   * @returns {number|null} The column index required to block the opponent, or null if not applicable.
+   */
+  findDefensiveMove(board, available) {
+    for (const col of available) {
+      const testBoard = board.map(r => [...r]);
+      for (let row = this.rows - 1; row >= 0; row--) {
+        if (testBoard[row][col] === null) {
+          testBoard[row][col] = 'player';
+          if (this.checkWinner(testBoard) === 'player') {
+            return col;
+          }
+          break;
+        }
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Retrieves all columns that are not completely full.
+   * @param {Array&lt;Array&lt;string|null>>} board - The current game board.
+   * @returns {Array&lt;number>} An array of indices representing available columns.
+   */
+  getAvailableMoves(board) {
+    return board[0]
+      .map((cell, col) => cell === null ? col : null)
+      .filter(col => col !== null);
+  }
+
+  /**
+   * Checks the board for four consecutive pieces in a horizontal row.
+   * @param {Array&lt;Array&lt;string|null>>} board - The board to evaluate.
+   * @returns {string|null} The symbol of the winner, or null.
+   */
+  checkHorizontal(board) {
+    for (let row = 0; row &lt; this.rows; row++) {
+      for (let col = 0; col &lt;= this.columns - 4; col++) {
+        const cells = [board[row][col], board[row][col+1], board[row][col+2], board[row][col+3]];
+        if (cells[0] !== null &amp;&amp; cells.every(cell => cell === cells[0])) {
+          return cells[0];
+        }
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Checks the board for four consecutive pieces in a vertical column.
+   * @param {Array&lt;Array&lt;string|null>>} board - The board to evaluate.
+   * @returns {string|null} The symbol of the winner, or null.
+   */
+  checkVertical(board) {
+    for (let col = 0; col &lt; this.columns; col++) {
+      for (let row = 0; row &lt;= this.rows - 4; row++) {
+        const cells = [board[row][col], board[row+1][col], board[row+2][col], board[row+3][col]];
+        if (cells[0] !== null &amp;&amp; cells.every(cell => cell === cells[0])) {
+          return cells[0];
+        }
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Checks the board for four consecutive pieces in a diagonal line (top-left to bottom-right).
+   * @param {Array&lt;Array&lt;string|null>>} board - The board to evaluate.
+   * @returns {string|null} The symbol of the winner, or null.
+   */
+  checkDiagonalDown(board) {
+    for (let row = 0; row &lt;= this.rows - 4; row++) {
+      for (let col = 0; col &lt;= this.columns - 4; col++) {
+        const cells = [board[row][col], board[row+1][col+1], board[row+2][col+2], board[row+3][col+3]];
+        if (cells[0] !== null &amp;&amp; cells.every(cell => cell === cells[0])) {
+          return cells[0];
+        }
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Checks the board for four consecutive pieces in a diagonal line (bottom-left to top-right).
+   * @param {Array&lt;Array&lt;string|null>>} board - The board to evaluate.
+   * @returns {string|null} The symbol of the winner, or null.
+   */
+  checkDiagonalUp(board) {
+    for (let row = 3; row &lt; this.rows; row++) { 
+      for (let col = 0; col &lt;= this.columns - 4; col++) {
+        const cells = [board[row][col], board[row-1][col+1], board[row-2][col+2], board[row-3][col+3]];
+        if (cells[0] !== null &amp;&amp; cells.every(cell => cell === cells[0])) {
+          return cells[0];
+        }
+      }
+    }
+    return null;
+  }
+  
+  /**
+   * Evaluates the entire board to determine if a winning condition has been met.
+   * @param {Array&lt;Array&lt;string|null>>} board - The board to check.
+   * @returns {string|null} The symbol of the winning player, or null if the game is still ongoing.
+   */
+  checkWinner(board) {
+    return this.checkHorizontal(board) || this.checkVertical(board) || 
+           this.checkDiagonalDown(board) || this.checkDiagonalUp(board);
+  }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Sat Feb 28 2026 13:19:31 GMT+0200 (Восточная Европа, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

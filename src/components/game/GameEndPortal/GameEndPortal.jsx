@@ -1,5 +1,27 @@
 import ReactDOM from 'react-dom';
 
+/**
+ * Пропси для компонента GameEndPortal.
+ * @typedef {Object} GameEndPortalProps
+ * @property {boolean} isOpen - Визначає, чи видимий портал завершення гри.
+ * @property {string|null} winner - Результат гри ('player', 'bot' або 'draw').
+ * @property {string} time - Відформатований рядок із загальним часом гри (наприклад, "02:45").
+ * @property {Function} onPlayAgain - Функція для миттєвого перезапуску матчу з тими ж налаштуваннями.
+ * @property {Function} onChangeSettings - Функція для повернення до конфігурації налаштувань.
+ * @property {Function} EndGame - Функція для повного виходу з поточної ігрової сесії.
+ * @property {string} [botLevel] - (Опціонально) Рівень складності бота-супротивника ('easy', 'medium', 'hard').
+ */
+
+/**
+ * A modal portal component displayed when a game session ends.
+ * Renders over the entire application using ReactDOM.createPortal to avoid z-index issues.
+ * Displays the result of the game (winner/draw), the elapsed time, bot difficulty, 
+ * and provides actions for the next steps.
+ * * @component
+ * @category Components
+ * @param {GameEndPortalProps} props - Об'єкт із пропсами компонента.
+ * @returns {React.ReactPortal|null} The rendered portal attached to document.body, or null if the modal is closed.
+ */
 export default function GameEndPortal({ 
   isOpen, 
   winner, 

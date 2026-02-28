@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>components/CookieConsent.jsx - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Bot.html">Bot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Bot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="Bot.html#evaluatePosition">evaluatePosition</a></li><li data-type='method' style='display: none;'><a href="Bot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="Bot.html#makeMove">makeMove</a></li></ul></li><li><a href="EasyBot.html">EasyBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findDefensiveMove">findDefensiveMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findWinningMove">findWinningMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#makeMove">makeMove</a></li></ul></li><li><a href="HardBot.html">HardBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateBoard">evaluateBoard</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateCell">evaluateCell</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#isBoardFull">isBoardFull</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#makeMove">makeMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#minimax">minimax</a></li></ul></li><li><a href="Player.html">Player</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Player.html#makeMove">makeMove</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#BoardProps">BoardProps</a></li><li><a href="global.html#ButtonProps">ButtonProps</a></li><li><a href="global.html#ConsentPreferences">ConsentPreferences</a></li><li><a href="global.html#ConsentStore">ConsentStore</a></li><li><a href="global.html#CookieConsent">CookieConsent</a></li><li><a href="global.html#GameEndPortalProps">GameEndPortalProps</a></li><li><a href="global.html#GameHeaderProps">GameHeaderProps</a></li><li><a href="global.html#GamePageProps">GamePageProps</a></li><li><a href="global.html#GameResult">GameResult</a></li><li><a href="global.html#GameSessionSlice">GameSessionSlice</a></li><li><a href="global.html#GameSettings">GameSettings</a></li><li><a href="global.html#GameSettingsFormProps">GameSettingsFormProps</a></li><li><a href="global.html#GameSettingsFormValues">GameSettingsFormValues</a></li><li><a href="global.html#HistorySlice">HistorySlice</a></li><li><a href="global.html#LevelBot">LevelBot</a></li><li><a href="global.html#MoveTimerProps">MoveTimerProps</a></li><li><a href="global.html#OnlineGamePageProps">OnlineGamePageProps</a></li><li><a href="global.html#OnlineGameProps">OnlineGameProps</a></li><li><a href="global.html#PrivacyFooter">PrivacyFooter</a></li><li><a href="global.html#PrivacyPolicy">PrivacyPolicy</a></li><li><a href="global.html#ResultInfoProps">ResultInfoProps</a></li><li><a href="global.html#ResultsPageProps">ResultsPageProps</a></li><li><a href="global.html#StartPageProps">StartPageProps</a></li><li><a href="global.html#UseGameReturn">UseGameReturn</a></li><li><a href="global.html#UseSignalRReturn">UseSignalRReturn</a></li><li><a href="global.html#WaitingRoomPlayer">WaitingRoomPlayer</a></li><li><a href="global.html#WaitingRoomProps">WaitingRoomProps</a></li><li><a href="global.html#addGameToHistory">addGameToHistory</a></li><li><a href="global.html#botColor">botColor</a></li><li><a href="global.html#clearSession">clearSession</a></li><li><a href="global.html#columns">columns</a></li><li><a href="global.html#createGameSessionSlice">createGameSessionSlice</a></li><li><a href="global.html#createHistorySlice">createHistorySlice</a></li><li><a href="global.html#firstPlayer">firstPlayer</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#gameSchema">gameSchema</a></li><li><a href="global.html#gameSettings">gameSettings</a></li><li><a href="global.html#history">history</a></li><li><a href="global.html#isModalOpen">isModalOpen</a></li><li><a href="global.html#lockedMode">lockedMode</a></li><li><a href="global.html#mode">mode</a></li><li><a href="global.html#moveTimeLimit">moveTimeLimit</a></li><li><a href="global.html#nickname">nickname</a></li><li><a href="global.html#playerColor">playerColor</a></li><li><a href="global.html#preferences">preferences</a></li><li><a href="global.html#roomCode">roomCode</a></li><li><a href="global.html#rows">rows</a></li><li><a href="global.html#setGameSession">setGameSession</a></li><li><a href="global.html#status">status</a></li><li><a href="global.html#useConsentStore">useConsentStore</a></li><li><a href="global.html#useGame">useGame</a></li><li><a href="global.html#useGameStore">useGameStore</a></li><li><a href="global.html#useGameTimer">useGameTimer</a></li><li><a href="global.html#useSignalR">useSignalR</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">components/CookieConsent.jsx</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState, useEffect } from 'react';
+import { useConsentStore } from '../store/useConsentStore';
+import { Link } from 'react-router-dom';
+
+/**
+ * A GDPR-compliant cookie and local storage consent banner.
+ * Manages user privacy preferences for game sessions and personalization. 
+ * The component integrates with a global `useConsentStore` to persist choices 
+ * and controls the availability of features like SignalR online play and nickname saving.
+ * 
+ * * @component
+ * @category Components
+ * @returns {JSX.Element|null} The rendered consent banner/modal or null if the user has already decided.
+ */
+const CookieConsent = () => {
+  /** * Destructured state and actions from the global consent store.
+   * Includes preferences for session storage and personalization.
+   */
+  const { status, preferences, setPreferences, acceptAll, declineAll, isModalOpen, closeModal } = useConsentStore();
+  
+/**
+ * Internal state to toggle between the simple banner view and the granular configuration view.
+ * @type {Array} 
+ */
+const [isConfiguring, setIsConfiguring] = useState(false);
+
+  /**
+   * Automatically opens the configuration view if the modal is triggered from the settings/footer.
+   */
+  useEffect(() => {
+    if (isModalOpen) setIsConfiguring(true);
+  }, [isModalOpen]);
+
+  /** * Determines visibility logic: show if the user hasn't decided yet or if they explicitly opened the settings modal.
+   */
+  const shouldShow = status === 'undecided' || isModalOpen;
+
+  if (!shouldShow) return null;
+
+  return (
+    &lt;div className="fixed bottom-8 left-1/2 -translate-x-1/2 w-[95%] max-w-2xl z-[100] animate-in fade-in slide-in-from-bottom-10 duration-700">
+      &lt;div className="bg-slate-900 border border-blue-500/40 p-6 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] relative">
+
+        {/* Close button - only visible if the user has already made an initial choice */}
+        {status !== 'undecided' &amp;&amp; (
+          &lt;button 
+            onClick={closeModal}
+            className="absolute top-4 right-5 text-slate-400 hover:text-white transition-colors text-xl font-bold"
+          >
+            ✕
+          &lt;/button>
+        )}
+
+        &lt;div className="flex items-start gap-4 mb-6">
+          &lt;div className="bg-blue-600/20 p-3 rounded-2xl text-3xl shrink-0">🍪&lt;/div>
+          &lt;div className="text-left">
+            &lt;h4 className="text-white font-bold text-lg tracking-tight">Privacy settings&lt;/h4>
+            &lt;p className="text-slate-300 text-sm leading-relaxed mt-1">
+              This project uses local storage to run the game.
+              Check out the &lt;Link to="/privacy-policy" className="text-blue-400 hover:text-blue-300 underline underline-offset-4 font-semibold">Privacy Policy&lt;/Link>
+            &lt;/p>
+          &lt;/div>
+        &lt;/div>
+
+        {/* Granular configuration view for specific categories */}
+        {(isConfiguring || isModalOpen) &amp;&amp; (
+          &lt;div className="space-y-4 mb-6 p-4 bg-slate-800/50 rounded-2xl border border-slate-700">
+            &lt;div className="flex items-center justify-between">
+              &lt;div>
+                &lt;p className="text-white text-sm font-bold">Game session (Required)&lt;/p>
+                &lt;p className="text-slate-400 text-xs">Storing the room ID for connection via SignalR.&lt;/p>
+              &lt;/div>
+              &lt;input 
+                type="checkbox" 
+                checked={preferences.session}
+                onChange={(e) => setPreferences({ session: e.target.checked })}
+                className="w-5 h-5 accent-blue-500 cursor-pointer"
+              />
+            &lt;/div>
+
+            &lt;div className="flex items-center justify-between">
+              &lt;div>
+                &lt;p className="text-white text-sm font-bold">Personalization (Optional)&lt;/p>
+                &lt;p className="text-slate-400 text-xs">Saving your nickname for future games.&lt;/p>
+              &lt;/div>
+              &lt;input 
+                type="checkbox" 
+                checked={preferences.nickname}
+                onChange={(e) => setPreferences({ nickname: e.target.checked })}
+                className="w-5 h-5 accent-blue-500 cursor-pointer"
+              />
+            &lt;/div>
+          &lt;/div>
+        )}
+
+        {/* Action buttons based on the current view (Banner vs Configuration) */}
+        &lt;div className="flex flex-col md:flex-row gap-3">
+          {(!isConfiguring &amp;&amp; status === 'undecided') ? (
+            &lt;>
+              &lt;button 
+                onClick={declineAll}
+                className="px-6 py-3 rounded-xl bg-slate-700 text-white text-sm font-bold hover:bg-slate-600 transition-all"
+              >
+                Reject all
+              &lt;/button>
+              &lt;button 
+                onClick={() => setIsConfiguring(true)}
+                className="px-6 py-3 rounded-xl bg-slate-800 border border-slate-600 text-white text-sm font-bold hover:bg-slate-700 transition-all"
+              >
+                Configure
+              &lt;/button>
+              &lt;button 
+                onClick={acceptAll}
+                className="flex-1 px-8 py-3 rounded-xl bg-blue-600 text-white text-sm font-black hover:bg-blue-500 shadow-lg shadow-blue-900/40 transition-all"
+              >
+                Accept everything and play
+              &lt;/button>
+            &lt;/>
+          ) : (
+            &lt;button 
+              onClick={() => {
+                setIsConfiguring(false);
+                closeModal(); 
+              }}
+              className="w-full px-8 py-3 rounded-xl bg-green-600 text-white text-sm font-black hover:bg-green-500 transition-all"
+            >
+              Save selection
+            &lt;/button>
+          )}
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  );
+};
+
+export default CookieConsent;</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Sat Feb 28 2026 13:19:31 GMT+0200 (Восточная Европа, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

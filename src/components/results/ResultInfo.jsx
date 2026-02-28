@@ -1,15 +1,31 @@
 import React from 'react';
 
+/**
+ * Props for the ResultInfo component.
+ * @typedef {Object} ResultInfoProps
+ * @property {string|null} winner - The outcome of the match ('player', 'bot', or 'draw').
+ * @property {string} time - The formatted string of the total time played (e.g., "05:12").
+ * @property {string} [botLevel] - The difficulty level of the bot ('easy', 'medium', 'hard'). Relevant only if mode is 'bot'.
+ * @property {string} mode - The type of game played ('online' or 'bot').
+ */
+
+/**
+ * Renders a summary card displaying the results of a completed game session.
+ * Shows the outcome (win/loss/draw), the game mode or bot difficulty, and the total elapsed time.
+ * Designed with a glassmorphism effect and dark mode support.
+ * @component
+ * @category Components
+ * @param {ResultInfoProps} props - The component properties.
+ * @returns {JSX.Element} The rendered result information card.
+ */
 export default function ResultInfo({ winner, time, botLevel, mode }) {
   
-
   const getWinnerText = () => {
     if (winner === 'draw') return '🤝 Нічия!';
     if (winner === 'player') return '🎉 Перемога!';
     if (winner === 'bot') return '💀 Поразка';
     return 'Гра закінчилась';
   };
-
 
   const getModeText = () => {
     if (mode === 'online') return 'Онлайн гра';
@@ -40,6 +56,4 @@ export default function ResultInfo({ winner, time, botLevel, mode }) {
     </div>
   </div>
 );
-
-
 }

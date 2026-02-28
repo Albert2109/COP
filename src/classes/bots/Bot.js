@@ -1,14 +1,35 @@
 import { Player } from '../Player.js';
 
+/**
+ * Base Bot class for the Connect Four game.
+ * Analyzes the current board state and uses basic heuristic evaluation
+ * to block the opponent or choose the most advantageous position.
+ * @class
+ * @extends Player
+ */
 export class Bot extends Player {
+  /**
+   * Creates an instance of the base Bot.
+   * @param {string} color - The color of the bot's pieces ('red' or 'yellow').
+   * @param {number} rows - The number of rows on the game board.
+   * @param {number} columns - The number of columns on the game board.
+   */
   constructor(color, rows, columns) {
     super('Бот', 'bot', color, rows, columns);
   }
 
+  /**
+   * Asynchronously calculates the best move for the bot.
+   * First, it checks for an immediate winning move, then it attempts to block
+   * the opponent's winning move. If neither, it chooses the move with the highest heuristic score.
+   * @param {Array<Array<string|null>>} board - The current state of the game board.
+   * @returns {Promise<number|null>} A promise that resolves to the index of the chosen column, or null if no moves are available.
+   */
   async chooseMove(board) {
     const available = this.getAvailableMoves(board);
     if (available.length === 0) return null;
 
+    // 1. Try to find a winning move for the bot
     for (const col of available) {
       const testBoard = this.makeMove(board, col);
       if (testBoard && this.checkWinner(testBoard) === this.symbol) {
@@ -16,6 +37,7 @@ export class Bot extends Player {
       }
     }
 
+    // 2. Try to block the opponent's winning move
     for (const col of available) {
       const testBoard = board.map(r => [...r]);
       for (let row = this.rows - 1; row >= 0; row--) {
@@ -29,6 +51,7 @@ export class Bot extends Player {
       }
     }
 
+    // 3. Evaluate positions to find the best alternative move
     let bestCol = available[0];
     let bestScore = -Infinity;
 
@@ -42,12 +65,22 @@ export class Bot extends Player {
     return Promise.resolve(bestCol); 
   }
   
+  /**
+   * Returns a list of available columns where a move can be made.
+   * @param {Array<Array<string|null>>} board - The current state of the game board.
+   * @returns {Array<number>} An array of available column indices.
+   */
   getAvailableMoves(board) {
     return board[0]
       .map((cell, col) => cell === null ? col : null)
       .filter(col => col !== null);
   }
 
+  /**
+   * Checks for a horizontal win condition.
+   * @param {Array<Array<string|null>>} board - The board to check.
+   * @returns {string|null} The symbol of the winner, or null if no winner.
+   */
   checkHorizontal(board) {
     for (let row = 0; row < this.rows; row++) {
       for (let col = 0; col <= this.columns - 4; col++) {
@@ -60,6 +93,11 @@ export class Bot extends Player {
     return null;
   }
 
+  /**
+   * Checks for a vertical win condition.
+   * @param {Array<Array<string|null>>} board - The board to check.
+   * @returns {string|null} The symbol of the winner, or null if no winner.
+   */
   checkVertical(board) {
     for (let col = 0; col < this.columns; col++) {
       for (let row = 0; row <= this.rows - 4; row++) {
@@ -72,6 +110,11 @@ export class Bot extends Player {
     return null;
   }
 
+  /**
+   * Checks for a diagonal win condition (top-left to bottom-right).
+   * @param {Array<Array<string|null>>} board - The board to check.
+   * @returns {string|null} The symbol of the winner, or null if no winner.
+   */
   checkDiagonalDown(board) {
     for (let row = 0; row <= this.rows - 4; row++) {
       for (let col = 0; col <= this.columns - 4; col++) {
@@ -84,6 +127,11 @@ export class Bot extends Player {
     return null;
   }
 
+  /**
+   * Checks for a diagonal win condition (bottom-left to top-right).
+   * @param {Array<Array<string|null>>} board - The board to check.
+   * @returns {string|null} The symbol of the winner, or null if no winner.
+   */
   checkDiagonalUp(board) {
     for (let row = 3; row < this.rows; row++) {
       for (let col = 0; col <= this.columns - 4; col++) {
@@ -96,11 +144,24 @@ export class Bot extends Player {
     return null;
   }
 
+  /**
+   * Checks if there is a winner on the given board.
+   * @param {Array<Array<string|null>>} board - The board to check.
+   * @returns {string|null} The symbol of the winner, or null if the game continues.
+   */
   checkWinner(board) {
     return this.checkHorizontal(board) || this.checkVertical(board) || 
            this.checkDiagonalDown(board) || this.checkDiagonalUp(board);
   }
 
+  /**
+   * Evaluates the desirability of a specific cell position based on potential winning lines.
+   * Awards points for consecutive pieces of the given symbol.
+   * @param {Array<Array<string|null>>} board - The current state of the board.
+   * @param {number} col - The column index to evaluate.
+   * @param {string} symbol - The symbol of the player/bot to evaluate for.
+   * @returns {number} A heuristic score representing the strength of the position.
+   */
   evaluatePosition(board, col, symbol) {
     let score = 0;
     const testBoard = board.map(r => [...r]);

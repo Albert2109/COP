@@ -5,6 +5,25 @@ import { HubConnectionState } from '@microsoft/signalr';
 import OnlineGame from '../components/game/OnlineGame';
 import WaitingRoom from '../components/game/WaitingRoom'; 
 
+/**
+ * Props for the OnlineGamePage component.
+ * @typedef {Object} OnlineGamePageProps
+ * @property {Object} settings - Global game settings (nickname, colors, board size).
+ * @property {Function} onGoToSettings - Callback to return to the settings menu.
+ * @property {Function} onGoToResults - Callback to navigate to the results/history page.
+ * @property {Function} onGameFinished - Callback to save match results to the local history.
+ */
+
+/**
+ * Page component that manages the lifecycle of an online multiplayer session.
+ * Handles SignalR connection, room management (creation/joining), player synchronization,
+ * and game state transitions (waiting vs. playing).
+ * 
+ * * * * @component
+ * @category Pages
+ * @param {OnlineGamePageProps} props - Component properties.
+ * @returns {JSX.Element} The rendered online game or waiting room interface.
+ */
 export default function OnlineGamePage({
     settings, 
     onGoToSettings,
@@ -14,34 +33,64 @@ export default function OnlineGamePage({
     const { roomCode: codeFromUrl } = useParams();
     const navigate = useNavigate(); 
 
+    /** * Current game phase: 'waiting' or 'playing'.
+     * @type {Array} 
+     */
     const [gameState, setGameState] = useState('waiting'); 
+    
+    /** * List of players currently in the room.
+     * @type {Array} 
+     */
     const [players, setPlayers] = useState([]); 
+    
+    /** * Current unique room identifier.
+     * @type {Array} 
+     */
     const [roomCode, setRoomCode] = useState(codeFromUrl === 'new' ? "" : codeFromUrl); 
+    
+    /** * Data required to initialize the board and turn order.
+     * @type {Array} 
+     */
     const [gameStartData, setGameStartData] = useState(null);
+    
     const [opponentLeft, setOpponentLeft] = useState(false);
     const [opponentWantsRestart, setOpponentWantsRestart] = useState(false); 
     const [pendingGameData, setPendingGameData] = useState(null);
 
     const [isGameFinished, setIsGameFinished] = useState(false);
+    
+    /** * Ref to access completion state inside SignalR closures without stale data.
+     * @type {Object} 
+     */
     const isGameFinishedRef = useRef(isGameFinished); 
     const didIClickPlayAgainRef = useRef(false);
 
     const { connection, startConnection, connectionId } = useSignalR();
     const joinAttempted = useRef(false);
 
+    /**
+     * Updates the game completion state both in state and in the reference.
+     * @param {boolean} value 
+     */
     const setGameFinished = useCallback((value) => {
         setIsGameFinished(value);
         isGameFinishedRef.current = value;
     }, []); 
 
+    /**
+     * Effect: Ensures SignalR connection is active.
+     */
     useEffect(() => {
      if (connection && connection.state === HubConnectionState.Disconnected) {
          startConnection().catch(() => {
-             alert("Не вдалося підключитися до ігрового сервера. Спробуйте оновити сторінку.");
+             alert("Не вдалося підключитися до сервера. Оновіть сторінку.");
          });
      }
     }, [connection, startConnection]);
 
+    /**
+     * Effect: Joins or creates a room once the connection is established.
+     */
     useEffect(() => {
      if (connection && connection.state === HubConnectionState.Connected && !joinAttempted.current) {
          joinAttempted.current = true; 
@@ -53,26 +102,25 @@ export default function OnlineGamePage({
              settings.columns || 7
          )
          .catch(err => {
-             console.error("Failed to join room: ", err);
-             alert(`Не вдалося приєднатися до кімнати: ${err.message || 'Помилка сервера'}`);
+             console.error("Join room error: ", err);
              joinAttempted.current = false; 
              navigate('/settings'); 
          });
      }
     }, [connection, connectionId, settings.nickname, settings.rows, settings.columns, codeFromUrl, navigate]); 
 
+    /**
+     * Prepares parameters for the online match and switches view to the game board.
+     * @param {Object} gameData - Initial game parameters from the server.
+     */
     const startGameWithData = useCallback((gameData) => {
-        if (!connectionId || !gameData || !gameData.players) { 
-            console.error("Invalid data in startGameWithData"); return;
-        }
+        if (!connectionId || !gameData || !gameData.players) return;
         
         const actualPlayers = gameData.players; 
         setPlayers(actualPlayers);
         const myPlayer = actualPlayers.find(p => p.connectionId === connectionId); 
 
-        if (!myPlayer) {
-            console.error("Cannot find myself in player list"); return;
-        }
+        if (!myPlayer) return;
         const iAmFirst = gameData.firstPlayerId === connectionId; 
         
         setGameStartData({
@@ -94,18 +142,19 @@ export default function OnlineGamePage({
         didIClickPlayAgainRef.current = false; 
     }, [connectionId, settings.playerColor, settings.botColor, settings.nickname, setGameFinished]);
 
+    /**
+     * Handles the 'Play Again' request logic between two networked players.
+     */
     const handleRestartApproved = useCallback(() => {
-        console.log("User clicked 'Play Again'.");
         didIClickPlayAgainRef.current = true; 
-
         if (pendingGameData) {
-            console.log("Opponent already agreed. Restarting.");
             startGameWithData(pendingGameData); 
-        } else {
-            console.log("Waiting for opponent to approve restart.");
         }
     }, [pendingGameData, startGameWithData]);
 
+    /**
+     * Effect: Registers and cleans up SignalR event listeners for room and game updates.
+     */
     useEffect(() => {
         if (!connection || connection.state !== HubConnectionState.Connected) return;
 
@@ -116,89 +165,59 @@ export default function OnlineGamePage({
                 navigate(`/online-game/${code}`, { replace: true });
             }
         };
-        const updateHandler = (playerList) => {
-            setPlayers(playerList);
-        };
-        const errorHandler = (message) => {
-            console.error("SignalR Hub Error:", message);
-            alert(`Помилка сервера: ${message}`);
-        };
 
         const gameStartHandler = (gameData) => {
-            console.log("GameStart event received.");
             if (isGameFinishedRef.current) {
                 setPendingGameData(gameData);
-                if (didIClickPlayAgainRef.current) {
-                    startGameWithData(gameData);
-                } 
+                if (didIClickPlayAgainRef.current) startGameWithData(gameData);
             } else {
                 startGameWithData(gameData);
             }
         };
         
        const gameFinishedHandler = (winnerConnectionId, time) => {
-             console.log(`GameFinished received. WinnerId: ${winnerConnectionId ?? "DRAW"}, Time: ${time}.`);
              if (!isGameFinishedRef.current) { 
                  setGameFinished(true); 
-
                  if (winnerConnectionId !== undefined && time && onGameFinished) {
-                    let relativeWinner = 'draw';
-                    if (winnerConnectionId === connectionId) relativeWinner = 'player';
-                    else if (winnerConnectionId) relativeWinner = 'bot';
-                    console.log("Saving result to history:", { winner: relativeWinner, time });
+                    let relativeWinner = winnerConnectionId === connectionId ? 'player' : (winnerConnectionId ? 'bot' : 'draw');
                     onGameFinished({ winner: relativeWinner, time });
-                 } else {
-                      console.warn("Could not save history: data missing or onGameFinished missing!");
                  }
              }
         };
 
-        const playerLeftHandler = (nickname) => {
-            console.log("PlayerLeft event received:", nickname);
-            setOpponentLeft(true); 
-        };
-        const restartRequestedHandler = (nickname) => {
-             console.log("RestartRequested by:", nickname);
-             setOpponentWantsRestart(true); 
-             setTimeout(() => setOpponentWantsRestart(false), 7000);
-        };
-
         connection.on("JoinedRoom", joinedHandler);
-        connection.on("UpdatePlayerList", updateHandler);
-        connection.on("Error", errorHandler);
+        connection.on("UpdatePlayerList", setPlayers);
         connection.on("GameStart", gameStartHandler);
         connection.on("GameFinished", gameFinishedHandler); 
-        connection.on("PlayerLeft", playerLeftHandler);
-        connection.on("RestartRequested", restartRequestedHandler);
+        connection.on("PlayerLeft", () => setOpponentLeft(true));
+        connection.on("RestartRequested", () => {
+             setOpponentWantsRestart(true); 
+             setTimeout(() => setOpponentWantsRestart(false), 7000);
+        });
 
         return () => {
-             connection?.off("JoinedRoom", joinedHandler);
-             connection?.off("UpdatePlayerList", updateHandler);
-             connection?.off("Error", errorHandler);
-             connection?.off("GameStart", gameStartHandler);
-             connection?.off("GameFinished", gameFinishedHandler); 
-             connection?.off("PlayerLeft", playerLeftHandler);
-             connection?.off("RestartRequested", restartRequestedHandler);
+             connection.off("JoinedRoom");
+             connection.off("UpdatePlayerList");
+             connection.off("GameStart");
+             connection.off("GameFinished"); 
+             connection.off("PlayerLeft");
+             connection.off("RestartRequested");
         };
     }, [connection, codeFromUrl, navigate, startGameWithData, setGameFinished]); 
 
+    // Final cleanup of the connection when the page is destroyed
     useEffect(() => {
      return () => {
-         connection?.stop().catch(err => console.error("Error stopping connection:", err));
+         connection?.stop().catch(err => console.error("Error stopping SignalR:", err));
      };
     }, [connection]);
 
-
-
+    // UI Rendering Logic based on connection and opponent status
     if (isGameFinished && opponentLeft) {
-         console.log("Rendering 'Opponent Left After Game Finished' message.");
          return (
-           <div className="alert alert-warning text-center">
-               <h2>Опонент покинув гру після її завершення</h2>
-               <p>Ви можете перейти до результатів.</p>
-               <button className="btn btn-primary mt-3" onClick={onGoToResults}>
-                   Переглянути результати
-               </button>
+           <div className="alert alert-warning text-center p-10">
+               <h2 className="text-2xl font-bold">Опонент покинув гру</h2>
+               <button className="btn btn-primary mt-5" onClick={onGoToResults}>Результати</button>
            </div>
          );
     }
@@ -220,17 +239,6 @@ export default function OnlineGamePage({
             />
         );
     }
-
-     if (opponentLeft && gameState === 'waiting') {
-         return (
-           <div className="alert alert-warning text-center">
-               <h2>Опонент покинув кімнату</h2>
-               <button className="btn btn-primary mt-3" onClick={onGoToResults}>
-                   На головну
-               </button>
-           </div>
-         );
-     }
 
     return (
         <WaitingRoom 
