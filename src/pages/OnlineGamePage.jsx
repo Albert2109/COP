@@ -6,16 +6,23 @@ import OnlineGame from '../components/game/OnlineGame';
 import WaitingRoom from '../components/game/WaitingRoom'; 
 
 /**
+ * Props for the OnlineGamePage component.
+ * @typedef {Object} OnlineGamePageProps
+ * @property {Object} settings - Global game settings (nickname, colors, board size).
+ * @property {Function} onGoToSettings - Callback to return to the settings menu.
+ * @property {Function} onGoToResults - Callback to navigate to the results/history page.
+ * @property {Function} onGameFinished - Callback to save match results to the local history.
+ */
+
+/**
  * Page component that manages the lifecycle of an online multiplayer session.
  * Handles SignalR connection, room management (creation/joining), player synchronization,
  * and game state transitions (waiting vs. playing).
- * * 
- * * @component
- * @param {Object} props - Component properties.
- * @param {Object} props.settings - Global game settings (nickname, colors, board size).
- * @param {Function} props.onGoToSettings - Callback to return to the settings menu.
- * @param {Function} props.onGoToResults - Callback to navigate to the results/history page.
- * @param {Function} props.onGameFinished - Callback to save match results to the local history.
+ * 
+ * * * * @component
+ * @category Pages
+ * @param {OnlineGamePageProps} props - Component properties.
+ * @returns {JSX.Element} The rendered online game or waiting room interface.
  */
 export default function OnlineGamePage({
     settings, 
@@ -26,20 +33,35 @@ export default function OnlineGamePage({
     const { roomCode: codeFromUrl } = useParams();
     const navigate = useNavigate(); 
 
-    /** @type {[string, function]} Current game phase: 'waiting' or 'playing' */
+    /** * Current game phase: 'waiting' or 'playing'.
+     * @type {Array} 
+     */
     const [gameState, setGameState] = useState('waiting'); 
-    /** @type {[Array, function]} List of players currently in the room */
+    
+    /** * List of players currently in the room.
+     * @type {Array} 
+     */
     const [players, setPlayers] = useState([]); 
-    /** @type {[string, function]} Current unique room identifier */
+    
+    /** * Current unique room identifier.
+     * @type {Array} 
+     */
     const [roomCode, setRoomCode] = useState(codeFromUrl === 'new' ? "" : codeFromUrl); 
-    /** @type {[Object|null, function]} Data required to initialize the board and turn order */
+    
+    /** * Data required to initialize the board and turn order.
+     * @type {Array} 
+     */
     const [gameStartData, setGameStartData] = useState(null);
+    
     const [opponentLeft, setOpponentLeft] = useState(false);
     const [opponentWantsRestart, setOpponentWantsRestart] = useState(false); 
     const [pendingGameData, setPendingGameData] = useState(null);
 
     const [isGameFinished, setIsGameFinished] = useState(false);
-    /** @type {Object} Ref to access completion state inside SignalR closures without stale data */
+    
+    /** * Ref to access completion state inside SignalR closures without stale data.
+     * @type {Object} 
+     */
     const isGameFinishedRef = useRef(isGameFinished); 
     const didIClickPlayAgainRef = useRef(false);
 

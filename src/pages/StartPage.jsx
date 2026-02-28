@@ -1,12 +1,18 @@
 import Button from "../components/ui/Button";
 
 /**
+ * Props for the StartPage component.
+ * @typedef {Object} StartPageProps
+ * @property {Function} onStart - Callback function triggered when the user clicks the "Play" button to begin the game setup.
+ */
+
+/**
  * The initial entry point component for the application.
  * Renders the welcome screen with the game title and a primary call-to-action button.
  * This page serves as the first step in the user flow before navigating to settings or game modes.
- * * @component
- * @param {Object} props - The component properties.
- * @param {Function} props.onStart - Callback function triggered when the user clicks the "Play" button to begin the game setup.
+ * @component
+ * @category Pages
+ * @param {StartPageProps} props - The component properties.
  * @returns {JSX.Element} The rendered start page.
  */
 export default function StartPage({ onStart }) {

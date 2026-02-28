@@ -1,11 +1,19 @@
+import React from 'react';
+
+/**
+ * Props for the Button component.
+ * @typedef {Object} ButtonProps
+ * @property {React.ReactNode} children - The content to be rendered inside the button (e.g., text, icons).
+ * @property {Function} onClick - The callback function executed when the button is clicked.
+ */
+
 /**
  * A reusable, styled button component used throughout the application.
  * Applies consistent gradient backgrounds, hover states, and click animations 
  * (scaling) using Tailwind CSS to maintain uniform UI design.
- * * @component
- * @param {Object} props - The component properties.
- * @param {React.ReactNode} props.children - The content to be rendered inside the button (e.g., text, icons).
- * @param {Function} props.onClick - The callback function executed when the button is clicked.
+ * @component
+ * @category Components
+ * @param {ButtonProps} props - The component properties.
  * @returns {JSX.Element} The rendered styled button.
  */
 export default function Button({ children, onClick }) {

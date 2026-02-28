@@ -1,19 +1,25 @@
 import ReactDOM from 'react-dom';
 
 /**
+ * Пропси для компонента GameEndPortal.
+ * @typedef {Object} GameEndPortalProps
+ * @property {boolean} isOpen - Визначає, чи видимий портал завершення гри.
+ * @property {string|null} winner - Результат гри ('player', 'bot' або 'draw').
+ * @property {string} time - Відформатований рядок із загальним часом гри (наприклад, "02:45").
+ * @property {Function} onPlayAgain - Функція для миттєвого перезапуску матчу з тими ж налаштуваннями.
+ * @property {Function} onChangeSettings - Функція для повернення до конфігурації налаштувань.
+ * @property {Function} EndGame - Функція для повного виходу з поточної ігрової сесії.
+ * @property {string} [botLevel] - (Опціонально) Рівень складності бота-супротивника ('easy', 'medium', 'hard').
+ */
+
+/**
  * A modal portal component displayed when a game session ends.
  * Renders over the entire application using ReactDOM.createPortal to avoid z-index issues.
  * Displays the result of the game (winner/draw), the elapsed time, bot difficulty, 
  * and provides actions for the next steps.
  * * @component
- * @param {Object} props - The component properties.
- * @param {boolean} props.isOpen - Determines whether the end-game portal is visible.
- * @param {string|null} props.winner - The outcome of the game ('player', 'bot', or 'draw').
- * @param {string} props.time - A formatted string representing the total game duration (e.g., "02:45").
- * @param {Function} props.onPlayAgain - Callback function triggered to instantly restart a match with the same settings.
- * @param {Function} props.onChangeSettings - Callback function triggered to navigate back to the settings configuration.
- * @param {Function} props.EndGame - Callback function triggered to completely exit the current game session.
- * @param {string} [props.botLevel] - The difficulty level of the opponent bot ('easy', 'medium', 'hard').
+ * @category Components
+ * @param {GameEndPortalProps} props - Об'єкт із пропсами компонента.
  * @returns {React.ReactPortal|null} The rendered portal attached to document.body, or null if the modal is closed.
  */
 export default function GameEndPortal({ 

@@ -1,13 +1,29 @@
 import * as yup from 'yup';
 
 /**
+ * Expected shape of the data validated by the game settings schema.
+ * @typedef {Object} GameSettingsFormValues
+ * @property {'bot'|'online'} mode - Defines the primary game mode.
+ * @property {string} [LevelBot] - Bot difficulty level. Required if mode is 'bot'.
+ * @property {string} [firstPlayer] - Determines who makes the first move. Required if mode is 'bot'.
+ * @property {string} [playerColor] - Hex color for the human player's pieces. Required if mode is 'bot'.
+ * @property {string} [botColor] - Hex color for the bot's pieces. Required if mode is 'bot'.
+ * @property {number} rows - Number of rows in the game grid (4-10).
+ * @property {number} columns - Number of columns in the game grid (4-10).
+ * @property {number|null} [moveTimeLimit] - Optional time limit for a single turn in seconds (5-120).
+ * @property {string} [nickname] - User nickname for online identity. Contextually required based on GDPR consent.
+ * @property {string} [roomCode] - Code to join a specific multiplayer room.
+ */
+
+/**
  * Validation schema for the Game Settings form.
  * Utilizes `yup` to enforce data types, constraints, and complex conditional requirements.
  * This schema ensures that board dimensions are within technical limits and that 
  * specific configurations (like bot difficulty or online nicknames) are provided 
  * only when the relevant game mode is selected.
- * * @constant
- * @type {yup.ObjectSchema}
+ * @constant
+ * @category Validation
+ * @type {yup.ObjectSchema<GameSettingsFormValues>}
  */
 export const gameSchema = yup.object({
   /**

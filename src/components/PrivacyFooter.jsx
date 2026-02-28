@@ -3,10 +3,11 @@ import { useConsentStore } from '../store/useConsentStore';
 import { Link } from 'react-router-dom';
 
 /**
- * A persistent footer component that providing quick access to privacy-related features.
+ * A persistent footer component that provides quick access to privacy-related features.
  * Contains a trigger to reopen the GDPR consent modal and a link to the full Privacy Policy page.
  * Positioned fixed at the bottom-left of the viewport to remain accessible across different game screens.
- * * @component
+ * @component
+ * @category Components
  * @returns {JSX.Element} The rendered privacy footer with action buttons and links.
  */
 const PrivacyFooter = () => {

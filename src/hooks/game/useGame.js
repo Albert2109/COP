@@ -5,27 +5,38 @@ import { Bot } from '../../classes/bots/Bot.js';
 import { HardBot } from '../../classes/bots/HardBot.js';
 
 /**
+ * Configuration object for initializing a game session.
+ * @typedef {Object} GameSettings
+ * @property {string} mode - The game mode ('bot' or 'online').
+ * @property {string} [LevelBot] - Difficulty level for the AI ('easy', 'medium', 'hard'). Relevant only in 'bot' mode.
+ * @property {string} [playerColor] - Hex color for the human player.
+ * @property {string} [botColor] - Hex color for the bot/opponent.
+ * @property {string} [firstPlayer] - Determines who starts ('player', 'bot', or 'random').
+ * @property {number|string} [rows] - The vertical size of the board (defaults to 6).
+ * @property {number|string} [columns] - The horizontal size of the board (defaults to 7).
+ */
+
+/**
+ * The object returned by the useGame hook, containing state and control functions.
+ * @typedef {Object} UseGameReturn
+ * @property {Array<Array<string|null>>} board - 2D array representing the current grid (null for empty, 'player' or 'bot' for pieces).
+ * @property {string|null} currentPlayer - The ID of the player whose turn it is ('player' or 'bot').
+ * @property {string|null} winner - The result of the game ('player', 'bot', 'draw', or null if ongoing).
+ * @property {Function} playerMove - Handler for processing a human player's move in a specific column.
+ * @property {Function} botMove - Asynchronous handler for processing the AI's move or an online opponent's forced move.
+ * @property {Function} resetGame - Resets the board and state for a new match with the same settings.
+ * @property {Function} forceTimeout - Ends the game immediately (e.g., when the turn timer expires), declaring the opponent as the winner.
+ */
+
+/**
  * The core game logic hook that manages the Connect Four state engine.
  * This hook handles the game board state, turn switching, win/draw detection, 
  * and orchestrates both human and automated (bot) moves.
- * * 
- * * @hook
- * @param {Object} settings - Configuration for the current game session.
- * @param {string} settings.mode - The game mode ('bot' or 'online').
- * @param {string} settings.LevelBot - Difficulty level for the AI ('easy', 'medium', 'hard').
- * @param {string} settings.playerColor - Hex color for the human player.
- * @param {string} settings.botColor - Hex color for the bot/opponent.
- * @param {string} settings.firstPlayer - Determines who starts ('player', 'bot', or 'random').
- * @param {number|string} settings.rows - The vertical size of the board.
- * @param {number|string} settings.columns - The horizontal size of the board.
- * * @returns {Object} Game state and action handlers.
- * @property {Array<Array<string|null>>} board - 2D array representing the current grid.
- * @property {string|null} currentPlayer - The ID of the player whose turn it is ('player' or 'bot').
- * @property {string|null} winner - The result of the game ('player', 'bot', 'draw', or null).
- * @property {Function} playerMove - Handler for processing a human player's move in a specific column.
- * @property {Function} botMove - Asynchronous handler for processing the AI's move or an online opponent's forced move.
- * @property {Function} resetGame - Resets the board and state for a new match.
- * @property {Function} forceTimeout - Ends the game immediately (e.g., when the turn timer expires).
+ * 
+ * @hook
+ * @category Hooks
+ * @param {GameSettings} settings - Configuration for the current game session.
+ * @returns {UseGameReturn} Game state and action handlers.
  */
 export function useGame(settings) {
   const {

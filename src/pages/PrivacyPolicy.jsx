@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
  * Displays the application's Privacy Policy, GDPR compliance details, and usage instructions.
  * This component outlines the granular consent model, data processing via SignalR, 
  * and user rights regarding the erasure of local storage data.
- * * 
- * * @component
+ * @component
+ * @category Pages
  * @returns {JSX.Element} The rendered Privacy Policy page with navigation back to the game.
  */
 const PrivacyPolicy = () => {

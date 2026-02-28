@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
  * Manages user privacy preferences for game sessions and personalization. 
  * The component integrates with a global `useConsentStore` to persist choices 
  * and controls the availability of features like SignalR online play and nickname saving.
+ * 
  * * @component
+ * @category Components
  * @returns {JSX.Element|null} The rendered consent banner/modal or null if the user has already decided.
  */
 const CookieConsent = () => {

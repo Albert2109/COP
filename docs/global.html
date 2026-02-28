@@ -1,3 +1,8322 @@
-<!DOCTYPE html><html lang="en" style="font-size:16px"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Global</title><!--[if lt IE 9]>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Global - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]--><script src="scripts/third-party/hljs.js" defer="defer"></script><script src="scripts/third-party/hljs-line-num.js" defer="defer"></script><script src="scripts/third-party/popper.js" defer="defer"></script><script src="scripts/third-party/tippy.js" defer="defer"></script><script src="scripts/third-party/tocbot.min.js"></script><script>var baseURL="/",locationPathname="";baseURL=(locationPathname=document.location.pathname).substr(0,locationPathname.lastIndexOf("/")+1)</script><link rel="stylesheet" href="styles/clean-jsdoc-theme.min.css"><svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"><defs><symbol id="copy-icon" viewbox="0 0 488.3 488.3"><g><path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/><path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/></g></symbol><symbol id="search-icon" viewBox="0 0 512 512"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g></symbol><symbol id="font-size-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol><symbol id="add-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></symbol><symbol id="minus-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5 11h14v2H5z"/></symbol><symbol id="dark-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/></symbol><symbol id="light-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></symbol><symbol id="reset-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/></symbol><symbol id="down-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path></symbol><symbol id="codepen-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.5 13.202L13 15.535v3.596L19.197 15 16.5 13.202zM14.697 12L12 10.202 9.303 12 12 13.798 14.697 12zM20 10.869L18.303 12 20 13.131V10.87zM19.197 9L13 4.869v3.596l3.5 2.333L19.197 9zM7.5 10.798L11 8.465V4.869L4.803 9 7.5 10.798zM4.803 15L11 19.131v-3.596l-3.5-2.333L4.803 15zM4 13.131L5.697 12 4 10.869v2.262zM2 9a1 1 0 0 1 .445-.832l9-6a1 1 0 0 1 1.11 0l9 6A1 1 0 0 1 22 9v6a1 1 0 0 1-.445.832l-9 6a1 1 0 0 1-1.11 0l-9-6A1 1 0 0 1 2 15V9z"/></symbol><symbol id="close-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></symbol><symbol id="menu-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></symbol></defs></svg></head><body data-theme="dark"><div class="sidebar-container"><div class="sidebar" id="sidebar"><a href="/" class="sidebar-title sidebar-title-anchor">Connect Four Documentation</a><div class="sidebar-items-container"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-classes"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="Bot.html">Bot</a></div><div class="sidebar-section-children"><a href="EasyBot.html">EasyBot</a></div><div class="sidebar-section-children"><a href="HardBot.html">HardBot</a></div><div class="sidebar-section-children"><a href="Player.html">Player</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-global"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#App">App</a></div><div class="sidebar-section-children"><a href="global.html#CookieConsent">CookieConsent</a></div><div class="sidebar-section-children"><a href="global.html#LevelBot">LevelBot</a></div><div class="sidebar-section-children"><a href="global.html#PrivacyFooter">PrivacyFooter</a></div><div class="sidebar-section-children"><a href="global.html#PrivacyPolicy">PrivacyPolicy</a></div><div class="sidebar-section-children"><a href="global.html#acceptAll">acceptAll</a></div><div class="sidebar-section-children"><a href="global.html#addGameToHistory">addGameToHistory</a></div><div class="sidebar-section-children"><a href="global.html#botColor">botColor</a></div><div class="sidebar-section-children"><a href="global.html#clearSession">clearSession</a></div><div class="sidebar-section-children"><a href="global.html#closeModal">closeModal</a></div><div class="sidebar-section-children"><a href="global.html#columns">columns</a></div><div class="sidebar-section-children"><a href="global.html#createGameSessionSlice">createGameSessionSlice</a></div><div class="sidebar-section-children"><a href="global.html#createHistorySlice">createHistorySlice</a></div><div class="sidebar-section-children"><a href="global.html#declineAll">declineAll</a></div><div class="sidebar-section-children"><a href="global.html#firstPlayer">firstPlayer</a></div><div class="sidebar-section-children"><a href="global.html#formatTime">formatTime</a></div><div class="sidebar-section-children"><a href="global.html#gameSchema">gameSchema</a></div><div class="sidebar-section-children"><a href="global.html#gameSettings">gameSettings</a></div><div class="sidebar-section-children"><a href="global.html#history">history</a></div><div class="sidebar-section-children"><a href="global.html#isModalOpen">isModalOpen</a></div><div class="sidebar-section-children"><a href="global.html#lockedMode">lockedMode</a></div><div class="sidebar-section-children"><a href="global.html#mode">mode</a></div><div class="sidebar-section-children"><a href="global.html#moveTimeLimit">moveTimeLimit</a></div><div class="sidebar-section-children"><a href="global.html#name">name</a></div><div class="sidebar-section-children"><a href="global.html#name">name</a></div><div class="sidebar-section-children"><a href="global.html#nickname">nickname</a></div><div class="sidebar-section-children"><a href="global.html#openModal">openModal</a></div><div class="sidebar-section-children"><a href="global.html#playerColor">playerColor</a></div><div class="sidebar-section-children"><a href="global.html#preferences">preferences</a></div><div class="sidebar-section-children"><a href="global.html#resetConsent">resetConsent</a></div><div class="sidebar-section-children"><a href="global.html#roomCode">roomCode</a></div><div class="sidebar-section-children"><a href="global.html#rows">rows</a></div><div class="sidebar-section-children"><a href="global.html#setGameSession">setGameSession</a></div><div class="sidebar-section-children"><a href="global.html#setPreferences">setPreferences</a></div><div class="sidebar-section-children"><a href="global.html#status">status</a></div><div class="sidebar-section-children"><a href="global.html#useConsentStore">useConsentStore</a></div><div class="sidebar-section-children"><a href="global.html#useGame">useGame</a></div><div class="sidebar-section-children"><a href="global.html#useGameStore">useGameStore</a></div><div class="sidebar-section-children"><a href="global.html#useGameTimer">useGameTimer</a></div><div class="sidebar-section-children"><a href="global.html#useSignalR">useSignalR</a></div></div></div></div></div><div class="navbar-container" id="VuAckcnZhf"><nav class="navbar"><div class="navbar-left-items"></div><div class="navbar-right-items"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div><nav></nav></nav></div><div class="toc-container"><div class="toc-content"><span class="bold">On this page</span><div id="eed4d2a0bfd64539bb9df78095dec881"></div></div></div><div class="body-wrapper"><div class="main-content"><div class="main-wrapper"><section><article><div class="container-overview"></div><h2 id="members" class="subsection-title has-anchor">Members</h2><h3 class="name has-anchor" id="LevelBot"><span class="type-signature"></span>LevelBot<span class="type-signature"></span></h3><div class="description"><p>Bot difficulty level. Required only if 'mode' is set to 'bot'.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line25">line 25</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="botColor"><span class="type-signature"></span>botColor<span class="type-signature"></span></h3><div class="description"><p>Visual color for the AI bot's pieces. Required only if 'mode' is set to 'bot'.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line52">line 52</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="columns"><span class="type-signature"></span>columns<span class="type-signature"></span></h3><div class="description"><p>Number of columns in the game grid. Range: 4 to 10.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line72">line 72</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="createGameSessionSlice"><span class="type-signature">(constant) </span>createGameSessionSlice<span class="type-signature"></span></h3><div class="description"><p>Zustand slice responsible for managing the active game session state. It tracks current game configurations and determines if certain modes are locked (e.g., when joining a specific online room via a direct link).</p><ul><li>@function</li></ul></div><b class="subsection-title">Properties</b><div class="allow-overflow"><table class="props"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>lockedMode</code></td><td class="type"><span class="param-type">string</span> |<wbr> <span class="param-type">null</span></td><td class="description last"><p>Indicates if the game mode is forced (e.g., 'online') and cannot be changed by the user.</p></td></tr><tr><td class="name"><code>setGameSession</code></td><td class="type"><span class="param-type">function</span></td><td class="description last"><p>Updates the session data and sets the mode lock status.</p></td></tr><tr><td class="name"><code>clearSession</code></td><td class="type"><span class="param-type">function</span></td><td class="description last"><p>Resets the session data to its initial null state.</p></td></tr></tbody></table></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line13">line 13</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="createHistorySlice"><span class="type-signature">(constant) </span>createHistorySlice<span class="type-signature"></span></h3><div class="description"><p>Zustand slice responsible for maintaining the match history log. Stores an array of completed game results and provides a method to append new outcomes to the beginning of the list (Last-In, First-Out).</p><ul><li>@function</li></ul></div><b class="subsection-title">Properties</b><div class="allow-overflow"><table class="props"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>addGameToHistory</code></td><td class="type"><span class="param-type">function</span></td><td class="description last"><p>Action to prepend a new game result to the history array.</p></td></tr></tbody></table></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_slices_historySlice.js.html">store/slices/historySlice.js</a>, <a href="store_slices_historySlice.js.html#line11">line 11</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="firstPlayer"><span class="type-signature"></span>firstPlayer<span class="type-signature"></span></h3><div class="description"><p>Determines who makes the first move. Required only if 'mode' is set to 'bot'.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line34">line 34</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="gameSchema"><span class="type-signature">(constant) </span>gameSchema<span class="type-signature"> :yup.ObjectSchema</span></h3><div class="description"><p>Validation schema for the Game Settings form. Utilizes <code>yup</code> to enforce data types, constraints, and complex conditional requirements. This schema ensures that board dimensions are within technical limits and that specific configurations (like bot difficulty or online nicknames) are provided only when the relevant game mode is selected.</p><ul><li>@constant</li></ul></div><div class="member-item-container flex"><strong>Type:</strong><ul><li><span class="param-type">yup.<wbr>ObjectSchema</span></li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line12">line 12</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="gameSettings"><span class="type-signature"></span>gameSettings<span class="type-signature"> :Object|null</span></h3><div class="description"><p>Current match configuration.</p></div><div class="member-item-container flex"><strong>Type:</strong><ul><li><span class="param-type">Object</span> |<wbr> <span class="param-type">null</span></li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line18">line 18</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="history"><span class="type-signature"></span>history<span class="type-signature"> :Array.&lt;{id: string, winner: string, time: string, <a href="global.html#mode">mode</a>: string, botLevel: (string|null)}></span></h3><div class="description"><p>The list of match results recorded during the active session.</p></div><div class="member-item-container flex"><strong>Type:</strong><ul><li><span class="param-type">Array.&lt;{id: string, winner: string, time: string, <a href="global.html#mode">mode</a>: string, botLevel: (string|null)}></span></li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_slices_historySlice.js.html">store/slices/historySlice.js</a>, <a href="store_slices_historySlice.js.html#line16">line 16</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="isModalOpen"><span class="type-signature"></span>isModalOpen<span class="type-signature"> :boolean</span></h3><div class="description"><p>Visibility state of the consent configuration modal</p></div><div class="member-item-container flex"><strong>Type:</strong><ul><li><span class="param-type">boolean</span></li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line36">line 36</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="lockedMode"><span class="type-signature"></span>lockedMode<span class="type-signature"> :string|null</span></h3><div class="description"><p>Forced game mode identifier.</p></div><div class="member-item-container flex"><strong>Type:</strong><ul><li><span class="param-type">string</span> |<wbr> <span class="param-type">null</span></li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line24">line 24</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="mode"><span class="type-signature"></span>mode<span class="type-signature"></span></h3><div class="description"><p>Defines the primary game mode. Must be either 'bot' (Local) or 'online' (SignalR).</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line17">line 17</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="moveTimeLimit"><span class="type-signature"></span>moveTimeLimit<span class="type-signature"></span></h3><div class="description"><p>Optional time limit for a single turn in seconds. Range: 5 to 120 seconds. Empty strings are transformed to null.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line84">line 84</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="name"><span class="type-signature"></span>name<span class="type-signature"></span></h3><div class="description"><p>Configuration for the persistence middleware. The store data is saved under the key 'ConnectFourStore' in Local Storage.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_gameStore.js.html">store/gameStore.js</a>, <a href="store_gameStore.js.html#line35">line 35</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="name"><span class="type-signature"></span>name<span class="type-signature"></span></h3><div class="description"><p>Configuration for persistent storage in 'AppConsentStore' local storage key</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line87">line 87</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="nickname"><span class="type-signature"></span>nickname<span class="type-signature"></span></h3><div class="description"><p>User nickname for online identity. Required only if 'mode' is 'online' and the GDPR consent for nickname usage ($canUseNickname) is granted.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line99">line 99</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="playerColor"><span class="type-signature"></span>playerColor<span class="type-signature"></span></h3><div class="description"><p>Visual color for the human player's pieces. Required only if 'mode' is set to 'bot'.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line43">line 43</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="preferences"><span class="type-signature"></span>preferences<span class="type-signature"> :Object</span></h3><div class="description"><p>Granular user preferences for different data categories.</p></div><div class="member-item-container flex"><strong>Type:</strong><ul><li><span class="param-type">Object</span></li></ul></div><b class="subsection-title">Properties</b><div class="allow-overflow"><table class="props"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>preferences.session</code></td><td class="type"><span class="param-type">boolean</span></td><td class="description last"><p>Permission to store technical IDs for SignalR/Online play.</p></td></tr><tr><td class="name"><code>preferences.nickname</code></td><td class="type"><span class="param-type">boolean</span></td><td class="description last"><p>Permission to persist the user's nickname across sessions.</p></td></tr></tbody></table></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line30">line 30</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="roomCode"><span class="type-signature"></span>roomCode<span class="type-signature"></span></h3><div class="description"><p>Code to join a specific multiplayer room. Optional during creation, required contextually.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line109">line 109</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="rows"><span class="type-signature"></span>rows<span class="type-signature"></span></h3><div class="description"><p>Number of rows in the game grid. Range: 4 to 10.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line61">line 61</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="status"><span class="type-signature"></span>status<span class="type-signature"> :string</span></h3><div class="description"><p>Current consent status. Values: 'undecided' (show banner), 'customized', 'accepted_all', 'declined_all'.</p></div><div class="member-item-container flex"><strong>Type:</strong><ul><li><span class="param-type">string</span></li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line22">line 22</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="useConsentStore"><span class="type-signature">(constant) </span>useConsentStore<span class="type-signature"></span></h3><div class="description"><p>Zustand store dedicated to managing user privacy and GDPR consent settings. It tracks whether a user has accepted, declined, or customized their data storage preferences (Cookies/Local Storage). This store acts as a gatekeeper for features like online matchmaking (requires session storage) and nickname persistence.</p><ul><li>[Image of a state machine diagram for user consent status]</li><li>@module useConsentStore</li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line13">line 13</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="useGameStore"><span class="type-signature">(constant) </span>useGameStore<span class="type-signature"> :function</span></h3><div class="description"><p>The primary global state store for the Connect Four application. Utilizes a slice-based architecture to separate concerns between game sessions and match history.</p><ul><li>Features:</li></ul><ul><li><strong>Redux DevTools</strong>: Integrated for real-time state debugging.</li><li><strong>Persistence</strong>: Automatically synchronizes the state with the browser's <code>localStorage</code> to preserve match history and settings across page refreshes.</li></ul><ul><li></li><li>@module useGameStore</li></ul></div><div class="member-item-container flex"><strong>Type:</strong><ul><li><span class="param-type">function</span></li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_gameStore.js.html">store/gameStore.js</a>, <a href="store_gameStore.js.html#line19">line 19</a></li></ul></dd></div></dl><h2 id="methods" class="subsection-title has-anchor">Methods</h2><h3 class="name has-anchor" id="App"><span class="type-signature"></span>App<span class="signature">()</span></h3><div class="description"><p>The root component of the Connect Four application. Responsibilities:</p><ul><li>Orchestrates top-level routing using React Router.</li><li>Connects the UI to the global Zustand <code>useGameStore</code>.</li><li>Manages the transition logic between settings, active gameplay, and results history.</li><li>Global injection of GDPR-related components (CookieConsent, PrivacyFooter).</li></ul><ul><li>@component</li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="App.jsx.html">App.jsx</a>, <a href="App.jsx.html#line26">line 26</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="CookieConsent"><span class="type-signature"></span>CookieConsent<span class="signature">()</span><span class="type-signature"> &rarr; {JSX.Element|null}</span></h3><div class="description"><p>A GDPR-compliant cookie and local storage consent banner. Manages user privacy preferences for game sessions and personalization. The component integrates with a global <code>useConsentStore</code> to persist choices and controls the availability of features like SignalR online play and nickname saving.</p><ul><li>@component</li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="components_CookieConsent.jsx.html">components/CookieConsent.jsx</a>, <a href="components_CookieConsent.jsx.html#line13">line 13</a></li></ul></dd></div></dl><div class="method-member-container mt-20"><strong>Returns:</strong><div class="param-desc"><p>The rendered consent banner/modal or null if the user has already decided.</p></div><dl class="param-type"><dt>Type:&nbsp;</dt><dd><span class="param-type">JSX.<wbr>Element</span> |<wbr> <span class="param-type">null</span></dd></dl></div><h3 class="name has-anchor" id="PrivacyFooter"><span class="type-signature"></span>PrivacyFooter<span class="signature">()</span><span class="type-signature"> &rarr; {JSX.Element}</span></h3><div class="description"><p>A persistent footer component that providing quick access to privacy-related features. Contains a trigger to reopen the GDPR consent modal and a link to the full Privacy Policy page. Positioned fixed at the bottom-left of the viewport to remain accessible across different game screens.</p><ul><li>@component</li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="components_PrivacyFooter.jsx.html">components/PrivacyFooter.jsx</a>, <a href="components_PrivacyFooter.jsx.html#line12">line 12</a></li></ul></dd></div></dl><div class="method-member-container mt-20"><strong>Returns:</strong><div class="param-desc"><p>The rendered privacy footer with action buttons and links.</p></div><dl class="param-type"><dt>Type:&nbsp;</dt><dd><span class="param-type">JSX.<wbr>Element</span></dd></dl></div><h3 class="name has-anchor" id="PrivacyPolicy"><span class="type-signature"></span>PrivacyPolicy<span class="signature">()</span><span class="type-signature"> &rarr; {JSX.Element}</span></h3><div class="description"><p>A static legal and information page component. Displays the application's Privacy Policy, GDPR compliance details, and usage instructions. This component outlines the granular consent model, data processing via SignalR, and user rights regarding the erasure of local storage data. *</p><ul><li>@component</li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="pages_PrivacyPolicy.jsx.html">pages/PrivacyPolicy.jsx</a>, <a href="pages_PrivacyPolicy.jsx.html#line13">line 13</a></li></ul></dd></div></dl><div class="method-member-container mt-20"><strong>Returns:</strong><div class="param-desc"><p>The rendered Privacy Policy page with navigation back to the game.</p></div><dl class="param-type"><dt>Type:&nbsp;</dt><dd><span class="param-type">JSX.<wbr>Element</span></dd></dl></div><h3 class="name has-anchor" id="acceptAll"><span class="type-signature"></span>acceptAll<span class="signature">()</span></h3><div class="description"><p>Grants full consent to all data processing categories.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line59">line 59</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="addGameToHistory"><span class="type-signature"></span>addGameToHistory<span class="signature">()</span></h3><div class="description"><p>Adds a new game outcome to the session history. Uses an immutable update pattern to ensure React re-renders correctly.</p><ul><li>@param {Object} gameResult - The result data of the finished game.</li></ul></div><div class="method-member-container flex flex-col w-100 overflow-auto mt-20"><strong>Parameters:</strong><table class="params"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>gameResult.id</code></td><td class="type"><span class="param-type">string</span></td><td class="description last"><p>Unique identifier for the match (e.g., ISO timestamp).</p></td></tr><tr><td class="name"><code>gameResult.winner</code></td><td class="type"><span class="param-type">string</span></td><td class="description last"><p>The winner of the match ('player', 'bot', or 'draw').</p></td></tr><tr><td class="name"><code>gameResult.time</code></td><td class="type"><span class="param-type">string</span></td><td class="description last"><p>The formatted duration of the match.</p></td></tr><tr><td class="name"><code>gameResult.mode</code></td><td class="type"><span class="param-type">string</span></td><td class="description last"><p>The game mode played ('bot' or 'online').</p></td></tr></tbody></table></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_slices_historySlice.js.html">store/slices/historySlice.js</a>, <a href="store_slices_historySlice.js.html#line27">line 27</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="clearSession"><span class="type-signature"></span>clearSession<span class="signature">()</span></h3><div class="description"><p>Clears all session-related data. Useful when returning to the main menu to start a fresh configuration.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line42">line 42</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="closeModal"><span class="type-signature"></span>closeModal<span class="signature">()</span></h3><div class="description"><p>Closes the privacy settings modal</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line42">line 42</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="declineAll"><span class="type-signature"></span>declineAll<span class="signature">()</span></h3><div class="description"><p>Revokes consent for all optional data processing.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line70">line 70</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="formatTime"><span class="type-signature"></span>formatTime<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h3><div class="description"><p>Formats a total duration in seconds into a standard &quot;MM:SS&quot; string. Uses padding to ensure both minutes and seconds are always represented by two digits, adding a leading zero if necessary.</p><ul><li>@param {number} seconds - The total number of seconds to format.</li></ul></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="helper_formatTime.js.html">helper/formatTime.js</a>, <a href="helper_formatTime.js.html#line8">line 8</a></li></ul></dd></div></dl><div class="method-member-container mt-20"><strong>Returns:</strong><div class="param-desc"><p>The formatted time string (e.g., &quot;05:09&quot;).</p></div><dl class="param-type"><dt>Type:&nbsp;</dt><dd><span class="param-type">string</span></dd></dl></div><h3 class="name has-anchor" id="openModal"><span class="type-signature"></span>openModal<span class="signature">()</span></h3><div class="description"><p>Opens the privacy settings modal</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line39">line 39</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="resetConsent"><span class="type-signature"></span>resetConsent<span class="signature">()</span></h3><div class="description"><p>Resets the consent state to 'undecided', effectively re-triggering the privacy banner.</p></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line81">line 81</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="setGameSession"><span class="type-signature"></span>setGameSession<span class="signature">(settings, lockedMode)</span></h3><div class="description"><p>Initializes or updates the current game session.</p></div><div class="method-member-container flex flex-col w-100 overflow-auto mt-20"><strong>Parameters:</strong><table class="params"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>settings</code></td><td class="type"><span class="param-type">Object</span></td><td class="description last"><p>The game settings to be applied.</p></td></tr><tr><td class="name"><code>lockedMode</code></td><td class="type"><span class="param-type">string</span> |<wbr> <span class="param-type">null</span></td><td class="description last"><p>The mode to lock the UI to.</p></td></tr></tbody></table></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line31">line 31</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="setPreferences"><span class="type-signature"></span>setPreferences<span class="signature">(newPrefs)</span></h3><div class="description"><p>Updates granular preferences and sets the status to 'customized'.</p></div><div class="method-member-container flex flex-col w-100 overflow-auto mt-20"><strong>Parameters:</strong><table class="params"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>newPrefs</code></td><td class="type"><span class="param-type">Object</span></td><td class="description last"><p>Partial preferences object to merge.</p></td></tr></tbody></table></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line48">line 48</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="useGame"><span class="type-signature"></span>useGame<span class="signature">(settings)</span></h3><div class="description"><p>The core game logic hook that manages the Connect Four state engine. This hook handles the game board state, turn switching, win/draw detection, and orchestrates both human and automated (bot) moves. *</p><ul><li>@hook</li></ul></div><div class="method-member-container flex flex-col w-100 overflow-auto mt-20"><strong>Parameters:</strong><table class="params"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>settings</code></td><td class="type"><span class="param-type">Object</span></td><td class="description last"><p>Configuration for the current game session.</p><h6>Properties</h6><table class="params"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>mode</code></td><td class="type"><span class="param-type">string</span></td><td class="description last"><p>The game mode ('bot' or 'online').</p></td></tr><tr><td class="name"><code>LevelBot</code></td><td class="type"><span class="param-type">string</span></td><td class="description last"><p>Difficulty level for the AI ('easy', 'medium', 'hard').</p></td></tr><tr><td class="name"><code>playerColor</code></td><td class="type"><span class="param-type">string</span></td><td class="description last"><p>Hex color for the human player.</p></td></tr><tr><td class="name"><code>botColor</code></td><td class="type"><span class="param-type">string</span></td><td class="description last"><p>Hex color for the bot/opponent.</p></td></tr><tr><td class="name"><code>firstPlayer</code></td><td class="type"><span class="param-type">string</span></td><td class="description last"><p>Determines who starts ('player', 'bot', or 'random').</p></td></tr><tr><td class="name"><code>rows</code></td><td class="type"><span class="param-type">number</span> |<wbr> <span class="param-type">string</span></td><td class="description last"><p>The vertical size of the board.</p></td></tr><tr><td class="name"><code>columns</code></td><td class="type"><span class="param-type">number</span> |<wbr> <span class="param-type">string</span></td><td class="description last"><p>The horizontal size of the board.</p><ul><li>@returns {Object} Game state and action handlers.</li></ul></td></tr></tbody></table></td></tr></tbody></table></div><b class="subsection-title">Properties</b><div class="allow-overflow"><table class="props"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>board</code></td><td class="type"><span class="param-type">Array.&lt;Array.&lt;(string|null)>></span></td><td class="description last"><p>2D array representing the current grid.</p></td></tr><tr><td class="name"><code>currentPlayer</code></td><td class="type"><span class="param-type">string</span> |<wbr> <span class="param-type">null</span></td><td class="description last"><p>The ID of the player whose turn it is ('player' or 'bot').</p></td></tr><tr><td class="name"><code>winner</code></td><td class="type"><span class="param-type">string</span> |<wbr> <span class="param-type">null</span></td><td class="description last"><p>The result of the game ('player', 'bot', 'draw', or null).</p></td></tr><tr><td class="name"><code>playerMove</code></td><td class="type"><span class="param-type">function</span></td><td class="description last"><p>Handler for processing a human player's move in a specific column.</p></td></tr><tr><td class="name"><code>botMove</code></td><td class="type"><span class="param-type">function</span></td><td class="description last"><p>Asynchronous handler for processing the AI's move or an online opponent's forced move.</p></td></tr><tr><td class="name"><code>resetGame</code></td><td class="type"><span class="param-type">function</span></td><td class="description last"><p>Resets the board and state for a new match.</p></td></tr><tr><td class="name"><code>forceTimeout</code></td><td class="type"><span class="param-type">function</span></td><td class="description last"><p>Ends the game immediately (e.g., when the turn timer expires).</p></td></tr></tbody></table></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="hooks_game_useGame.js.html">hooks/game/useGame.js</a>, <a href="hooks_game_useGame.js.html#line30">line 30</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="useGameTimer"><span class="type-signature"></span>useGameTimer<span class="signature">(isGameActive, onTimeUpdate)</span></h3><div class="description"><p>A custom hook that manages the game session's total elapsed time. It sets up a 1-second interval that updates the game duration as long as the match is active. Automatically handles cleanup by clearing the interval when the game is paused, finished, or the component is unmounted. *</p><ul><li>@hook</li></ul></div><div class="method-member-container flex flex-col w-100 overflow-auto mt-20"><strong>Parameters:</strong><table class="params"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>isGameActive</code></td><td class="type"><span class="param-type">boolean</span></td><td class="description last"><p>A flag determining if the timer should be running (true) or paused (false).</p></td></tr><tr><td class="name"><code>onTimeUpdate</code></td><td class="type"><span class="param-type">function</span></td><td class="description last"><p>A callback function (usually a state setter) that receives the previous time and returns the updated time.</p></td></tr></tbody></table></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="hooks_game_useGameTimer.js.html">hooks/game/useGameTimer.js</a>, <a href="hooks_game_useGameTimer.js.html#line13">line 13</a></li></ul></dd></div></dl><h3 class="name has-anchor" id="useSignalR"><span class="type-signature"></span>useSignalR<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h3><div class="description"><p>Custom hook to manage the SignalR lifecycle for real-time multiplayer functionality. It initializes the hub connection, handles automatic reconnections, and provides a method to manually start the connection when the user enters the multiplayer mode.</p><ul><li>@hook</li></ul></div><b class="subsection-title">Properties</b><div class="allow-overflow"><table class="props"><thead><tr><th>Name</th><th>Type</th><th class="last">Description</th></tr></thead><tbody><tr><td class="name"><code>connection</code></td><td class="type"><span class="param-type">HubConnection</span> |<wbr> <span class="param-type">null</span></td><td class="description last"><p>The SignalR connection instance used to invoke hub methods and listen to events.</p></td></tr><tr><td class="name"><code>startConnection</code></td><td class="type"><span class="param-type">function</span></td><td class="description last"><p>An asynchronous function to initiate the connection to the game hub.</p></td></tr><tr><td class="name"><code>connectionId</code></td><td class="type"><span class="param-type">string</span> |<wbr> <span class="param-type">null</span></td><td class="description last"><p>The unique identifier for the current active connection assigned by the server.</p></td></tr></tbody></table></div><dl class="details"><div class="details-item-container"><dt class="tag-source bold">Source</dt><dd class="tag-source"><ul><li><a href="hooks_api_useSignalR.js.html">hooks/api/useSignalR.js</a>, <a href="hooks_api_useSignalR.js.html#line14">line 14</a></li></ul></dd></div></dl><div class="method-member-container mt-20"><strong>Returns:</strong><div class="param-desc"><p>SignalR connection state and control methods.</p></div><dl class="param-type"><dt>Type:&nbsp;</dt><dd><span class="param-type">Object</span></dd></dl></div></article></section></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><a href="/" class="sidebar-title sidebar-title-anchor">Connect Four Documentation</a><div class="mobile-nav-links"></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-classes"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="Bot.html">Bot</a></div><div class="sidebar-section-children"><a href="EasyBot.html">EasyBot</a></div><div class="sidebar-section-children"><a href="HardBot.html">HardBot</a></div><div class="sidebar-section-children"><a href="Player.html">Player</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-global"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#App">App</a></div><div class="sidebar-section-children"><a href="global.html#CookieConsent">CookieConsent</a></div><div class="sidebar-section-children"><a href="global.html#LevelBot">LevelBot</a></div><div class="sidebar-section-children"><a href="global.html#PrivacyFooter">PrivacyFooter</a></div><div class="sidebar-section-children"><a href="global.html#PrivacyPolicy">PrivacyPolicy</a></div><div class="sidebar-section-children"><a href="global.html#acceptAll">acceptAll</a></div><div class="sidebar-section-children"><a href="global.html#addGameToHistory">addGameToHistory</a></div><div class="sidebar-section-children"><a href="global.html#botColor">botColor</a></div><div class="sidebar-section-children"><a href="global.html#clearSession">clearSession</a></div><div class="sidebar-section-children"><a href="global.html#closeModal">closeModal</a></div><div class="sidebar-section-children"><a href="global.html#columns">columns</a></div><div class="sidebar-section-children"><a href="global.html#createGameSessionSlice">createGameSessionSlice</a></div><div class="sidebar-section-children"><a href="global.html#createHistorySlice">createHistorySlice</a></div><div class="sidebar-section-children"><a href="global.html#declineAll">declineAll</a></div><div class="sidebar-section-children"><a href="global.html#firstPlayer">firstPlayer</a></div><div class="sidebar-section-children"><a href="global.html#formatTime">formatTime</a></div><div class="sidebar-section-children"><a href="global.html#gameSchema">gameSchema</a></div><div class="sidebar-section-children"><a href="global.html#gameSettings">gameSettings</a></div><div class="sidebar-section-children"><a href="global.html#history">history</a></div><div class="sidebar-section-children"><a href="global.html#isModalOpen">isModalOpen</a></div><div class="sidebar-section-children"><a href="global.html#lockedMode">lockedMode</a></div><div class="sidebar-section-children"><a href="global.html#mode">mode</a></div><div class="sidebar-section-children"><a href="global.html#moveTimeLimit">moveTimeLimit</a></div><div class="sidebar-section-children"><a href="global.html#name">name</a></div><div class="sidebar-section-children"><a href="global.html#name">name</a></div><div class="sidebar-section-children"><a href="global.html#nickname">nickname</a></div><div class="sidebar-section-children"><a href="global.html#openModal">openModal</a></div><div class="sidebar-section-children"><a href="global.html#playerColor">playerColor</a></div><div class="sidebar-section-children"><a href="global.html#preferences">preferences</a></div><div class="sidebar-section-children"><a href="global.html#resetConsent">resetConsent</a></div><div class="sidebar-section-children"><a href="global.html#roomCode">roomCode</a></div><div class="sidebar-section-children"><a href="global.html#rows">rows</a></div><div class="sidebar-section-children"><a href="global.html#setGameSession">setGameSession</a></div><div class="sidebar-section-children"><a href="global.html#setPreferences">setPreferences</a></div><div class="sidebar-section-children"><a href="global.html#status">status</a></div><div class="sidebar-section-children"><a href="global.html#useConsentStore">useConsentStore</a></div><div class="sidebar-section-children"><a href="global.html#useGame">useGame</a></div><div class="sidebar-section-children"><a href="global.html#useGameStore">useGameStore</a></div><div class="sidebar-section-children"><a href="global.html#useGameTimer">useGameTimer</a></div><div class="sidebar-section-children"><a href="global.html#useSignalR">useSignalR</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Bot.html">Bot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Bot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Bot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="Bot.html#evaluatePosition">evaluatePosition</a></li><li data-type='method' style='display: none;'><a href="Bot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="Bot.html#makeMove">makeMove</a></li></ul></li><li><a href="EasyBot.html">EasyBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findDefensiveMove">findDefensiveMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#findWinningMove">findWinningMove</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="EasyBot.html#makeMove">makeMove</a></li></ul></li><li><a href="HardBot.html">HardBot</a><ul class='methods'><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#chooseMove">chooseMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateBoard">evaluateBoard</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#evaluateCell">evaluateCell</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#getAvailableMoves">getAvailableMoves</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#isBoardFull">isBoardFull</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#makeMove">makeMove</a></li><li data-type='method' style='display: none;'><a href="HardBot.html#minimax">minimax</a></li></ul></li><li><a href="Player.html">Player</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalDown">checkDiagonalDown</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkDiagonalUp">checkDiagonalUp</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkHorizontal">checkHorizontal</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkVertical">checkVertical</a></li><li data-type='method' style='display: none;'><a href="Player.html#checkWinner">checkWinner</a></li><li data-type='method' style='display: none;'><a href="Player.html#makeMove">makeMove</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#BoardProps">BoardProps</a></li><li><a href="global.html#ButtonProps">ButtonProps</a></li><li><a href="global.html#ConsentPreferences">ConsentPreferences</a></li><li><a href="global.html#ConsentStore">ConsentStore</a></li><li><a href="global.html#CookieConsent">CookieConsent</a></li><li><a href="global.html#GameEndPortalProps">GameEndPortalProps</a></li><li><a href="global.html#GameHeaderProps">GameHeaderProps</a></li><li><a href="global.html#GamePageProps">GamePageProps</a></li><li><a href="global.html#GameResult">GameResult</a></li><li><a href="global.html#GameSessionSlice">GameSessionSlice</a></li><li><a href="global.html#GameSettings">GameSettings</a></li><li><a href="global.html#GameSettingsFormProps">GameSettingsFormProps</a></li><li><a href="global.html#GameSettingsFormValues">GameSettingsFormValues</a></li><li><a href="global.html#HistorySlice">HistorySlice</a></li><li><a href="global.html#LevelBot">LevelBot</a></li><li><a href="global.html#MoveTimerProps">MoveTimerProps</a></li><li><a href="global.html#OnlineGamePageProps">OnlineGamePageProps</a></li><li><a href="global.html#OnlineGameProps">OnlineGameProps</a></li><li><a href="global.html#PrivacyFooter">PrivacyFooter</a></li><li><a href="global.html#PrivacyPolicy">PrivacyPolicy</a></li><li><a href="global.html#ResultInfoProps">ResultInfoProps</a></li><li><a href="global.html#ResultsPageProps">ResultsPageProps</a></li><li><a href="global.html#StartPageProps">StartPageProps</a></li><li><a href="global.html#UseGameReturn">UseGameReturn</a></li><li><a href="global.html#UseSignalRReturn">UseSignalRReturn</a></li><li><a href="global.html#WaitingRoomPlayer">WaitingRoomPlayer</a></li><li><a href="global.html#WaitingRoomProps">WaitingRoomProps</a></li><li><a href="global.html#addGameToHistory">addGameToHistory</a></li><li><a href="global.html#botColor">botColor</a></li><li><a href="global.html#clearSession">clearSession</a></li><li><a href="global.html#columns">columns</a></li><li><a href="global.html#createGameSessionSlice">createGameSessionSlice</a></li><li><a href="global.html#createHistorySlice">createHistorySlice</a></li><li><a href="global.html#firstPlayer">firstPlayer</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#gameSchema">gameSchema</a></li><li><a href="global.html#gameSettings">gameSettings</a></li><li><a href="global.html#history">history</a></li><li><a href="global.html#isModalOpen">isModalOpen</a></li><li><a href="global.html#lockedMode">lockedMode</a></li><li><a href="global.html#mode">mode</a></li><li><a href="global.html#moveTimeLimit">moveTimeLimit</a></li><li><a href="global.html#nickname">nickname</a></li><li><a href="global.html#playerColor">playerColor</a></li><li><a href="global.html#preferences">preferences</a></li><li><a href="global.html#roomCode">roomCode</a></li><li><a href="global.html#rows">rows</a></li><li><a href="global.html#setGameSession">setGameSession</a></li><li><a href="global.html#status">status</a></li><li><a href="global.html#useConsentStore">useConsentStore</a></li><li><a href="global.html#useGame">useGame</a></li><li><a href="global.html#useGameStore">useGameStore</a></li><li><a href="global.html#useGameTimer">useGameTimer</a></li><li><a href="global.html#useSignalR">useSignalR</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Global</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        
+            
+        
+        </h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="LevelBot"><span class="type-signature"></span>LevelBot<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Bot difficulty level. Required only if 'mode' is set to 'bot'.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line41">line 41</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Bot difficulty level. Required only if 'mode' is set to 'bot'.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="botColor"><span class="type-signature"></span>botColor<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Visual color for the AI bot's pieces. Required only if 'mode' is set to 'bot'.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line68">line 68</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Visual color for the AI bot's pieces. Required only if 'mode' is set to 'bot'.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="columns"><span class="type-signature"></span>columns<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Number of columns in the game grid. Range: 4 to 10.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line88">line 88</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Number of columns in the game grid. Range: 4 to 10.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="createGameSessionSlice"><span class="type-signature type-signature-constant">(constant) </span>createGameSessionSlice<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Zustand slice responsible for managing the active game session state.
+It tracks current game configurations and determines if certain modes are
+locked (e.g., when joining a specific online room via a direct link).</p>
+<ul>
+<li>@category Stores</li>
+</ul></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Zustand slice responsible for managing the active game session state.
+It tracks current game configurations and determines if certain modes are
+locked (e.g., when joining a specific online room via a direct link).</p>
+<ul>
+<li>@category Stores</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="createHistorySlice"><span class="type-signature type-signature-constant">(constant) </span>createHistorySlice<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Zustand slice responsible for maintaining the match history log.
+Stores an array of completed game results and provides a method to append
+new outcomes to the beginning of the list (Last-In, First-Out).</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_historySlice.js.html">store/slices/historySlice.js</a>, <a href="store_slices_historySlice.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Zustand slice responsible for maintaining the match history log.
+Stores an array of completed game results and provides a method to append
+new outcomes to the beginning of the list (Last-In, First-Out).</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="firstPlayer"><span class="type-signature"></span>firstPlayer<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Determines who makes the first move. Required only if 'mode' is set to 'bot'.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line50">line 50</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Determines who makes the first move. Required only if 'mode' is set to 'bot'.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="gameSchema"><span class="type-signature type-signature-constant">(constant) </span>gameSchema<span class="type-signature"> :yup.ObjectSchema.&lt;<a href="global.html#GameSettingsFormValues">GameSettingsFormValues</a>></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Validation schema for the Game Settings form.
+Utilizes <code>yup</code> to enforce data types, constraints, and complex conditional requirements.
+This schema ensures that board dimensions are within technical limits and that
+specific configurations (like bot difficulty or online nicknames) are provided
+only when the relevant game mode is selected.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Validation schema for the Game Settings form.
+Utilizes <code>yup</code> to enforce data types, constraints, and complex conditional requirements.
+This schema ensures that board dimensions are within technical limits and that
+specific configurations (like bot difficulty or online nicknames) are provided
+only when the relevant game mode is selected.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">yup.ObjectSchema.&lt;<a href="global.html#GameSettingsFormValues">GameSettingsFormValues</a>></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="gameSettings"><span class="type-signature"></span>gameSettings<span class="type-signature"> :Object|null</span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Current match configuration.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Current match configuration.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="history"><span class="type-signature"></span>history<span class="type-signature"> :Array.&lt;<a href="global.html#GameResult">GameResult</a>></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The list of match results recorded during the active session.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_historySlice.js.html">store/slices/historySlice.js</a>, <a href="store_slices_historySlice.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The list of match results recorded during the active session.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;<a href="global.html#GameResult">GameResult</a>></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="isModalOpen"><span class="type-signature"></span>isModalOpen<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+
+<dl class="details">
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="lockedMode"><span class="type-signature"></span>lockedMode<span class="type-signature"> :string|null</span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Forced game mode identifier.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Forced game mode identifier.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="mode"><span class="type-signature"></span>mode<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Defines the primary game mode.
+Must be either 'bot' (Local) or 'online' (SignalR).</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Defines the primary game mode.
+Must be either 'bot' (Local) or 'online' (SignalR).</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="moveTimeLimit"><span class="type-signature"></span>moveTimeLimit<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Optional time limit for a single turn in seconds.
+Range: 5 to 120 seconds. Empty strings are transformed to null.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line100">line 100</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Optional time limit for a single turn in seconds.
+Range: 5 to 120 seconds. Empty strings are transformed to null.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="nickname"><span class="type-signature"></span>nickname<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>User nickname for online identity.
+Required only if 'mode' is 'online' and the GDPR consent for nickname usage ($canUseNickname) is granted.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line115">line 115</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>User nickname for online identity.
+Required only if 'mode' is 'online' and the GDPR consent for nickname usage ($canUseNickname) is granted.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="playerColor"><span class="type-signature"></span>playerColor<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Visual color for the human player's pieces. Required only if 'mode' is set to 'bot'.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line59">line 59</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Visual color for the human player's pieces. Required only if 'mode' is set to 'bot'.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="preferences"><span class="type-signature"></span>preferences<span class="type-signature"> :<a href="global.html#ConsentPreferences">ConsentPreferences</a></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="global.html#ConsentPreferences">ConsentPreferences</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="roomCode"><span class="type-signature"></span>roomCode<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Code to join a specific multiplayer room. Optional during creation, required contextually.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line125">line 125</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Code to join a specific multiplayer room. Optional during creation, required contextually.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="rows"><span class="type-signature"></span>rows<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Number of rows in the game grid. Range: 4 to 10.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line77">line 77</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Number of rows in the game grid. Range: 4 to 10.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="status"><span class="type-signature"></span>status<span class="type-signature"> :string</span></h4>
+
+
+
+
+
+<dl class="details">
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="useConsentStore"><span class="type-signature type-signature-constant">(constant) </span>useConsentStore<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Zustand store dedicated to managing user privacy and GDPR consent settings.
+Acts as a gatekeeper for features like online matchmaking and persistence.</p>
+<ul>
+<li>@category Stores</li>
+</ul></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Zustand store dedicated to managing user privacy and GDPR consent settings.
+Acts as a gatekeeper for features like online matchmaking and persistence.</p>
+<ul>
+<li>@category Stores</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="useGameStore"><span class="type-signature type-signature-constant">(constant) </span>useGameStore<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The primary global state store for the Connect Four application.
+Utilizes a slice-based architecture to separate concerns between game sessions
+and match history.
+*</p>
+<ul>
+<li>@category Stores</li>
+</ul></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_gameStore.js.html">store/gameStore.js</a>, <a href="store_gameStore.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="global.html#createGameSessionSlice">createGameSessionSlice</a></li>
+        
+            <li><a href="global.html#createHistorySlice">createHistorySlice</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The primary global state store for the Connect Four application.
+Utilizes a slice-based architecture to separate concerns between game sessions
+and match history.
+*</p>
+<ul>
+<li>@category Stores</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="App"><span class="type-signature"></span>App<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The root component of the Connect Four application.</p>
+<ul>
+<li>Responsibilities:</li>
+</ul>
+<ul>
+<li>Orchestrates top-level routing using React Router.</li>
+<li>Connects the UI to the global Zustand <code>useGameStore</code>.</li>
+<li>Manages the transition logic between settings, active gameplay, and results history.</li>
+<li>Global injection of GDPR-related components (CookieConsent, PrivacyFooter).</li>
+</ul>
+<ul>
+<li></li>
+<li>@component</li>
+</ul></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="App.jsx.html">App.jsx</a>, <a href="App.jsx.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="CookieConsent"><span class="type-signature"></span>CookieConsent<span class="signature">()</span><span class="type-signature"> &rarr; {JSX.Element|null}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>A GDPR-compliant cookie and local storage consent banner.
+Manages user privacy preferences for game sessions and personalization.
+The component integrates with a global <code>useConsentStore</code> to persist choices
+and controls the availability of features like SignalR online play and nickname saving.</p>
+<ul>
+<li>@component</li>
+</ul></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_CookieConsent.jsx.html">components/CookieConsent.jsx</a>, <a href="components_CookieConsent.jsx.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The rendered consent banner/modal or null if the user has already decided.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">JSX.Element</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="PrivacyFooter"><span class="type-signature"></span>PrivacyFooter<span class="signature">()</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>A persistent footer component that provides quick access to privacy-related features.
+Contains a trigger to reopen the GDPR consent modal and a link to the full Privacy Policy page.
+Positioned fixed at the bottom-left of the viewport to remain accessible across different game screens.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_PrivacyFooter.jsx.html">components/PrivacyFooter.jsx</a>, <a href="components_PrivacyFooter.jsx.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The rendered privacy footer with action buttons and links.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">JSX.Element</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="PrivacyPolicy"><span class="type-signature"></span>PrivacyPolicy<span class="signature">()</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>A static legal and information page component.
+Displays the application's Privacy Policy, GDPR compliance details, and usage instructions.
+This component outlines the granular consent model, data processing via SignalR,
+and user rights regarding the erasure of local storage data.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_PrivacyPolicy.jsx.html">pages/PrivacyPolicy.jsx</a>, <a href="pages_PrivacyPolicy.jsx.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The rendered Privacy Policy page with navigation back to the game.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">JSX.Element</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="addGameToHistory"><span class="type-signature"></span>addGameToHistory<span class="signature">(gameResult)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Adds a new game outcome to the session history.
+Uses an immutable update pattern to ensure React re-renders correctly.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_historySlice.js.html">store/slices/historySlice.js</a>, <a href="store_slices_historySlice.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gameResult</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#GameResult">GameResult</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The result data of the finished game.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="clearSession"><span class="type-signature"></span>clearSession<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Clears all session-related data.
+Useful when returning to the main menu to start a fresh configuration.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line48">line 48</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="formatTime"><span class="type-signature"></span>formatTime<span class="signature">(seconds)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Formats a total duration in seconds into a standard &quot;MM:SS&quot; string format.
+Uses string padding to ensure both minutes and seconds are always represented
+by at least two digits, adding a leading zero if necessary. This is primarily
+used for displaying elapsed game time or turn timers in the UI.</p>
+<ul>
+<li>@category Utilities</li>
+</ul></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="helper_formatTime.js.html">helper/formatTime.js</a>, <a href="helper_formatTime.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>seconds</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The total number of seconds to format (should be a positive integer).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The formatted time string (e.g., &quot;05:09&quot;, &quot;12:34&quot;).</p>
+<ul>
+<li>@example
+// Returns &quot;05:09&quot;
+formatTime(309);</li>
+<li>@example
+// Returns &quot;00:42&quot;
+formatTime(42);</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setGameSession"><span class="type-signature"></span>setGameSession<span class="signature">(settings, lockedMode)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Initializes or updates the current game session.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game settings to be applied.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lockedMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The mode to lock the UI to.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="useGame"><span class="type-signature"></span>useGame<span class="signature">(settings)</span><span class="type-signature"> &rarr; {<a href="global.html#UseGameReturn">UseGameReturn</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The core game logic hook that manages the Connect Four state engine.
+This hook handles the game board state, turn switching, win/draw detection,
+and orchestrates both human and automated (bot) moves.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hooks_game_useGame.js.html">hooks/game/useGame.js</a>, <a href="hooks_game_useGame.js.html#line41">line 41</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#GameSettings">GameSettings</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Configuration for the current game session.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Game state and action handlers.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#UseGameReturn">UseGameReturn</a></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="useGameTimer"><span class="type-signature"></span>useGameTimer<span class="signature">(isGameActive, onTimeUpdate)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>A custom hook that manages the game session's total elapsed time.
+It sets up a 1-second interval that updates the game duration as long as the match is active.
+Automatically handles cleanup by clearing the interval when the game is paused, finished,
+or the component is unmounted.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hooks_game_useGameTimer.js.html">hooks/game/useGameTimer.js</a>, <a href="hooks_game_useGameTimer.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>isGameActive</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A flag determining if the timer should be running (true) or paused (false).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onTimeUpdate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A callback function (usually a state setter) that receives the previous time and returns the updated time.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="useSignalR"><span class="type-signature"></span>useSignalR<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="global.html#UseSignalRReturn">UseSignalRReturn</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Custom hook to manage the SignalR lifecycle for real-time multiplayer functionality.
+It initializes the hub connection, handles automatic reconnections, and provides
+a method to manually start the connection when the user enters the multiplayer mode.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hooks_api_useSignalR.js.html">hooks/api/useSignalR.js</a>, <a href="hooks_api_useSignalR.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>SignalR connection state and control methods.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#UseSignalRReturn">UseSignalRReturn</a></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id="BoardProps">BoardProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the Board component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_game_Board.jsx.html">components/game/Board.jsx</a>, <a href="components_game_Board.jsx.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>board</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array.&lt;(string|null)>></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>A 2D array representing the current state of the game grid (null for empty, 'player' or 'bot' for pieces).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onColumnClick</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Callback function triggered when a player clicks on a specific column. Passes the column index.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>playerColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Hex code or CSS color string for the player's pieces. Defaults to '#FF0000' (Red).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>botColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Hex code or CSS color string for the bot's pieces. Defaults to '#FFFF00' (Yellow).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the Board component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="ButtonProps">ButtonProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the Button component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_ui_Button.jsx.html">components/ui/Button.jsx</a>, <a href="components_ui_Button.jsx.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>children</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">React.ReactNode</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The content to be rendered inside the button (e.g., text, icons).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onClick</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The callback function executed when the button is clicked.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the Button component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="ConsentPreferences">ConsentPreferences</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Granular user preferences for different data categories.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>session</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Permission for SignalR/Online play.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nickname</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Permission to persist the nickname.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Granular user preferences for different data categories.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="ConsentStore">ConsentStore</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The state and actions provided by the Consent Store.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_useConsentStore.js.html">store/useConsentStore.js</a>, <a href="store_useConsentStore.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Current consent status ('undecided', 'customized', etc.).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>preferences</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#ConsentPreferences">ConsentPreferences</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User data categories settings.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isModalOpen</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Visibility state of the modal.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>openModal</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Opens the settings modal.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>closeModal</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Closes the settings modal.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>setPreferences</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Updates granular preferences.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>acceptAll</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Grants full consent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>declineAll</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Revokes optional consent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resetConsent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Triggers the privacy banner again.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The state and actions provided by the Consent Store.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="GameEndPortalProps">GameEndPortalProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Пропси для компонента GameEndPortal.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_game_GameEndPortal_GameEndPortal.jsx.html">components/game/GameEndPortal/GameEndPortal.jsx</a>, <a href="components_game_GameEndPortal_GameEndPortal.jsx.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>isOpen</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Визначає, чи видимий портал завершення гри.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>winner</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Результат гри ('player', 'bot' або 'draw').</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Відформатований рядок із загальним часом гри (наприклад, &quot;02:45&quot;).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onPlayAgain</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Функція для миттєвого перезапуску матчу з тими ж налаштуваннями.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onChangeSettings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Функція для повернення до конфігурації налаштувань.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>EndGame</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Функція для повного виходу з поточної ігрової сесії.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>botLevel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>(Опціонально) Рівень складності бота-супротивника ('easy', 'medium', 'hard').</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Пропси для компонента GameEndPortal.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="GameHeaderProps">GameHeaderProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the GameHeader component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_game_GameHeader.jsx.html">components/game/GameHeader.jsx</a>, <a href="components_game_GameHeader.jsx.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>currentPlayer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Identifier for whose turn it currently is ('player' or 'bot').</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>formattedTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The total elapsed time of the game, formatted as a string (e.g., &quot;01:23&quot;).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the GameHeader component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="GamePageProps">GamePageProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the GamePage component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_GamePage.jsx.html">pages/GamePage.jsx</a>, <a href="pages_GamePage.jsx.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The configuration object for the match (difficulty, colors, time limits).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onGoToSettings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback to return to the configuration screen.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onGoToResults</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback to navigate to the session statistics/history.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onGameFinished</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback triggered when a winner is declared to save session data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the GamePage component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="GameResult">GameResult</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Represents a single game match result stored in the history.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_historySlice.js.html">store/slices/historySlice.js</a>, <a href="store_slices_historySlice.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Unique identifier for the match (e.g., ISO timestamp).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>winner</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The winner of the match ('player', 'bot', or 'draw').</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The formatted duration of the match.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The game mode played ('bot' or 'online').</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>botLevel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Difficulty level if the mode was 'bot'.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Represents a single game match result stored in the history.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="GameSessionSlice">GameSessionSlice</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The state and actions provided by the Game Session slice.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_gameSessionSlice.js.html">store/slices/gameSessionSlice.js</a>, <a href="store_slices_gameSessionSlice.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gameSettings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Stores the configuration for the current match (colors, grid size, bot level).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lockedMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Indicates if the game mode is forced (e.g., 'online') and cannot be changed by the user.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>setGameSession</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Updates the session data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>clearSession</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Resets the session data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The state and actions provided by the Game Session slice.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="GameSettings">GameSettings</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Configuration object for initializing a game session.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hooks_game_useGame.js.html">hooks/game/useGame.js</a>, <a href="hooks_game_useGame.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The game mode ('bot' or 'online').</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>LevelBot</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Difficulty level for the AI ('easy', 'medium', 'hard'). Relevant only in 'bot' mode.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>playerColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Hex color for the human player.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>botColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Hex color for the bot/opponent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>firstPlayer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Determines who starts ('player', 'bot', or 'random').</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rows</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The vertical size of the board (defaults to 6).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>columns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The horizontal size of the board (defaults to 7).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Configuration object for initializing a game session.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="GameSettingsFormProps">GameSettingsFormProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the GameSettingsForm component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_settings_GameSettingsForm.jsx.html">components/settings/GameSettingsForm.jsx</a>, <a href="components_settings_GameSettingsForm.jsx.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>onSubmit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Callback function triggered when the form is successfully validated and submitted. Receives the validated form data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lockedMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Forces the form to stay in a specific mode ('bot' or 'online') preventing the user from changing it.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>currentSettings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional initial settings object to prepopulate the form.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>initialRoomCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Pre-fills the room code input field if the user is joining via a shared code URL.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the GameSettingsForm component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="GameSettingsFormValues">GameSettingsFormValues</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Expected shape of the data validated by the game settings schema.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="validation_GameSchema.js.html">validation/GameSchema.js</a>, <a href="validation_GameSchema.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'bot'</span>
+|
+
+<span class="param-type">'online'</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Defines the primary game mode.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>LevelBot</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Bot difficulty level. Required if mode is 'bot'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>firstPlayer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Determines who makes the first move. Required if mode is 'bot'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>playerColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Hex color for the human player's pieces. Required if mode is 'bot'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>botColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Hex color for the bot's pieces. Required if mode is 'bot'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rows</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Number of rows in the game grid (4-10).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>columns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Number of columns in the game grid (4-10).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>moveTimeLimit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional time limit for a single turn in seconds (5-120).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nickname</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>User nickname for online identity. Contextually required based on GDPR consent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>roomCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Code to join a specific multiplayer room.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Expected shape of the data validated by the game settings schema.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="HistorySlice">HistorySlice</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The state and actions provided by the History slice.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="store_slices_historySlice.js.html">store/slices/historySlice.js</a>, <a href="store_slices_historySlice.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>history</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="global.html#GameResult">GameResult</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The list of match results.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>addGameToHistory</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Action to prepend a new game result.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The state and actions provided by the History slice.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="MoveTimerProps">MoveTimerProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the MoveTimer component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_game_MoveTimer.jsx.html">components/game/MoveTimer.jsx</a>, <a href="components_game_MoveTimer.jsx.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>timeLeft</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The current amount of time remaining for the move (in seconds).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>moveTimeLimit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The maximum total time allowed for a single move (in seconds).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the MoveTimer component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="OnlineGamePageProps">OnlineGamePageProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the OnlineGamePage component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_OnlineGamePage.jsx.html">pages/OnlineGamePage.jsx</a>, <a href="pages_OnlineGamePage.jsx.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Global game settings (nickname, colors, board size).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onGoToSettings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback to return to the settings menu.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onGoToResults</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback to navigate to the results/history page.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onGameFinished</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback to save match results to the local history.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the OnlineGamePage component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="OnlineGameProps">OnlineGameProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the OnlineGame component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_game_OnlineGame.jsx.html">components/game/OnlineGame.jsx</a>, <a href="components_game_OnlineGame.jsx.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Game configuration settings (e.g., player/bot colors).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>connection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The active SignalR WebSocket connection instance.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>connectionId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The unique identifier for the local player's network connection.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>roomCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The specific room code where the multiplayer match is taking place.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onGoToSettings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback to navigate back to the game settings menu.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onGoToResults</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback to navigate to the session results page.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opponentLeft</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Flag indicating whether the opponent has disconnected or left the room.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opponentWantsRestart</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Flag indicating the opponent has proposed a rematch.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onRestartApproved</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback triggered when the local player accepts a rematch request.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isGameFinished</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Flag indicating if the current match has officially concluded.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the OnlineGame component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="ResultInfoProps">ResultInfoProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the ResultInfo component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_results_ResultInfo.jsx.html">components/results/ResultInfo.jsx</a>, <a href="components_results_ResultInfo.jsx.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>winner</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The outcome of the match ('player', 'bot', or 'draw').</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The formatted string of the total time played (e.g., &quot;05:12&quot;).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>botLevel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The difficulty level of the bot ('easy', 'medium', 'hard'). Relevant only if mode is 'bot'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The type of game played ('online' or 'bot').</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the ResultInfo component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="ResultsPageProps">ResultsPageProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the ResultsPage component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_ResultsPage.jsx.html">pages/ResultsPage.jsx</a>, <a href="pages_ResultsPage.jsx.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>onRestart</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback function to navigate the user back to the main menu or settings.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the ResultsPage component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="StartPageProps">StartPageProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the StartPage component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_StartPage.jsx.html">pages/StartPage.jsx</a>, <a href="pages_StartPage.jsx.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>onStart</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback function triggered when the user clicks the &quot;Play&quot; button to begin the game setup.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the StartPage component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="UseGameReturn">UseGameReturn</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The object returned by the useGame hook, containing state and control functions.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hooks_game_useGame.js.html">hooks/game/useGame.js</a>, <a href="hooks_game_useGame.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>board</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array.&lt;(string|null)>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2D array representing the current grid (null for empty, 'player' or 'bot' for pieces).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>currentPlayer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The ID of the player whose turn it is ('player' or 'bot').</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>winner</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The result of the game ('player', 'bot', 'draw', or null if ongoing).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>playerMove</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Handler for processing a human player's move in a specific column.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>botMove</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Asynchronous handler for processing the AI's move or an online opponent's forced move.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resetGame</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Resets the board and state for a new match with the same settings.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forceTimeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Ends the game immediately (e.g., when the turn timer expires), declaring the opponent as the winner.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The object returned by the useGame hook, containing state and control functions.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="UseSignalRReturn">UseSignalRReturn</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Об'єкт, який повертає кастомний хук useSignalR.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hooks_api_useSignalR.js.html">hooks/api/useSignalR.js</a>, <a href="hooks_api_useSignalR.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>connection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The SignalR connection instance used to invoke hub methods and listen to events.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startConnection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An asynchronous function to initiate the connection to the game hub.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>connectionId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The unique identifier for the current active connection assigned by the server.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Об'єкт, який повертає кастомний хук useSignalR.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="WaitingRoomPlayer">WaitingRoomPlayer</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Represents a player currently connected to the matchmaking room.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_game_WaitingRoom.jsx.html">components/game/WaitingRoom.jsx</a>, <a href="components_game_WaitingRoom.jsx.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>connectionId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The unique SignalR connection ID of the player.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nickname</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The display name of the player.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Represents a player currently connected to the matchmaking room.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="WaitingRoomProps">WaitingRoomProps</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Props for the WaitingRoom component.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_game_WaitingRoom.jsx.html">components/game/WaitingRoom.jsx</a>, <a href="components_game_WaitingRoom.jsx.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roomCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The unique alphanumeric identifier for the current game session.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>players</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="global.html#WaitingRoomPlayer">WaitingRoomPlayer</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of player objects currently connected to the room.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>connectionId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The local user's SignalR connection ID, used to identify &quot;You&quot; in the list.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>Props for the WaitingRoom component.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Sat Feb 28 2026 13:19:31 GMT+0200 (Восточная Европа, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

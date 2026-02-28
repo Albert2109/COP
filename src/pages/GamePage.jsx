@@ -10,16 +10,22 @@ import GameHeader from '../components/game/GameHeader';
 import MoveTimer from '../components/game/MoveTimer';
 
 /**
+ * Props for the GamePage component.
+ * @typedef {Object} GamePageProps
+ * @property {Object} settings - The configuration object for the match (difficulty, colors, time limits).
+ * @property {Function} onGoToSettings - Callback to return to the configuration screen.
+ * @property {Function} onGoToResults - Callback to navigate to the session statistics/history.
+ * @property {Function} onGameFinished - Callback triggered when a winner is declared to save session data.
+ */
+
+/**
  * The primary container component for the local game mode (Player vs. Bot).
  * It orchestrates the game flow by managing the session timer, turn-based move timers,
  * and bot execution timing. It also handles navigation callbacks for settings and results.
- * * 
- * * @component
- * @param {Object} props - The component properties.
- * @param {Object} props.settings - The configuration object for the match (difficulty, colors, time limits).
- * @param {Function} props.onGoToSettings - Callback to return to the configuration screen.
- * @param {Function} props.onGoToResults - Callback to navigate to the session statistics/history.
- * @param {Function} props.onGameFinished - Callback triggered when a winner is declared to save session data.
+ * 
+ * @component
+ * @category Pages
+ * @param {GamePageProps} props - The component properties.
  * @returns {JSX.Element} The rendered game page including header, timer, board, and portals.
  */
 export default function GamePage({ settings, onGoToSettings, onGoToResults, onGameFinished }) {
@@ -29,17 +35,17 @@ export default function GamePage({ settings, onGoToSettings, onGoToResults, onGa
   const { board, currentPlayer, winner, playerMove, botMove, resetGame, forceTimeout } = useGame(settings);
   
   /** * Local state for tracking the total session duration in seconds.
-   * @type {[number, function]} 
+   * @type {Array} 
    */
   const [time, setTime] = useState(0);
 
   /** * Local state for the countdown timer of the current move.
-   * @type {[number|null, function]} 
+   * @type {Array} 
    */
   const [timeLeft, setTimeLeft] = useState(settings.moveTimeLimit ? parseInt(settings.moveTimeLimit, 10) : null);
 
   /** * Visibility state for the game result modal.
-   * @type {[boolean, function]} 
+   * @type {Array} 
    */
   const [showEndPortal, setShowEndPortal] = useState(false);
 

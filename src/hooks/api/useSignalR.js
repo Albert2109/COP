@@ -2,14 +2,19 @@ import { useState, useEffect, useCallback } from 'react';
 import { HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
 
 /**
+ * Об'єкт, який повертає кастомний хук useSignalR.
+ * @typedef {Object} UseSignalRReturn
+ * @property {Object|null} connection - The SignalR connection instance used to invoke hub methods and listen to events.
+ * @property {Function} startConnection - An asynchronous function to initiate the connection to the game hub.
+ * @property {string|null} connectionId - The unique identifier for the current active connection assigned by the server.
+ */
+
+/**
  * Custom hook to manage the SignalR lifecycle for real-time multiplayer functionality.
  * It initializes the hub connection, handles automatic reconnections, and provides
  * a method to manually start the connection when the user enters the multiplayer mode.
- * * @hook
- * @returns {Object} SignalR connection state and control methods.
- * @property {HubConnection|null} connection - The SignalR connection instance used to invoke hub methods and listen to events.
- * @property {Function} startConnection - An asynchronous function to initiate the connection to the game hub.
- * @property {string|null} connectionId - The unique identifier for the current active connection assigned by the server.
+ * @category Hooks
+ * @returns {UseSignalRReturn} SignalR connection state and control methods.
  */
 export function useSignalR() {
   const [connection, setConnection] = useState(null);
@@ -40,8 +45,7 @@ export function useSignalR() {
   /**
    * Starts the SignalR connection if it is currently in a disconnected state.
    * Updates the local connectionId state upon successful connection.
-   * * @async
-   * @callback
+   * @async
    * @throws Will throw an error if the connection attempt fails.
    */
   const startConnection = useCallback(async () => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+
 /** * Note: Imports of CookieConsent and PrivacyFooter are available here 
  * if global injection outside the App component is required.
  */
@@ -12,11 +13,12 @@ import './index.css';
 /**
  * Application Entry Point.
  * Initializing the React root element and mounting the application.
+ * * [Image of a React application component tree showing StrictMode, BrowserRouter, and the root App component]
  * * - **ReactDOM.createRoot**: Modern React 18 API for concurrent rendering.
  * - **React.StrictMode**: Development tool to highlight potential problems.
  * - **BrowserRouter**: Provides the navigation context for the entire application,
  * enabling the use of 'react-router-dom' hooks and components.
- * * 
+ * * @category Core
  */
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

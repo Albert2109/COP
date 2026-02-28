@@ -5,10 +5,11 @@ import { useEffect } from 'react';
  * It sets up a 1-second interval that updates the game duration as long as the match is active.
  * Automatically handles cleanup by clearing the interval when the game is paused, finished, 
  * or the component is unmounted.
- * * 
- * * @hook
+ * @hook
+ * @category Hooks
  * @param {boolean} isGameActive - A flag determining if the timer should be running (true) or paused (false).
  * @param {Function} onTimeUpdate - A callback function (usually a state setter) that receives the previous time and returns the updated time.
+ * @returns {void}
  */
 export function useGameTimer(isGameActive, onTimeUpdate) {
   useEffect(() => {

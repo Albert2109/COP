@@ -6,16 +6,23 @@ import { useGameStore } from '../../store/gameStore';
 import { useConsentStore } from '../../store/useConsentStore';
 
 /**
+ * Props for the GameSettingsForm component.
+ * @typedef {Object} GameSettingsFormProps
+ * @property {Function} onSubmit - Callback function triggered when the form is successfully validated and submitted. Receives the validated form data.
+ * @property {string} [lockedMode] - Forces the form to stay in a specific mode ('bot' or 'online') preventing the user from changing it.
+ * @property {Object} [currentSettings] - Optional initial settings object to prepopulate the form.
+ * @property {string} [initialRoomCode] - Pre-fills the room code input field if the user is joining via a shared code URL.
+ */
+
+/**
  * Renders the configuration form for starting a new game or updating settings.
  * Integrates with `react-hook-form` and `yup` for schema-based validation.
  * Dynamically adjusts available fields (like Online Mode or Nicknames) based on 
  * the user's GDPR cookie consent preferences stored in Zustand.
- * * @component
- * @param {Object} props - The component properties.
- * @param {Function} props.onSubmit - Callback function triggered when the form is successfully validated and submitted. Receives the validated form data.
- * @param {string} [props.lockedMode] - Forces the form to stay in a specific mode ('bot' or 'online') preventing the user from changing it.
- * @param {Object} [props.currentSettings] - Optional initial settings object to prepopulate the form.
- * @param {string} [props.initialRoomCode] - Pre-fills the room code input field if the user is joining via a shared code.
+ * 
+ * @component
+ * @category Components
+ * @param {GameSettingsFormProps} props - The component properties.
  * @returns {JSX.Element} The rendered game settings form interface.
  */
 export default function GameSettingsForm({ onSubmit, lockedMode, currentSettings, initialRoomCode }) {

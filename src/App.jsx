@@ -16,12 +16,14 @@ import './App.css';
 
 /**
  * The root component of the Connect Four application.
- * Responsibilities:
+ * * Responsibilities:
  * - Orchestrates top-level routing using React Router.
  * - Connects the UI to the global Zustand `useGameStore`.
  * - Manages the transition logic between settings, active gameplay, and results history.
  * - Global injection of GDPR-related components (CookieConsent, PrivacyFooter).
+ * * 
  * * @component
+ * @category Core
  */
 function App() {
   /** * Hook to programmatically trigger navigation between routes.
@@ -37,6 +39,8 @@ function App() {
 
   /**
    * Resets the current session and directs the user to the initial setup.
+   * Clears all temporary game data from the store.
+   * @function
    */
   const handleStartClick = () => {
     clearSession(); 
@@ -45,7 +49,9 @@ function App() {
 
   /**
    * Processes the settings form submission.
-   * Determines the final game mode (Bot or Online) and navigates to the appropriate route.
+   * Determines the final game mode (Bot or Online), updates the store,
+   * and navigates to the appropriate route.
+   * @function
    * @param {Object} settings - Validated form data from GameSettingsForm.
    */
   const handleSettingsSubmit = (settings) => {
@@ -70,7 +76,9 @@ function App() {
 
   /**
    * Memoized callback to record match results into the global history.
-   * Enriches raw result data with current session metadata (mode, bot difficulty, grid size).
+   * Enriches raw result data with current session metadata (mode, bot difficulty, grid size)
+   * before persisting it to the store.
+   * @function
    * @param {Object} result - Result object containing winner and elapsed time.
    */
   const addGameToHistory = useCallback((result) => {
@@ -98,6 +106,7 @@ function App() {
 
   /**
    * HOC-like wrapper for the Settings Page to handle optional URL room codes.
+   * Extracts roomCode from URL parameters and passes it to the form.
    * @returns {JSX.Element}
    */
   function SettingsPageWrapper() {
@@ -115,7 +124,7 @@ function App() {
   /**
    * Safeguard wrapper for the Online Game Page.
    * Ensures that game settings exist and mode is 'online' before rendering.
-   * Redirects back to settings if the state is invalid or missing.
+   * Redirects back to settings if the state is invalid or missing to prevent runtime errors.
    * @returns {JSX.Element}
    */
   function OnlineGamePageWrapper() {

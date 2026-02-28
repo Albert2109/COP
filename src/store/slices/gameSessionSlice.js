@@ -1,14 +1,20 @@
 /**
+ * The state and actions provided by the Game Session slice.
+ * @typedef {Object} GameSessionSlice
+ * @property {Object|null} gameSettings - Stores the configuration for the current match (colors, grid size, bot level).
+ * @property {string|null} lockedMode - Indicates if the game mode is forced (e.g., 'online') and cannot be changed by the user.
+* @property {Function} setGameSession - Updates the session data.
+ * @property {Function} clearSession - Resets the session data.
+ */
+
+/**
  * Zustand slice responsible for managing the active game session state.
  * It tracks current game configurations and determines if certain modes are 
  * locked (e.g., when joining a specific online room via a direct link).
- * * @function
+ * 
+ * * @category Stores
  * @param {Function} set - Zustand's internal state setter.
- * @returns {Object} An object containing the session state and action handlers.
- * * @property {Object|null} gameSettings - Stores the configuration for the current match (colors, grid size, bot level).
- * @property {string|null} lockedMode - Indicates if the game mode is forced (e.g., 'online') and cannot be changed by the user.
- * @property {Function} setGameSession - Updates the session data and sets the mode lock status.
- * @property {Function} clearSession - Resets the session data to its initial null state.
+ * @returns {GameSessionSlice} An object containing the session state and action handlers.
  */
 export const createGameSessionSlice = (set) => ({
   /**
