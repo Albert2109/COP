@@ -1,5 +1,7 @@
 /** @module Components/GameSettingsForm.stories */
+import React, { useEffect, useState } from 'react';
 import GameSettingsForm from './GameSettingsForm';
+import { useConsentStore } from '../../store/useConsentStore';
 
 export default {
   title: 'Components/GameSettingsForm',
@@ -9,63 +11,75 @@ export default {
     layout: 'fullscreen',
   },
   argTypes: {
-    onSubmit: { action: 'form submitted' },
-    lockedMode: { 
-      control: 'select', 
-      options: [null, 'bot', 'online'],
-      name: 'Фіксований режим'
+    onSubmit: { action: '🚀 Дані форми відправлено' },
+  },
+  decorators: [
+    (Story, { args }) => {
+      const [isReady, setIsReady] = useState(false);
+
+      useEffect(() => {
+        if (args.mockConsent) {
+          useConsentStore.setState(args.mockConsent);
+          setIsReady(true);
+        } else {
+          setIsReady(true);
+        }
+      }, [args.mockConsent]);
+
+      const consent = useConsentStore();
+
+      if (!isReady) return null;
+
+      return (
+        <div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 p-8 flex flex-col items-center justify-center gap-4 text-center">
+          <div className="bg-white/20 backdrop-blur-md px-6 py-2 rounded-full border border-white/30 text-white text-sm font-bold shadow-xl">
+            🔒 Режим конфіденційності: {
+              consent.status === 'accepted' ? '✅ ПРИЙНЯТО' : 
+              consent.status === 'declined' ? '❌ ВІДХИЛЕНО' : '⏳ ОЧІКУВАННЯ'
+            }
+          </div>
+          
+          <div className="w-full max-w-4xl" key={JSON.stringify(args.mockConsent)}>
+            <Story />
+          </div>
+
+          <p className="text-white/70 text-xs mt-4 italic">
+            Підказка: заповніть форму та натисніть кнопку, щоб побачити результат у вкладці "Actions"
+          </p>
+        </div>
+      );
     },
-  },
+  ],
 };
 
-/** * Сценарій 1: Початковий стан. 
- * Користувач тільки зайшов, нічого ще не обрав.
- */
-export const EmptyInitial = {
+export const AllAccepted = {
   args: {
-    onSubmit: (data) => console.log('Submit:', data),
-  },
+    mockConsent: {
+      status: 'accepted',
+      preferences: { session: true, nickname: true }
+    },
+    currentSettings: { mode: 'online', nickname: 'Albert_Pro_Dev' }
+  }
 };
 
-/** * Сценарій 2: Гра проти бота. 
- * Показує розгорнуті налаштування складності та кольорів.
- */
-export const BotModeActive = {
+
+export const AllDeclined = {
   args: {
-    onSubmit: (data) => console.log('Bot Mode Submit:', data),
-    currentSettings: {
-      mode: 'bot',
-      LevelBot: 'medium',
-      firstPlayer: 'player',
-      playerColor: '#ff0080',
-      botColor: '#00ffff',
-    }
-  },
+    mockConsent: {
+      status: 'declined',
+      preferences: { session: false, nickname: false }
+    },
+    currentSettings: { mode: '' }
+  }
 };
 
-/** * Сценарій 3: Онлайн режим. 
- * Демонструє поля для нікнейму та коду кімнати.
- */
-export const OnlineModeActive = {
-  args: {
-    onSubmit: (data) => console.log('Online Mode Submit:', data),
-    currentSettings: {
-      mode: 'online',
-      nickname: 'SuperPlayer_2026',
-      roomCode: 'RTX-3090',
-    }
-  },
-};
 
-/** * Сценарій 4: Заблокований режим (наприклад, зміна налаштувань під час гри). 
- * Користувач не може змінити 'bot' на 'online'.
- */
-export const LockedBotMode = {
+export const PartialConsent = {
   args: {
-    lockedMode: 'bot',
-    currentSettings: {
-      mode: 'bot',
-      LevelBot: 'hard',
-    }
-  },
+    mockConsent: {
+      status: 'accepted',
+      preferences: { session: true, nickname: false } 
+    },
+    currentSettings: { mode: 'bot', nickname: 'PrivacyFan' }
+  }
 };
