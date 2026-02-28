@@ -30,3 +30,6 @@ backend/Four-in-row-api/obj/
 backend/Four-in-row-api/.vs/
 backend/Four-in-row-api/*.csproj.user
 backend/Four-in-row-api/appsettings.Development.json
+
+*storybook.log
+storybook-static
