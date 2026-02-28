@@ -93,3 +93,13 @@ npm run dev
 npm run build
 
 ```
+
+## 🚀 Roadmap & Future Improvements
+
+While the current version (v1.0) meets all laboratory requirements, the following enhancements are planned for future iterations:
+
+* **Dynamic Entity Labeling:** Improve the UI to dynamically distinguish between AI opponents and remote human players (currently labeled as 'Bot' by default).
+* **Enhanced Reconnection Logic:** Implementation of a more robust SignalR heartbeat system to handle unstable network transitions during active matches.
+* **Persistent Statistics:** Adding a local database (IndexedDB) to track win/loss ratios and match history across sessions.
+* **Granular UI Feedback:** Advanced animations and sound effects for winning combinations and timer alerts.
+
